@@ -37,6 +37,17 @@ unzip google-research-identify-contrails-reduce-gobal-warming.zip
 rm google-research-identify-contrails-reduce-gobal-warming.zip
 ```
 
+#### data download notes:
+#### Install the Kaggle CLI 
+#### `pip install kaggle`
+#### Create a Kaggle account and go to your account settings page
+#### Click "Create New API Token" to download the `kaggle.json` file
+#### Move the downloaded file to either `~/.kaggle/kaggle.json` 
+#### Set permissions for the API key file: 
+#### `chmod 600 ~/.kaggle/kaggle.json` 
+#### Confirm the setup: Run kaggle competitions list to verify the API key works 
+#### `kaggle competitions list`
+ 
 
 ## run
 
