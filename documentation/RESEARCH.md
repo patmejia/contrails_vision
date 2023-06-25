@@ -1,11 +1,8 @@
 #### Title:
-# GOES16 Advanced Baseline Imager (ABI) 
-### Contrail Detection with Computer Vision
+# GOES-16 Satellite Contrail Detection using CV/ML
 
-#### Description:
-
-#### Harnessing machine learning and computer vision, this project detects contrails in GOES-16 satellite data, supplying critical insights for climate change research and global warming mitigation. Adiabatic processes create visible ice-crystal trails of varying duration, contributing to the greenhouse effect and introducing uncertainty in climate models. Accurate contrail detection and tracking are crucial for understanding their climate change impact and devising effective mitigation strategies.
-
+### Optimizing satellite imagery, [GOES-R ABI](https://www.star.nesdis.noaa.gov/goes/index.php), and advanced computer vision/machine learning for accurate detection of contrails
+### atmospheric optics contrail shadows
 ![Atmospheric-optics-Contrail-shadows](./images/atmospheric-optics-contrail-shadows.png)
 
 ---
@@ -54,10 +51,18 @@ graph TD
 #### 14. Consider similar objects: Cloud shadows and cloud streets can mimic contrails but exhibit different behaviors and characteristics.
 
 ---
+### Reducing Contrail Formation: Strategies to Consider
+##### Adjusting Altitudes: Change cruising altitude to avoid contrail-forming conditions, considering increased fuel use and CO2 emissions.
+##### Optimizing Flight Paths: Modify routes to avoid areas with conditions conducive to contrail formation.
+##### Modifying Flight Schedules: Adjust schedules to influence contrail climate effects during the day (cooling) and night (warming).
+##### Enhancing Aircraft Efficiency: Improve efficiency to reduce exhaust water vapor and potentially decrease contrail occurrence.
+##### Exploring Alternative Fuels: Investigate biofuels emitting less water vapor when burned to reduce contrails.
+##### Utilizing Advanced Forecasts: Use weather prediction tech to identify high contrail formation areas and adjust flight paths.
+---
 ### Acknowledgements:
 
 #### 📌 arxiv: https://arxiv.org/abs/2304.02122
-#### 📌 challenge-guide: https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-gobal-warming/data
+#### 📌 challenge-guide: https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming
 #### ☛ Adam Duran (Michigan Tech, Q&A with SATAVIA: Climate and Contrails): https://www.mtu.edu/unscripted/2021/06/qa-with-satavia-climate-and-contrails.html
 #### ☛ contrails-labeling-guide: https://storage.googleapis.com/goes_contrails_dataset/20230419/Contrail_Detection_Dataset_Instruction.pdf
 #### ☛ catalogues of atmospheric optics (rocket plume, contrail shadow): https://atoptics.co.uk/atoptics/shuttle.htm, https://atoptics.co.uk/atoptics/contr1.htm
