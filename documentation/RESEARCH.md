@@ -6,7 +6,8 @@
 
 #### Harnessing machine learning and computer vision, this project detects contrails in GOES-16 satellite data, supplying critical insights for climate change research and global warming mitigation. Adiabatic processes create visible ice-crystal trails of varying duration, contributing to the greenhouse effect and introducing uncertainty in climate models. Accurate contrail detection and tracking are crucial for understanding their climate change impact and devising effective mitigation strategies.
 
-![Atmospheric-optics-Contrail-shadows](documentation/images/Atmospheric-optics-Contrail-shadows.png)
+![Atmospheric-optics-Contrail-shadows](./images/atmospheric-optics-contrail-shadows.png)
+
 ---
 ### Process of identifying a contrail:
 ```mermaid
