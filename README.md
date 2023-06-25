@@ -42,7 +42,7 @@ rm google-research-identify-contrails-reduce-gobal-warming.zip
 
 ```bash
 conda activate contrails_env
-python visualizing_contrails.py --base_dir /path/to/data --n_times_before 4 --record_id 1234567890
+python src/visualize.py --base_dir samples/sample1 --n_records 5 --n_times_before 4
 ```
 
 ## stop
