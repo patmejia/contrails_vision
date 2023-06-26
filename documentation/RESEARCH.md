@@ -2,7 +2,7 @@
 # GOES-16 Satellite Contrail Detection using CV/ML
 
 ### Optimizing satellite imagery, [GOES-R ABI](https://www.star.nesdis.noaa.gov/goes/index.php), and advanced computer vision/machine learning for accurate detection of contrails
-### atmospheric optics contrail shadows
+### Atmospheric optics contrail shadows
 ![Atmospheric-optics-Contrail-shadows](./images/atmospheric-optics-contrail-shadows.png)
 
 ---
