@@ -35,20 +35,20 @@ graph TD
 
 ```
 
-#### 1. Darkness of the object: Contrails appear darker than their surroundings in the image.
-#### 2. Linearity of the object: Contrails are line-shaped clouds produced by aircraft engines.
-#### 3. Object appearance: Contrails appear suddenly or enter from the sides of the image due to planes moving at high speeds.
-#### 4. Object visibility: Contrails should be visible in at least two images, as they are created by moving airplanes.
-#### 5. Size and shape of the object: Contrails have a length at least three times longer than their width and contain at least 10 pixels.
-#### 6. Object movement: Contrails move and change shape over time due to wind influence.
-#### 7. Contrail Aging and Dissipation: Contrails spread and become more diffuse over time.
-#### 8. Contrail Color: Contrails' color can vary depending on the sun's position and aircraft altitude.
-#### 9. Flight Path Alignment: Aligning observed contrails with known flight paths increases confidence in identification.
-#### 10. Cloud Shadows: Shadows aligned with the sun's position may resemble contrails but behave differently in a sequence of images.
-#### 11. Cloud Streets: Rows of cumulus clouds that are wider, less straight, and have different appearance and dissipation behavior than contrails.
-#### 12. Jet Stream Impact: Contrails are influenced by high altitude winds, which can help distinguish them from other linear objects.
-#### 13. Consistency Across Different Wavelengths: Consistent appearance across different wavelengths supports contrail identification.
-#### 14. Consider similar objects: Cloud shadows and cloud streets can mimic contrails but exhibit different behaviors and characteristics.
+##### 1. Darkness of the object: Contrails appear darker than their surroundings in the image.
+##### 2. Linearity of the object: Contrails are line-shaped clouds produced by aircraft engines.
+##### 3. Object appearance: Contrails appear suddenly or enter from the sides of the image due to planes moving at high speeds.
+##### 4. Object visibility: Contrails should be visible in at least two images, as they are created by moving airplanes.
+##### 5. Size and shape of the object: Contrails have a length at least three times longer than their width and contain at least 10 pixels.
+##### 6. Object movement: Contrails move and change shape over time due to wind influence.
+##### 7. Contrail Aging and Dissipation: Contrails spread and become more diffuse over time.
+##### 8. Contrail Color: Contrails' color can vary depending on the sun's position and aircraft altitude.
+##### 9. Flight Path Alignment: Aligning observed contrails with known flight paths increases confidence in identification.
+##### 10. Cloud Shadows: Shadows aligned with the sun's position may resemble contrails but behave differently in a sequence of images.
+##### 11. Cloud Streets: Rows of cumulus clouds that are wider, less straight, and have different appearance and dissipation behavior than contrails.
+##### 12. Jet Stream Impact: Contrails are influenced by high altitude winds, which can help distinguish them from other linear objects.
+##### 13. Consistency Across Different Wavelengths: Consistent appearance across different wavelengths supports contrail identification.
+##### 14. Consider similar objects: Cloud shadows and cloud streets can mimic contrails but exhibit different behaviors and characteristics.
 
 ---
 ### Reducing Contrail Formation: Strategies to Consider
@@ -58,15 +58,40 @@ graph TD
 ##### Enhancing Aircraft Efficiency: Improve efficiency to reduce exhaust water vapor and potentially decrease contrail occurrence.
 ##### Exploring Alternative Fuels: Investigate biofuels emitting less water vapor when burned to reduce contrails.
 ##### Utilizing Advanced Forecasts: Use weather prediction tech to identify high contrail formation areas and adjust flight paths.
----
-### Acknowledgements:
+##### Developing Contrail Avoidance Tech: Create new tech to detect contrails and avoid them in real-time.
 
-#### 📌 arxiv: https://arxiv.org/abs/2304.02122
-#### 📌 challenge-guide: https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming
-#### ☛ Adam Duran (Michigan Tech, Q&A with SATAVIA: Climate and Contrails): https://www.mtu.edu/unscripted/2021/06/qa-with-satavia-climate-and-contrails.html
-#### ☛ contrails-labeling-guide: https://storage.googleapis.com/goes_contrails_dataset/20230419/Contrail_Detection_Dataset_Instruction.pdf
-#### ☛ catalogues of atmospheric optics (rocket plume, contrail shadow): https://atoptics.co.uk/atoptics/shuttle.htm, https://atoptics.co.uk/atoptics/contr1.htm
-#### ☛ high-score-example: https://www.kaggle.com/code/egortrushin/gr-icrgw-training-with-4-folds
-#### ☛ visualize (input dataset 450.91 GB): https://www.kaggle.com/code/inversion/visualizing-contrails#OpenContrails-dataset-documentation
-#### ☛ GOES-16 (Geostationary Operational Environmental Satellite, Launch Date: Nov. 19, 2016): https://eospso.nasa.gov/missions/geostationary-operational-environmental-satellite-16
-#### ☛ contrails dataset sample (11.74 GB) train_df.csv, valid_df.csv: https://www.kaggle.com/datasets/shashwatraman/contrails-images-ash-color
+---
+### Overview of the different bands used by the GOES-16 ABI, their wavelengths, types, and primary uses
+
+| ABI Band # | Wavelength | Type | Primary Uses |
+|---|---|---|---|
+| 1 | 0.47 microns | Visible (“Blue Band”) | Monitoring aerosols (smoke, haze, dust), Air quality monitoring |
+| 2 | 0.64 microns | Visible (“Red Band”) | Daytime monitoring of clouds, Volcanic ash monitoring |
+| 3 | 0.86 microns | Near–IR (“Veggie Band”) | High contrast between water and land, Assess land characteristics including flooding impacts, burn scars, and hail swath damage |
+| 4 | 1.37 microns | Near-IR (“Cirrus Band”) | Thin cirrus detection during the day, Volcanic ash monitoring |
+| 5 | 1.6 microns | Near–IR (“Snow/Ice Band”) | Daytime snow, ice, and cloud discrimination |
+| 6 | 2.24 microns | Near-IR (“Cloud Particle Size Band”) | Cloud particle size, snow, and cloud phase, Hot spot detection at emission temperatures of greater than 600K |
+| 7 | 3.9 microns | IR (“Shortwave Window Band”) | Low stratus and fog, Fire/hot spot detection and volcanic ash |
+| 8 | 6.2 microns | IR (“Upper Troposphere WV Band”) | Upper-level feature detection (jet stream, waves, etc.) |
+| 9 | 6.9 microns | IR (“Mid-Level Troposphere WV Band”) | Mid-level feature detection |
+| 10 | 7.3 microns | IR (“Low-Level Troposphere WV Band”) | Low-level feature detection (EML, fronts) |
+| * 11 | 8.4 microns | IR (“Cloud-Top Phase Band”) | Cloud-top phase and type products, Volcanic ash (S02 detection) and dust |
+| 12 | 9.6 microns | IR (“Ozone Band”) | Dynamics near the tropopause including stratospheric intrusions, Input to Airmass RGB |
+| 13 | 10.3 microns | IR (“Clean IR Longwave Band”) | Less sensitive to atmospheric moisture than the other IR channels |
+| * 14 | 11.2 microns | IR (“IR Longwave Band”) | Differenced with the 3.9 micron near IR channel for low stratus and fog detection |
+| * 15 | 12.3 microns | IR (“Dirty IR Longwave Band”) | Greater sensitivity to moisture, Contributes to total PWAT and low-level moisture information |
+| 16 | 13.3 microns | IR (“CO2 Longwave IR Band”) | Mean tropospheric air temperature estimation |
+
+---
+### GOES-16 Baseline Products and RGBs
+
+| Product/RGB | Description | Availability/Frequency | ABI Bands Used | Special Features | Limitations |
+|-------------|-------------|------------------------|----------------|------------------|-------------|
+|* Derived-Motion Winds (DMWs) | Uses a set of three sequential images to estimate atmospheric motion using six ABI bands following a set of targets (cloud edges or clear sky water vapor gradients) | Full Disk: 60 minutes, CONUS: 15 minutes, Mesoscale: 5 minutes | Bands 2, 5, and 14 | Uses the ABI Cloud Height Algorithm (ACHA) to assign heights | - |
+|Airmass RGB | Monitors stratospheric intrusions during cyclogenesis | - | - | Distinguishes between high-PV, ozone-rich stratospheric air (appearing red/orange) and other conditions | - |
+|Daytime Convection RGB | Helps identify convection with strong updrafts and small ice particles indicative of severe storms | Daytime only | - | Useful for determining storm strength and the stage of development | Pixel color fades when the sun angle is low, false “Yellow/Strong Convection” may be caused by mountain wave, dust or cold cloud tops with only moderate 3.9-micron reflectance |
+|Nighttime Microphysics RGB | Useful for fog and low-cloud analysis and differentiation | Nighttime only | - | Allows for quick cloud type discrimination, Outflow boundaries and drylines can be seen | Thin fog can blend with the surface, shortwave noise in extreme cold. Color of cloud-free regions varies based on temperature, moisture, and surface type |
+|Fire Detection and Characterization (FDC) | Detects fires by looking for hot spots exploiting the 3.9-micron channel | - | 3.9-micron channel | Can estimate instantaneous fire size and temperature, calculates Fire Radiative Power (FRP) | Screens out surfaces that are not usable, such as water, tundra, deserts, and sparsely vegetated mountains. Also screens out clouds that are opaque for ~4-micron radiation |
+|* Rainfall Rate Product | Provides an estimate of rainfall rate | Full Disk (Day and Night), Available every 15 minutes with less than 5-minute latency | ABI bands 8, 10, 11, 14, and 15 | Full ABI pixel resolution, 0 to 3.9 in/hr range | Does not account for orographic effects, sub-cloud evaporation, and sub-cloud phase changes |
+|Geostationary Lightning Mapper | Provides lightning spatial extent, storm triage, and information on developing convection | 20-second updates | - | Differentiates between events, groups, and flashes | - |
+
