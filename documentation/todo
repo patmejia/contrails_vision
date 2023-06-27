@@ -1,26 +1,24 @@
-# devlog
+# Roadmap
+ ### □: posted <br> ☑︎: completed <br> ☒: abandoned <br> ○: in progress <br> ●: on hold <br> ◌: not started
+---
+##### □ U-Net Notebook - Develop `U-Net` notebook
 
-##### unet notebook
-- [ ] add `unet` notebook
-#### write tests
-- [ ] write tests for `unet` notebook
+##### □ Notebook Tests - Create tests for `U-Net` notebook
 
-####
-##### find:
+##### □ Data Retrieval - Execute Python code to fetch data:
+
 ```python
 BASE_DIR = '/kaggle/input/google-research-identify-contrails-reduce-global-warming/train'
 N_TIMES_BEFORE = 4
 record_id = '1704010292581573769'
 
-with open(os.path.join(BASE_DIR, record_id, 'band_11.npy'), 'rb') as f:
-    band11 = np.load(f)
-with open(os.path.join(BASE_DIR, record_id, 'band_14.npy'), 'rb') as f:
-    band14 = np.load(f)
-with open(os.path.join(BASE_DIR, record_id, 'band_15.npy'), 'rb') as f:
-    band15 = np.load(f)
-with open(os.path.join(BASE_DIR, record_id, 'human_pixel_masks.npy'), 'rb') as f:
-    human_pixel_mask = np.load(f)
-with open(os.path.join(BASE_DIR, record_id, 'human_individual_masks.npy'), 'rb') as f:
-    human_individual_mask = np.load(f)
-    ```
+def load_band_data(band_name):
+    with open(os.path.join(BASE_DIR, record_id, f'{band_name}.npy'), 'rb') as f:
+        return np.load(f)
 
+band11 = load_band_data('band_11')
+band14 = load_band_data('band_14')
+band15 = load_band_data('band_15')
+human_pixel_mask = load_band_data('human_pixel_masks')
+human_individual_mask = load_band_data('human_individual_masks')
+```
