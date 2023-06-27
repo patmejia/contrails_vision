@@ -59,7 +59,9 @@ graph TD
 ##### Exploring Alternative Fuels: Investigate biofuels emitting less water vapor when burned to reduce contrails.
 ##### Utilizing Advanced Forecasts: Use weather prediction tech to identify high contrail formation areas and adjust flight paths.
 ##### Developing Contrail Avoidance Tech: Create new tech to detect contrails and avoid them in real-time.
-
+---
+### [Level 2+ Algorithm Products, page 43](https://www.goes-r.gov/products/docs/PUG-L2+-vol5.pdf)
+![ABI Level 2+ imagery products ](images/abi_level2_products.png)
 ---
 ### Overview of the different bands used by the GOES-16 ABI, their wavelengths, types, and primary uses
 
@@ -94,4 +96,3 @@ graph TD
 |Fire Detection and Characterization (FDC) | Detects fires by looking for hot spots exploiting the 3.9-micron channel | - | 3.9-micron channel | Can estimate instantaneous fire size and temperature, calculates Fire Radiative Power (FRP) | Screens out surfaces that are not usable, such as water, tundra, deserts, and sparsely vegetated mountains. Also screens out clouds that are opaque for ~4-micron radiation |
 |* Rainfall Rate Product | Provides an estimate of rainfall rate | Full Disk (Day and Night), Available every 15 minutes with less than 5-minute latency | ABI bands 8, 10, 11, 14, and 15 | Full ABI pixel resolution, 0 to 3.9 in/hr range | Does not account for orographic effects, sub-cloud evaporation, and sub-cloud phase changes |
 |Geostationary Lightning Mapper | Provides lightning spatial extent, storm triage, and information on developing convection | 20-second updates | - | Differentiates between events, groups, and flashes | - |
-
