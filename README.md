@@ -3,16 +3,20 @@
 
 ### Optimizing satellite imagery, [GOES-R ABI](https://www.star.nesdis.noaa.gov/goes/index.php), and advanced computer vision/machine learning for accurate detection of contrails
 
+#### Absract:
 
-#### Description:
-
-##### Connecting machine learning (ML) and computer vision (CV) techniques to detect contrails in GOES-16 satellite data, providing valuable insights for climate change research. The contrail detection model integrates various features such as darkness, linearity, appearance, size, movement, aging, color, and flight path alignment. Additionally, strategies to mitigate contrail formation, including altitude adjustments, optimized flight paths, schedule modifications, improved efficiency, exploration of alternative fuels, and advanced weather forecasts, are considered. The availability of the OpenContrails dataset and the proposed contrail detection model contribute to advancing contrail research and promoting sustainable practices in the aviation industry.
+##### The "OpenContrails: Benchmarking Contrail Detection" paper proposes a new contrail detection model, enhancing the study of climate change. The model, leveraging multiple frames for temporal context, improves detection performance and focuses on young, linear contrails. It utilizes the OpenContrails dataset, containing human-labeled contrail detections from the GOES-16 satellite, and confirms prior contrail research. The authors present the OpenContrails dataset and model as public benchmarks, promoting advances in contrail research. This work involves contributors from Google's Research Department and MIT's Laboratory for Aviation and the Environment.
 
 ![network-architecture](documentation/images/network-architecture.png)
 
 > #### Q: Why focus on contrails to curb climate change impacts?
 > #### Adam Durant: It’s not just direct engine emissions that matter in terms of aviation’s climate impacts. Non-carbon dioxide sources — like the climate forcing from contrails — make up almost two-thirds of the industry’s impact, which is a surprisingly big number. In fact, it equates to 2% of all human-caused climate change.
 ![detected-contrails-flights](documentation/images/detected-contrails-flights.png)
+
+#### Name of dataset:
+##### OpenContrails
+
+##### The dataset contains 244,400 images of contrails and 244,400 images of non-contrails. The images are collected from the GOES-16 satellite over the United States from 2017 to 2019. The dataset is split into 195,520 training images, 24,440 validation images, and 24,440 test images. The dataset is available in TFRecord format and can be downloaded from the [Google Cloud Storage](https://console.cloud.google.com/storage/browser/goes_contrails_dataset) bucket. The dataset is also available on [Kaggle](https://www.kaggle.com/datasets/shashwatraman/contrails-images-ash-color) in JPEG format.
 
 ## ➲ Setup
 ```bash
@@ -71,7 +75,7 @@ conda deactivate
 ###### ☛ visualize (input dataset 450.91 GB): https://www.kaggle.com/code/inversion/visualizing-contrails#OpenContrails-dataset-documentation
 ###### ☛ high-score-example: https://www.kaggle.com/code/egortrushin/gr-icrgw-training-with-4-folds
 ###### ☛ Beginner's Guide to GOES-R Series Data: https://www.goes-r.gov/downloads/resources/documents/Beginners_Guide_to_GOES-R_Series_Data.pdf
-##### ☛ GOES-R Series Product Definition and users' guide: [Level 2+ Algorithm Products, page 43](https://www.goes-r.gov/products/docs/PUG-L2+-vol5.pdf)
+###### ☛ GOES-R Series Product Definition and users' guide: [Level 2+ Algorithm Products, page 43](https://www.goes-r.gov/products/docs/PUG-L2+-vol5.pdf)
 
 ###### ☛ GOES-16 (Geostationary Operational Environmental Satellite, Launch Date: Nov. 19, 2016): https://eospso.nasa.gov/missions/geostationary-operational-environmental-satellite-16
 ###### ☛ GOES-16 Band Reference Guide: https://www.weather.gov/media/crp/GOES_16_Guides_FINALBIS.pdf
