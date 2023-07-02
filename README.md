@@ -1,10 +1,11 @@
 #### Title:
 # GOES-16 Satellite Contrail Detection using CV/ML
 
-### Optimizing satellite imagery, [GOES-R ABI](https://www.star.nesdis.noaa.gov/goes/index.php), and advanced computer vision/machine learning for accurate detection of contrails
+##### Optimizing satellite imagery, [GOES-R ABI](https://www.star.nesdis.noaa.gov/goes/index.php), and advanced computer vision/machine learning for accurate detection of contrails
+
+#### Documentation: [research.md](documentation/RESEARCH.md)
 
 #### Absract:
-
 ##### The "OpenContrails: Benchmarking Contrail Detection" paper proposes a new contrail detection model, enhancing the study of climate change. The model, leveraging multiple frames for temporal context, improves detection performance and focuses on young, linear contrails. It utilizes the OpenContrails dataset, containing human-labeled contrail detections from the GOES-16 satellite, and confirms prior contrail research. The authors present the OpenContrails dataset and model as public benchmarks, promoting advances in contrail research. This work involves contributors from Google's Research Department and MIT's Laboratory for Aviation and the Environment.
 
 ![network-architecture](documentation/images/network-architecture.png)
@@ -52,7 +53,7 @@ kaggle competitions download -c google-research-identify-contrails-reduce-global
 ## ➲ Run
 ```bash
 conda activate contrails_env
-python src/visualize.py --base_dir samples/sample_mini/contrails --n_records 5 --n_times_before 4
+python src/npy_player.py ./samples/sample_mini/contrails
 ```
 #### Stop
 ```bash

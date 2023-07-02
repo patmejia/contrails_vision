@@ -7,3 +7,5 @@ samples/contrails-images-ash-color.zip
 devlog.md
 .DS_Store
 notebooks/
+samples/sample_full/.DS_Store
+output/

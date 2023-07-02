@@ -1,10 +1,19 @@
+# Table of Contents
+1. [GOES-16 Satellite Contrail Detection using CV/ML](#goes-16-satellite-contrail-detection-using-cvml)
+    - [Atmospheric optics contrail shadows](#atmospheric-optics-contrail-shadows)
+    - [Process of identifying a contrail](#process-of-identifying-a-contrail)
+2. [Reducing Contrail Formation: Strategies to Consider](#reducing-contrail-formation-strategies-to-consider)
+3. [Level 2+ Algorithm Products, page 43](#level-2-algorithm-products-page-43)
+4. [Overview of the different bands used by the GOES-16 ABI, their wavelengths, types, and primary uses](#overview-of-the-different-bands-used-by-the-goes-16-abi-their-wavelengths-types-and-primary-uses)
+5. [GOES-16 Baseline Products and RGBs](#goes-16-baseline-products-and-rgbs)
+6. [GOES-16 Derived Products](#goes-16-derived-products)
+
 #### Title:
 # GOES-16 Satellite Contrail Detection using CV/ML
 
-### Optimizing satellite imagery, [GOES-R ABI](https://www.star.nesdis.noaa.gov/goes/index.php), and advanced computer vision/machine learning for accurate detection of contrails
 ### Atmospheric optics contrail shadows
 ![Atmospheric-optics-Contrail-shadows](./images/atmospheric-optics-contrail-shadows.png)
-
+![abi-region-angle](images/full-disk-products.png)
 ---
 ### Process of identifying a contrail:
 ```mermaid
@@ -98,7 +107,7 @@ graph TD
 |Geostationary Lightning Mapper | Provides lightning spatial extent, storm triage, and information on developing convection | 20-second updates | - | Differentiates between events, groups, and flashes | - |
 
 
-
+### GOES-16 Derived Products
 The methodology involved in creating this dataset is as follows:
 
 1. **Image Collection**: The researchers collected images from the GOES-16 Advanced Baseline Imager (ABI) which provides high-resolution full-disk images.
