@@ -1,0 +1,7 @@
+name: contrails_env
+channels:
+  - defaults
+dependencies:
+  - numpy==1.21.0
+  - matplotlib==3.4.2
+  - kaggle==1.5.12

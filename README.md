@@ -22,9 +22,8 @@
 
 ## ➲ Setup
 ```bash
-conda create --name contrails_env python=3.8
+conda env create -f equirements.yaml
 conda activate contrails_env
-pip install -r requirements.txt
 ```
 ---
 ### Kaggle api key (optional)
@@ -65,22 +64,22 @@ conda deactivate
 ### Acknowledgements:
 
 ##### 📓 arxiv: https://arxiv.org/abs/2304.02122
+##### 🄺 challenge-guide: https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming
+##### 🄺 contrails dataset sample (11.74 GB) train_df.csv, valid_df.csv: https://www.kaggle.com/datasets/shashwatraman/contrails-images-ash-color
+##### 🄺 visualize (input dataset 450.91 GB): https://www.kaggle.com/code/inversion/visualizing-contrails#OpenContrails-dataset-documentation
+##### 🄺 high-score-example: https://www.kaggle.com/code/egortrushin/gr-icrgw-training-with-4-folds
+##### 🄺 Using U-Net to Predict Segmentation Masks in Python & Keras: https://www.kaggle.com/keegil/keras-u-net-starter-lb-0-277
+##### 🐍 Using Python to Explore GOES-16 Data: https://edc.occ-data.org/goes16/python/
+##### 🌍 visualization: [RAMMB CIRA, colostate.edu](https://rammb-slider.cira.colostate.edu/?sat=goes-18&sec=full_disk&x=12480&y=9274.5&z=0&angle=0&im=12&ts=1&st=0&et=0&speed=130&motion=loop&maps%5Bborders%5D=white&p%5B0%5D=geocolor&opacity%5B0%5D=1&pause=0&slider=-1&hide_controls=0&mouse_draw=0&follow_feature=0&follow_hide=0&s=rammb-slider&draw_color=FFD700&draw_width=6)
 ##### ☛ gcp-public-data-goes-16: https://console.cloud.google.com/storage/browser/gcp-public-data-goes-16;tab=objects?prefix=&forceOnObjectsSortingFiltering=false
-##### 🅺 challenge-guide: https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming
 ##### ☛ contrails-labeling-guide: https://storage.googleapis.com/goes_contrails_dataset/20230419/Contrail_Detection_Dataset_Instruction.pdf
-##### 🅺 contrails dataset sample (11.74 GB) train_df.csv, valid_df.csv: https://www.kaggle.com/datasets/shashwatraman/contrails-images-ash-color
-##### 🅺 visualize (input dataset 450.91 GB): https://www.kaggle.com/code/inversion/visualizing-contrails#OpenContrails-dataset-documentation
-##### 🅺 high-score-example: https://www.kaggle.com/code/egortrushin/gr-icrgw-training-with-4-folds
-##### 🅺 Using U-Net to Predict Segmentation Masks in Python & Keras: https://www.kaggle.com/keegil/keras-u-net-starter-lb-0-277
 ##### ☛ Beginner's Guide to GOES-R Series Data: https://www.goes-r.gov/downloads/resources/documents/Beginners_Guide_to_GOES-R_Series_Data.pdf
 ##### ☛ GOES-R Series Product Definition and users' guide: [Level 2+ Algorithm Products, page 43](https://www.goes-r.gov/products/docs/PUG-L2+-vol5.pdf)
 ##### ☛ GOES-16 (Geostationary Operational Environmental Satellite, Launch Date: Nov. 19, 2016): https://eospso.nasa.gov/missions/geostationary-operational-environmental-satellite-16
 ##### ☛ GOES-16 Band Reference Guide: https://www.weather.gov/media/crp/GOES_16_Guides_FINALBIS.pdf
-##### ☛ Using Python to Explore GOES-16 Data: https://edc.occ-data.org/goes16/python/
 ##### ☛ Adam Duran (Michigan Tech, Q&A with SATAVIA: Climate and Contrails): https://www.mtu.edu/unscripted/2021/06/qa-with-satavia-climate-and-contrails.html
 ##### ☛ catalogues of atmospheric optics (rocket plume, contrail shadow): https://atoptics.co.uk/atoptics/shuttle.htm, https://atoptics.co.uk/atoptics/contr1.htm
 ##### 📓  U-Net: Convolutional Networks for Biomedical Image Segmentation: https://arxiv.org/abs/1505.04597
-##### ☛ visualization: [RAMMB CIRA, colostate.edu](https://rammb-slider.cira.colostate.edu/?sat=goes-18&sec=full_disk&x=12480&y=9274.5&z=0&angle=0&im=12&ts=1&st=0&et=0&speed=130&motion=loop&maps%5Bborders%5D=white&p%5B0%5D=geocolor&opacity%5B0%5D=1&pause=0&slider=-1&hide_controls=0&mouse_draw=0&follow_feature=0&follow_hide=0&s=rammb-slider&draw_color=FFD700&draw_width=6)
 
 ```bibtex
 @article{ng2023opencontrails,
