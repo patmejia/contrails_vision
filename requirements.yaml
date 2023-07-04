@@ -6,3 +6,5 @@ dependencies:
   - matplotlib==3.4.2
   - kaggle==1.5.12
   - pyvista==0.39.0
+  - pyvistaqt==0.5.0
+  - pyqt

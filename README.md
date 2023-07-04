@@ -80,6 +80,7 @@ conda deactivate
 ##### ☛ Adam Duran (Michigan Tech, Q&A with SATAVIA: Climate and Contrails): https://www.mtu.edu/unscripted/2021/06/qa-with-satavia-climate-and-contrails.html
 ##### ☛ catalogues of atmospheric optics (rocket plume, contrail shadow): https://atoptics.co.uk/atoptics/shuttle.htm, https://atoptics.co.uk/atoptics/contr1.htm
 ##### 📓  U-Net: Convolutional Networks for Biomedical Image Segmentation: https://arxiv.org/abs/1505.04597
+##### [STAC](https://stacspec.org/en/tutorials/1-read-stac-python/)
 
 ```bibtex
 @article{ng2023opencontrails,
@@ -89,3 +90,6 @@ conda deactivate
   year={2023}
 }
 ```
+
+### Contributing
+#### 👋 Welcome to the contributing section! We're excited to have you join us in enhancing the GOES-16 Satellite Contrail Detection project. Contribute by forking the repository, making changes in a descriptive branch, and submitting a pull request. Join our [Slack](https://sdteam6.slack.com/archives/C05D6MBTW2D) channel for real-time communication with other contributors. Follow and contribute to this impactful project to combat climate change through advanced technology 🌍✨
