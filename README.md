@@ -53,9 +53,18 @@ kaggle competitions download -c google-research-identify-contrails-reduce-global
 ## ➲ Run
 ```bash
 conda activate contrails_env
-python src/npy_player.py ./samples/sample_mini/contrails
-python src/visualize.py --base_dir samples/sample_mini/contrails --n_records 2 --n_times_before 4
+pytest -sv
 ```
+
+#### ➲ Other run options
+
+```bash
+conda activate contrails_env
+python src/main.py
+python src/utils//visualize.py --base_dir samples/sample_mini/contrails --n_records 2 --n_times_before 4
+python coordinate_converter.py input_directory output_directory
+```
+
 #### Stop
 ```bash
 conda deactivate

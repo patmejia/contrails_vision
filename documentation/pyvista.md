@@ -27,6 +27,30 @@ thread.start()
 
 #### time series: https://docs.pyvista.org/version/stable/api/plotting/plotting.html
 
-### other link: 
+#### [detection, collision](https://docs.pyvista.org/version/stable/examples/01-filter/collisions.html)
 
-#### [STAC](https://stacspec.org/en/tutorials/1-read-stac-python/)
+The conversion from Latitude, Longitude, Altitude (LLA) to Earth Centered Earth Fixed (ECEF) coordinates is a common requirement in geospatial work. This conversion can be performed using the pyproj library in Python:
+
+```bash
+pip install pyproj
+```
+
+convert LLA to ECEF coordinates using the `pyproj` library:
+
+```python
+import pyproj
+
+# Initialize the conversion functions
+lla_to_ecef = pyproj.Proj(proj='latlong', ellps='WGS84', datum='WGS84')
+ecef = pyproj.Proj(proj='geocent', ellps='WGS84', datum='WGS84')
+
+# Define a latitude, longitude, and altitude (LLA)
+lat, lon, alt = 40, -70, 1000  # in degrees and meters
+
+# Convert LLA to ECEF
+x, y, z = pyproj.transform(lla_to_ecef, ecef, lon, lat, alt)
+
+print(x, y, z)
+```
+
+In this example, `x`, `y`, and `z` are the ECEF coordinates in meters. Note that this example uses the WGS84 ellipsoid, which is the standard choice for much of modern geodesy and remote sensing (including GPS coordinates). Your choice of ellipsoid might be different depending on your specific needs.
