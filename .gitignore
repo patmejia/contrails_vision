@@ -1,11 +1,15 @@
 **/.DS_Store
 cat-dir-content.sh
+devlog.md
+.DS_Store
+tmp.png
+
 samples/
 # samples/samples_full
 samples/sample1
 samples/contrails-images-ash-color.zip
-devlog.md
-.DS_Store
-notebooks/
 samples/sample_full/.DS_Store
-output/
+
+notebooks/
+
+output/midstream/
