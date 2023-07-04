@@ -22,7 +22,7 @@
 
 ## ➲ Setup
 ```bash
-conda env create -f equirements.yaml
+conda env create -f requirements.yaml
 conda activate contrails_env
 ```
 ---

@@ -5,3 +5,4 @@ dependencies:
   - numpy==1.21.0
   - matplotlib==3.4.2
   - kaggle==1.5.12
+  - pyvista==0.39.0
