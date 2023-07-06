@@ -1,12 +1,14 @@
 # Table of Contents
 1. [GOES-16 Satellite Contrail Detection using CV/ML](#goes-16-satellite-contrail-detection-using-cvml)
-    - [Atmospheric optics contrail shadows](#atmospheric-optics-contrail-shadows)
-    - [Process of identifying a contrail](#process-of-identifying-a-contrail)
+  - [Atmospheric optics contrail shadows](#atmospheric-optics-contrail-shadows)
+  - [Process of identifying a contrail](#process-of-identifying-a-contrail)
 2. [Reducing Contrail Formation: Strategies to Consider](#reducing-contrail-formation-strategies-to-consider)
 3. [Level 2+ Algorithm Products, page 43](#level-2-algorithm-products-page-43)
 4. [Overview of the different bands used by the GOES-16 ABI, their wavelengths, types, and primary uses](#overview-of-the-different-bands-used-by-the-goes-16-abi-their-wavelengths-types-and-primary-uses)
 5. [GOES-16 Baseline Products and RGBs](#goes-16-baseline-products-and-rgbs)
 6. [GOES-16 Derived Products](#goes-16-derived-products)
+7. [WG84 Ellipsoid](#wg84-ellipsoid)
+
 
 #### Title:
 # GOES-16 Satellite Contrail Detection using CV/ML
@@ -108,6 +110,7 @@ graph TD
 
 
 ### GOES-16 Derived Products
+
 The methodology involved in creating this dataset is as follows:
 
 1. **Image Collection**: The researchers collected images from the GOES-16 Advanced Baseline Imager (ABI) which provides high-resolution full-disk images.
@@ -121,3 +124,26 @@ The methodology involved in creating this dataset is as follows:
 5. **Model Evaluation**: The contrail detection model was evaluated by running it on multiple years of available GOES-16 images. The researchers confirmed previous findings on contrail research, such as contrail coverage patterns and diurnal effects.
 
 6. **Model Output Availability**: The outputs of the contrail detection model are publicly available on Google Cloud Storage at gs://goes_contrails_dataset. This dataset and the contrail detection model can be used as a foundation for contrail warming impact assessment and validating contrail avoidance experiments in the western hemisphere.
+
+### WG84 Ellipsoid
+![wg84](images/wg84.png)
+
+The WGS84 Ellipsoid is a geodetic reference system that defines an Earth-centered, Earth-fixed (ECEF) coordinate system, a reference ellipsoid, and a geodetic datum. The vertical datum specifies the reference surface for orthometric heights, while the coordinate system provides the reference frame for geodetic latitude and longitude. The horizontal datum establishes the relationship between the reference ellipsoid and the geoid. The diagram in the image compares a sphere and an ellipsoid. An ellipsoid provides a more accurate representation of the Earth’s shape as it accounts for its oblateness, characterized by its semi-major and semi-minor axes and flattening.
+
+```python
+from pyproj import CRS, Transformer
+
+# Define the WGS84 geographic coordinate system
+wgs84 = CRS.from_epsg(4326)
+
+# Define a projected coordinate system (e.g., UTM Zone 10N)
+utm10n = CRS.from_epsg(32610)
+
+# Create a transformer object to convert between the two coordinate systems
+transformer = Transformer.from_crs(wgs84, utm10n)
+
+# Transform a point from WGS84 to UTM Zone 10N
+x, y = transformer.transform(45.5236, -122.6750)
+print(f"UTM coordinates: {x:.3f}, {y:.3f}")
+```
+The code above defines the WGS84 geographic coordinate system using its EPSG code (4326) and creates a transformer object to convert between WGS84 and another projected coordinate system (in this case, UTM Zone 10N). The code then uses the transformer object to convert a point from WGS84 latitude and longitude coordinates to UTM coordinates.
