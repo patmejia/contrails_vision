@@ -71,14 +71,7 @@ kaggle competitions download -c google-research-identify-contrails-reduce-global
 ```bash
 conda activate contrail_env 
 pytest -sv
-```
-
-#### ➲ Other run options
-
-```bash
 python src/main.py
-python src/utils//visualize.py --base_dir samples/sample_mini/contrails --n_records 2 --n_times_before 4
-python coordinate_converter.py input_directory output_directory
 ```
 
 #### Stop
@@ -105,7 +98,8 @@ conda deactivate
 ##### ☛ Adam Duran (Michigan Tech, Q&A with SATAVIA: Climate and Contrails): https://www.mtu.edu/unscripted/2021/06/qa-with-satavia-climate-and-contrails.html
 ##### ☛ catalogues of atmospheric optics (rocket plume, contrail shadow): https://atoptics.co.uk/atoptics/shuttle.htm, https://atoptics.co.uk/atoptics/contr1.htm
 ##### 📓  U-Net: Convolutional Networks for Biomedical Image Segmentation: https://arxiv.org/abs/1505.04597
-##### [STAC](https://stacspec.org/en/tutorials/1-read-stac-python/)
+##### ☛ [STAC](https://stacspec.org/en/tutorials/1-read-stac-python/)
+##### ☛ [WGS84 coordinate system](https://support.virtual-surveyor.com/en/support/solutions/articles/1000261351-what-is-wgs84-)
 
 ```bibtex
 @article{ng2023opencontrails,
