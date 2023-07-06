@@ -21,10 +21,27 @@
 #### ☛ Documentation: [research.md](documentation/RESEARCH.md)
 
 ## ➲ Setup
+
+#### ☛ option 1: using `conda`
 ```bash
 conda env create -f requirements.yml
-conda activate contrail_env 
+conda activate contrail_env
 ```
+
+#### ☛ option 2: using `pip` and `venv`
+```bash
+python -m venv contrails_env
+source contrails_env/bin/activate
+pip install -r requirements.txt
+```
+#### ☛ option 3: using `conda` and `pip` ?
+```bash
+conda create -n contrail_env
+conda activate contrail_env
+pip install -r requirements.txt
+```
+Both `conda`` and `pip`` can be used in the same environment, but issues may arise. Using them back-to-back can create an unreproducible state and overwrite packages. To avoid problems, create an isolated conda environment, install most packages with conda, and use pip with `--upgrade-strategy only-if-needed`.
+
 ---
 ### Kaggle api key (optional)
 ```bash
