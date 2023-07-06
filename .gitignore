@@ -9,6 +9,5 @@ tmp.png
 # samples/kaggle_competition_mini_sample
 samples/false_color_sample
 
-notebooks/
-
+output/
 output/midstream/
