@@ -4,11 +4,10 @@ devlog.md
 .DS_Store
 tmp.png
 
-samples/
-# samples/samples_full
-samples/sample1
-samples/contrails-images-ash-color.zip
-samples/sample_full/.DS_Store
+
+# samples/false_color_mini_sample
+# samples/kaggle_competition_mini_sample
+samples/false_color_sample
 
 notebooks/
 
