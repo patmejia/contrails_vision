@@ -8,8 +8,10 @@ dependencies:
   - libtiff
   - numpy==1.25.0
   - matplotlib==3.7.1
+  - pandas==2.0.3
   - kaggle==1.5.15
   - pyvista==0.38.5
   - pyvistaqt==0.11.0
   - vtk==9.2.6
   - pyproj==3.6.0
+  - ipykernel

@@ -11,3 +11,5 @@ samples/false_color_sample
 
 output/
 output/midstream/
+__pycache__/
+src/__pycache__/
