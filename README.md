@@ -71,14 +71,32 @@ kaggle competitions download -c google-research-identify-contrails-reduce-global
 ```bash
 conda activate contrail_env 
 pytest -sv
-python src/main.py
 ```
 
 #### Stop
 ```bash
 conda deactivate
 ```
+#### Usage:
+```bash
+python src/main.py
+python run.py samples/kaggle_competition_mini_sample/test/1000834164244036115 output
+python src/utils//visualize.py --base_dir samples/sample_mini/contrails --n_records 2 --n_times_before 4
+python src/utils/get_shape.py samples/sample_mini/contrails/1108741208571075.npy
+python src/utils/coordinate_converter.py samples/kaggle_competition_mini_sample/test/1000834164244036115 output
+python src/utils/get_shape.py samples/kaggle_competition_sample/test/1000834164244036115/band_08.npy
+python src/utils/rle_encoding_submission.py samples/kaggle_competition_mini_sample 2
+```
 ---
+
+##### Example usage output after running
+```bash
+python src/utils/rle_encoding_submission.py samples/kaggle_competition_mini_sample 2
+```
+
+![globe-temp](documentation/images/generated/globe-tmp.png)
+
+
 ### Acknowledgements:
 
 ```bibtex
