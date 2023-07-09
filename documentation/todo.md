@@ -1,3 +1,16 @@
+## Notes: 
+
+#### ➲ Other run options
+
+```bash
+python src/main.py
+python run.py samples/kaggle_competition_mini_sample/test/1000834164244036115 output
+python src/utils//visualize.py --base_dir samples/sample_mini/contrails --n_records 2 --n_times_before 4
+python src/utils/get_shape.py samples/sample_mini/contrails/1108741208571075.npy
+python src/utils/coordinate_converter.py samples/kaggle_competition_mini_sample/test/1000834164244036115 output
+python src/utils/get_shape.py samples/kaggle_competition_sample/test/1000834164244036115/band_08.npy
+python src/utils/rle_encoding_submission.py samples/kaggle_competition_mini_sample 1
+```
 # Roadmap
  ### □: posted <br> ☑︎: completed <br> ☒: abandoned <br> ○: in progress <br> ●: on hold <br> ◌: unconfirmed
 ---
@@ -25,16 +38,3 @@ human_individual_mask = load_band_data('human_individual_masks')
 ```
 #### □ Draw: scriprt to imagine a global reference ellipsoid as a large ellipsoid that approximates the shape of the Earth on a global scale. On top of this global reference ellipsoid, there are smaller regional reference ellipsoids that provide a better fit to the local geoid in specific regions.
 
-```python
-## Notes: 
-
-#### ➲ Other run options
-
-```bash
-python src/main.py
-python src/utils//visualize.py --base_dir samples/sample_mini/contrails --n_records 2 --n_times_before 4
-python src/utils/get_shape.py samples/sample_mini/contrails/1108741208571075.npy
-python src/utils/coordinate_converter.py samples/kaggle_competition_mini_sample/test/1000834164244036115 output
-python src/utils/get_shape.py samples/kaggle_competition_sample/test/1000834164244036115/band_08.npy
-python run.py samples/kaggle_competition_mini_sample/test/1000834164244036115 output
-```
