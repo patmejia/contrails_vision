@@ -1,5 +1,9 @@
 #### Title:
-# Contrail Detection using GOES-16 Satellite Imagery and Computer Vision (CVD
+# Contrail Detection using GOES-16 Satellite Imagery and Computer Vision
+
+![no_contrail_vs_detected_contrail](documentation/images/generated/contrail_vs_empty.gif)
+*Comparison of an image with no contrail (left) and an image with a detected contrail (right)*
+
 #### Abstract:
 The paper "OpenContrails: Benchmarking Contrail Detection" presents a new contrail detection model that enhances the study of climate change. The model leverages multiple frames for temporal context to improve detection performance, particularly for young, linear contrails. The model utilizes the OpenContrails dataset, which contains human-labeled contrail detections from the GOES-16 satellite, and confirms prior contrail research. The authors present the OpenContrails dataset and model as public benchmarks to promote advances in contrail research. This work involves contributors from Google's Research Department and MIT's Laboratory for Aviation and the Environment.
 
@@ -101,6 +105,7 @@ python src/utils/get_shape.py samples/kaggle_competition_mini_sample/test/100083
 python src/utils/get_shape.py samples/sample_mini/contrails/1108741208571075.npy
 python -m src.utils.coordinate_converter samples/kaggle_competition_mini_sample/test/1000834164244036115 output
 python src/utils/rle_encoding_submission.py samples/kaggle_competition_mini_sample 2
+python src/utils/contrail_animation.py 1000603527582775543
 ```
 ---
 
