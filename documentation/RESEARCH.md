@@ -18,8 +18,8 @@
 # GOES-16 Satellite Contrail Detection using CV/ML
 
 ### Atmospheric optics contrail shadows
-![Atmospheric-optics-Contrail-shadows](./images/atmospheric-optics-contrail-shadows.png)
-![abi-region-angle](images/full-disk-products.png)
+![Atmospheric-optics-Contrail-shadows](./images/research/atmospheric-optics-contrail-shadows.png)
+![abi-region-angle](images/research/full-disk-products.png)
 ---
 ### Process of identifying a contrail:
 ```mermaid
@@ -77,7 +77,7 @@ Here is a revised version of the text that is consistent in style and formatting
 - **Developing contrail avoidance tech**: Create new tech to detect contrails and avoid them in real-time.
 ---
 ### [Level 2+ Algorithm Products, page 43](https://www.goes-r.gov/products/docs/PUG-L2+-vol5.pdf)
-![ABI Level 2+ imagery products ](images/abi_level2_products.png)
+![ABI Level 2+ imagery products ](images/research/abi_level2_products.png)
 ---
 ### Overview of the different bands used by the GOES-16 ABI, their wavelengths, types, and primary uses
 
@@ -131,7 +131,7 @@ The methodology involved in creating this dataset is as follows:
 6. **Model Output Availability**: The outputs of the contrail detection model are publicly available on Google Cloud Storage at gs://goes_contrails_dataset. This dataset and the contrail detection model can be used as a foundation for contrail warming impact assessment and validating contrail avoidance experiments in the western hemisphere.
 
 ### WG84 Ellipsoid
-![wg84](images/wg84.png)
+![wg84](images/research/wg84.png)
 
 The WGS84 Ellipsoid is a geodetic reference system that defines an Earth-centered, Earth-fixed (ECEF) coordinate system, a reference ellipsoid, and a geodetic datum. The vertical datum specifies the reference surface for orthometric heights, while the coordinate system provides the reference frame for geodetic latitude and longitude. The horizontal datum establishes the relationship between the reference ellipsoid and the geoid. The diagram in the image compares a sphere and an ellipsoid. An ellipsoid provides a more accurate representation of the Earth’s shape as it accounts for its oblateness, characterized by its semi-major and semi-minor axes and flattening.
 
