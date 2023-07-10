@@ -38,3 +38,16 @@ human_individual_mask = load_band_data('human_individual_masks')
 ```
 #### □ Draw: scriprt to imagine a global reference ellipsoid as a large ellipsoid that approximates the shape of the Earth on a global scale. On top of this global reference ellipsoid, there are smaller regional reference ellipsoids that provide a better fit to the local geoid in specific regions.
 
+#### □ Resolve `run.py` and `kaggle_competition_mini_sample` Dataset Incompatibility
+
+Shape difference information:
+
+```
+(contrail_env) ➜  contrails-vision git:(main) ✗ python src/utils/get_shape.py samples/kaggle_competition_mini_sample/test/1000834164244036115/band_08.npy 
+Shape: (256, 256, 8)
+Size: 524288
+(contrail_env) ➜  contrails-vision git:(main) ✗ python src/utils/get_shape.py samples/false_color_mini_sample/contrails/1108741208571075.npy 
+Shape: (256, 256, 4)
+Size: 262144
+(contrail_env) ➜  contrails-vision git:(main) ✗ 
+```

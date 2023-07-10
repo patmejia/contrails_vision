@@ -3,7 +3,7 @@ import os
 import numpy as np
 import pyvista as pv
 import pyproj
-from src.main import download_dataset, compute_normals_and_warp, plot_dataset
+from ..main import download_dataset, compute_normals_and_warp, plot_dataset
 
 class CoordinateConverter:
     """Class for converting coordinates from one system to another."""
