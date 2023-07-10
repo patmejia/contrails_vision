@@ -101,6 +101,7 @@ python src/main.py
 python src/utils/rand_record_viz_with_masks_false_color.py --base_dir samples/kaggle_competition_mini_sample/test/1000834164244036115  --n_records 2 --n_times_before 4
 ```
 ![false-color-mask-ash](documentation/images/generated/false_color_mask_Figure_3.png)
+![false-color-mask-ash](documentation/images/generated/false_color_mask_Figure_1.png)
 
 ### Acknowledgements:
 
