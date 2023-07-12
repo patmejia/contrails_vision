@@ -27,7 +27,7 @@ The dataset and outputs are publicly available on the Google Cloud Storage bucke
 #### Documentation
 
 • [Research Collection](documentation/RESEARCH.md) <br>
-• [ArXiv OpenContrail in a Nutshell](documentation/arvix_opencontrials_nutshell.md)
+• [ArXiv OpenContrail in a Nutshell](https://www.kaggle.com/code/patimejia/arxiv-opencontrail-nutshell)
 
 ---
 ## ➲ Setup
@@ -110,7 +110,6 @@ python src/main.py
 ### Acknowledgements:
 ☛ https://arxiv.org/abs/2304.02122: Ng, J. Y.-H., McCloskey, K., Cui, J., Meijer, V., Brand, E., Sarna, A., Goyal, N., Van Arsdale, C., & Geraedts, S. (2023). OpenContrails: Benchmarking Contrail Detection on GOES-16 ABI. arXiv preprint arXiv:2304.02122.
 <br>
-
 ☛ goes_contrails_dataset from OpenContrails: [Benchmarking Contrail Detection on GOES-16 ABI](https://console.cloud.google.com/storage/browser/goes_contrails_dataset)
 <br>
 ☛ Competition: [google-research-identify-contrails-reduce-global-warming](https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming)
