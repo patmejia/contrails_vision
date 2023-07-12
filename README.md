@@ -108,17 +108,9 @@ python src/main.py
 ![globe-temp](documentation/images/generated/globe-tmp.png)
 
 ### Acknowledgements:
-
-```bibtex
-@article{ng2023opencontrails,
-  title={OpenContrails: Benchmarking Contrail Detection on GOES-16 ABI},
-  author={Ng, Joe Yue-Hei and McCloskey, Kevin and Cui, Jian and Meijer, Vincent and Brand, Erica and Sarna, Aaron and Goyal, Nita and Van Arsdale, Christopher and Geraedts, Scott},
-  journal={arXiv preprint arXiv:2304.02122},
-  year={2023}
-}
-```
-☛ arxiv: https://arxiv.org/abs/2304.02122
+☛ https://arxiv.org/abs/2304.02122: Ng, J. Y.-H., McCloskey, K., Cui, J., Meijer, V., Brand, E., Sarna, A., Goyal, N., Van Arsdale, C., & Geraedts, S. (2023). OpenContrails: Benchmarking Contrail Detection on GOES-16 ABI. arXiv preprint arXiv:2304.02122.
 <br>
+
 ☛ goes_contrails_dataset from OpenContrails: [Benchmarking Contrail Detection on GOES-16 ABI](https://console.cloud.google.com/storage/browser/goes_contrails_dataset)
 <br>
 ☛ Competition: [google-research-identify-contrails-reduce-global-warming](https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming)
@@ -180,6 +172,7 @@ python src/main.py
     <h3 style="text-align: left;">If you found this notebook helpful...</h3>
     <p style="text-align: left;">Please consider giving it a star. Your support helps me continue to develop high-quality code and pursue my career as a data analyst/engineer. Feedback is always welcome and appreciated. Thank you for taking the time to read my work!</p>
     <div style="text-align: right;">
-       <button style="background-color: #20BEFF; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;" onclick="window.location.href='https://github.com/patmejia/contrails-vision'"> Up ⇪</button>
+      <button style="background-color: #20BEFF; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;" onclick="window.location.href='https://github.com/patmejia/contrails-vision'"> Up ⇪</button>
+    </div>
 
 </div>
