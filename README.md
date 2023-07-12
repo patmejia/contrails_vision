@@ -167,11 +167,15 @@ python src/main.py
 </div>
 
 ---
-<div style="background-color: #f2f2f2; padding: 10px; border-radius: 5px;">
-    <h3 style="text-align: left;">If you found this notebook helpful...</h3>
-    <p style="text-align: left;">Please consider giving it a star. Your support helps me continue to develop high-quality code and pursue my career as a data analyst/engineer. Feedback is always welcome and appreciated. Thank you for taking the time to read my work!</p>
-    <div style="text-align: right;">
-      <button style="background-color: #20BEFF; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;" onclick="window.location.href='https://github.com/patmejia/contrails-vision'"> Up ⇪</button>
-    </div>
 
+<div style="background-color: #f2f2f2; padding: 10px; border-radius: 5px;">
+  <h3>If you found this notebook helpful...</h3>
+  <p>
+  Please consider giving it a star. Your support helps me continue to develop high-quality code and pursue my career as a data analyst/engineer. Feedback is always welcome and appreciated. Thank you for taking the time to read my work! 
+  </p> 
+  <h4>
+  <p style="text-align: right;">
+  <a href="https://github.com/patmejia"> - pat [¬º-°]¬ </a>
+  </h4>
+  </p>
 </div>
