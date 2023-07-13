@@ -15,3 +15,5 @@ dependencies:
   - vtk==9.2.6
   - pyproj==3.6.0
   - ipykernel
+  - scipy
+  - scikit-learn
