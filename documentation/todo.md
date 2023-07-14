@@ -38,6 +38,8 @@ IV. Model Evaluation and Deployment
 ### □: posted <br> ☑︎: completed <br> ☒: abandoned <br> ○: in progress <br> ●: on hold <br> ◌: unconfirmed
 
 ---
+
+##### ◌ add :"load bands of data, normalize them, create false-color images, and generate animations over time for visual inspection" to viz script"
 ##### ☑︎ Resolve `run.py` and `kaggle_competition_mini_sample` Dataset Incompatibility
 Shape difference information:
 
@@ -73,6 +75,31 @@ human_individual_mask = load_band_data('human_individual_masks')
 ##### ○ U-Net Notebook - Develop `U-Net` notebook
 
 ##### □ Notebook Tests - Create tests for `U-Net` notebook
+
+##### □ Does "# Convert data to float64 to avoid potential overflows" in `compute_stats` function in `utils.py` cause any issues? If so, how to resolve? Or, what are people doing to resolve this issue? If, it is not an issue, why not? or why is it not a problem? i.e. changing data type from `uint16` to `float64`?
+```
+def compute_stats(data, filepath):
+    try:
+        # Convert data to float64 to avoid potential overflows
+        data = data.astype(np.float64)
+        
+        stats = {
+            'shape': data.shape,
+            'size': data.size,
+            'mean': np.mean(data),
+            'std_dev': np.std(data),
+            'min': np.min(data),
+            'max': np.max(data),
+            'all_zeros': np.all(data == 0),
+            'zero_count': np.count_nonzero(data == 0),  # count of zeros
+            'non_zero_count': np.count_nonzero(data)  # count of non-zeros
+        }
+    except Exception as e:
+        print(f"Error processing file {filepath}: {e}")
+        print(f"Data type: {data.dtype}, Data min: {np.min(data)}, Data max: {np.max(data)}")
+        return None
+    return stats
+```
 
 ##### ◌ Draw: script to imagine a global reference ellipsoid as a large ellipsoid that approximates the shape of the Earth on a global scale. On top of this global reference ellipsoid, there are smaller regional reference ellipsoids that provide a better fit to the local geoid in specific regions.
 

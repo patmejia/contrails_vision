@@ -1,80 +1,103 @@
+
 # Table of Contents
-1. [GOES-16 Satellite Contrail Detection using CV/ML](#goes-16-satellite-contrail-detection-using-cvml)
-  - [Atmospheric optics contrail shadows](#atmospheric-optics-contrail-shadows)
-  - [Process of identifying a contrail](#process-of-identifying-a-contrail)
-2. [Reducing Contrail Formation: Strategies to Consider](#reducing-contrail-formation-strategies-to-consider)
-3. [Level 2+ Algorithm Products, page 43](#level-2-algorithm-products-page-43)
-4. [Overview of the different bands used by the GOES-16 ABI, their wavelengths, types, and primary uses](#overview-of-the-different-bands-used-by-the-goes-16-abi-their-wavelengths-types-and-primary-uses)
-5. [GOES-16 Baseline Products and RGBs](#goes-16-baseline-products-and-rgbs)
-6. [GOES-16 Derived Products](#goes-16-derived-products)
-7. [WG84 Ellipsoid](#wg84-ellipsoid)
-8. [Advanced Methods for Medical Image Segmentation](#advanced-methods-for-medical-image-segmentation)
-9. [Comparison of Image Segmentation Models](#comparison-of-image-segmentation-models)
-10. [Evaluating Segmentation Performance](#evaluating-segmentation-performance)
 
+1. [CV/ML-Based Contrail Detection Using GOES-16 Satellite Data](#cvml-based-contrail-detection-using-goes-16-satellite-data)
+   - [Sky Phenomena Misinterpreted as Contrails and Their Implications for Climate Change](#sky-phenomena-misinterpreted-as-contrails-and-their-implications-for-climate-change)
+   - [Process of Contrail Identification](#process-of-contrail-identification)
+   - [Key Characteristics for Contrail Identification](#key-characteristics-for-contrail-identification)
+   - [Reducing Contrail Formation: Strategies to Consider](#reducing-contrail-formation-strategies-to-consider)
+2. [Level 2+ Algorithm Products](#level-2-algorithm-products)
+3. [Overview of the different bands used by the GOES-16 ABI, their wavelengths, types, and primary uses](#overview-of-the-different-bands-used-by-the-goes-16-abi-their-wavelengths-types-and-primary-uses)
+4. [GOES-16 Baseline Products and RGBs](#goes-16-baseline-products-and-rgbs)
+5. [GOES-16 Derived Products](#goes-16-derived-products)
+6. [WG84 Ellipsoid](#wg84-ellipsoid)
+7. [Advanced Methods for Medical Image Segmentation](#advanced-methods-for-medical-image-segmentation)
+   - [Comparing the Performance of UNet++, UNeXt, and CE-Net](#comparing-the-performance-of-unet-unext-and-ce-net)
+   - [UNet++: An Advanced Image Segmentation Network](#unet-an-advanced-image-segmentation-network)
+   - [Comparison of Image Segmentation Models](#comparison-of-image-segmentation-models)
+---
 
+# Research notes: <br>CV/ML-Based Contrail Detection Using GOES-16 Satellite Data
 
-#### Title:
-# GOES-16 Satellite Contrail Detection using CV/ML
+## Sky Phenomena Misinterpreted as Contrails and Their Implications for Climate Change
 
-### Atmospheric optics contrail shadows
+1. **Cirrus Clouds**: These ice crystal formations at high altitudes are often confused for contrails. They trap Earth's outgoing heat, contributing to climate warming.
+2. **Dissipation Trails (Distrails)**: Formed by aircraft in stratocumulus layers, these clear sky corridors can be mistaken as contrails. Distrails cool the climate by reducing solar radiation.
+3. **Cloud Streets**: These linear arrangements of cumulus clouds are sometimes confused with contrails due to their paralalel alignment. Their climatic effect is twofold, reflecting sunlight into space while also trapping Earth's heat.
+4. **Cloud Shadows**: These darker zones on lower cloud layers or Earth's surface can be misinterpreted as contrails. They cool the climate by reducing solar energy absorption.
+5. **Fallstreak Holes (Hole Punch Clouds)**: Triggered by aircraft within cirrocumulus or altocumulus layers, these gaps can be mistaken for contrails. They warm the climate by increasing surface exposure to sunlight.
+6. **Jet Stream Clouds**: These linear formations of ice crystals within high-altitude wind corridors can be mistaken as contrails. They trap heat, contributing to climate warming.
+7. **Kelvin-Helmholtz Waves**: Despite their distinctive wave-like formations, these can be misclassified. Their climatic impact is negligible due to their infrequency and transient existence.
+8. **Aircraft Wake Vortices**: These spiraling air streams from aircraft can resemble contrails. They indirectly impact the climate by altering cloud and precipitation properties and creating heat-trapping contrails.
+
+Recognizing these sky phenomena, their climatic effects, and correctly distinguishing them from contrails are key to developing informed climate change strategies.
+
 ![Atmospheric-optics-Contrail-shadows](./images/research/atmospheric-optics-contrail-shadows.png)
 ![abi-region-angle](images/research/full-disk-products.png)
+
 ---
-### Process of identifying a contrail:
+
+## Process of Contrail Identification:
+
 ```mermaid
 graph TD
-  A[Start]
-  A --> B{Dark?}
-  B --> |No| C1[Not a contrail]
-  B --> |Yes| D{Line-shaped?}
-  D --> |No| E1[Not a contrail]
-  D --> |Yes| F{Appears suddenly or from sides?}
-  F --> |No| G1[Not a contrail]
-  F --> |Yes| H{Visible in 2+ images?}
-  H --> |No| I1[Not a contrail]
-  H --> |Yes| J{10+ pixels, 3x longer \n than wide at least once?}
-  J --> |No| K1[Not a contrail]
-  J --> |Yes| L{Moves with wind?}
-  L --> |No| M1[Not a contrail]
-  L --> |Yes| N{Spreads quickly?}
-  N --> |No| O{Potential Shadow?}
-  O --> |Yes| P1[Cloud Shadow]
-  O --> |No| Q{Cloud Street Traits?}
-  Q --> |Yes| R1[Cloud Street]
-  Q --> |No| S{Consistent Across Wavelengths?}
-  S --> |No| T1[Wavelength Inconsistency]
-  S --> |Yes| U{Flight Path Reference?}
-  U --> |No| V[Contrail, >90% confidence]
-  U --> |Yes| W[Contrail, 60% confidence]
-
+  A[Begin]
+  A --> B{Line-shaped?}
+  B --> |No| C{Elliptical gaps in cloud layer?}
+  C --> |Yes| D[Hole Punch Clouds]
+  C --> |No| E{Rounded cloud formations?}
+  E --> |Yes| F[Altocumulus Clouds]
+  E --> |No| G{Wispy appearance?}
+  G --> |Yes| H[Cirrus Clouds]
+  G --> |No| I{Dark hue?}
+  I --> |No| J[Non-Contrail]
+  I --> |Yes| K{Sudden appearance or lateral emergence?}
+  K --> |No| L[Non-Contrail]
+  K --> |Yes| M{Visible across multiple images?}
+  M --> |No| N[Non-Contrail]
+  M --> |Yes| O{Min. 10 pixels, 3X longer than wide?}
+  O --> |No| P[Non-Contrail]
+  O --> |Yes| Q{Wind-aligned?}
+  Q --> |No| R[Non-Contrail]
+  Q --> |Yes| S{Rapid spreading?}
+  S --> |No| T{Potential shadow?}
+  T --> |Yes| U[Cloud Shadow]
+  T --> |No| V{Parallel rows, rounded tops, similarly sized clouds?}
+  V --> |Yes| W[Cloud Street]
+  V --> |No| X{Consistent across wavelengths?}
+  X --> |No| Y[Wavelength Inconsistency]
+  X --> |Yes| Z{Matches known flight path?}
+  Z --> |No| AA[Contrail: High Confidence]
+  Z --> |Yes| AB{Presence of wave patterns?}
+  AB --> |No| AC[Contrail: Moderate Confidence]
+  AB --> |Yes| AD{Presence of air vortices?}
+  AD --> |No| AE[Kelvin-Helmholtz Waves]
+  AD --> |Yes| AF[Aircraft Wake Vortices]
 ```
-Here is a revised version of the text that is consistent in style and formatting:
 
-### Contrail Identification: Key Characteristics to Consider
-- **Darkness**: Contrails appear darker than their surroundings.
-- **Linearity**: Contrails are line-shaped clouds produced by aircraft engines.
-- **Appearance**: Contrails appear suddenly or enter from the sides of the image due to planes moving at high speeds.
-- **Visibility**: Contrails should be visible in at least two images, as they are created by moving airplanes.
-- **Size and shape**: Contrails have a length at least three times longer than their width and contain at least 10 pixels.
-- **Movement**: Contrails move and change shape over time due to wind influence.
-- **Aging and dissipation**: Contrails spread and become more diffuse over time.
-- **Color**: Contrails' color can vary depending on the sun's position and aircraft altitude.
-- **Flight path alignment**: Aligning observed contrails with known flight paths increases confidence in identification.
-- **Cloud shadows**: Shadows aligned with the sun's position may resemble contrails but behave differently in a sequence of images.
-- **Cloud streets**: Rows of cumulus clouds that are wider, less straight, and have different appearance and dissipation behavior than contrails.
-- **Jet stream impact**: Contrails are influenced by high altitude winds, which can help distinguish them from other linear objects.
-- **Consistency across wavelengths**: Consistent appearance across different wavelengths supports contrail identification.
-- **Consider similar objects**: Cloud shadows and cloud streets can mimic contrails but exhibit different behaviors and characteristics.
+---
 
-### Reducing Contrail Formation: Strategies to Consider
-- **Adjusting altitudes**: Change cruising altitude to avoid contrail-forming conditions, considering increased fuel use and CO2 emissions.
-- **Optimizing flight paths**: Modify routes to avoid areas with conditions conducive to contrail formation.
-- **Modifying flight schedules**: Adjust schedules to influence contrail climate effects during the day (cooling) and night (warming).
-- **Enhancing aircraft efficiency**: Improve efficiency to reduce exhaust water vapor and potentially decrease contrail occurrence.
-- **Exploring alternative fuels**: Investigate biofuels emitting less water vapor when burned to reduce contrails.
-- **Utilizing advanced forecasts**: Use weather prediction tech to identify high contrail formation areas and adjust flight paths.
-- **Developing contrail avoidance tech**: Create new tech to detect contrails and avoid them in real-time.
+## Key Characteristics for Contrail Identification
+- **Darkness**: Contrails appear darker than surrounding clouds.
+- **Linearity**: Contrails are line-shaped clouds emitted by aircraft engines.
+- **Appearance**: Contrails appear suddenly or from the sides of the image, indicative of high-speed aircraft movement.
+- **Visibility**: Contrails should be discernible in at least two images, reflecting the motion of the aircraft.
+- **Size and Shape**: Contrails are typically at least three times longer than their width and occupy at least 10 pixels.
+- **Movement and Dissipation**: Wind influence causes contrails to move and spread over time.
+- **Color Variance**: The color of contrails can change depending on the sun's position and the aircraft's altitude.
+- **Flight Path Alignment**: Matching observed contrails with known flight paths increases identification confidence.
+- **Consistency across Wavelengths**: A consistent appearance across different wavelengths supports contrail identification.
+
+## Strategies for Reducing Contrail Formation
+- **Altitude Adjustment**: Modify cruising altitude to avoid contrail-forming conditions. This should balance with fuel use and CO2 emissions.
+- **Flight Path Optimization**: Reroute aircraft to avoid regions with favorable conditions for contrail formation.
+- **Flight Schedule Modification**: Change flight schedules to manage the day (cooling) and night (warming) climate effects of contrails.
+- **Aircraft Efficiency**: Enhance aircraft efficiency to reduce exhaust water vapor and lower contrail formation.
+- **Alternative Fuels**: Research into biofuels that emit less water vapor could help reduce contrail occurrences.
+- **Advanced Forecasts**: Utilize weather forecasting technology to identify areas with high contrail formation potential and adjust flight paths accordingly.
+- **Contrail Avoidance Tech**: Develop technology for real-time contrail detection and avoidance. 
+
+
 ---
 ### [Level 2+ Algorithm Products, page 43](https://www.goes-r.gov/products/docs/PUG-L2+-vol5.pdf)
 ![ABI Level 2+ imagery products ](images/research/abi_level2_products.png)
@@ -114,7 +137,7 @@ Here is a revised version of the text that is consistent in style and formatting
 |Geostationary Lightning Mapper | Provides lightning spatial extent, storm triage, and information on developing convection | 20-second updates | - | Differentiates between events, groups, and flashes | - |
 
 
-### GOES-16 Derived Products
+# Methodology for Creating the OpenContrails Dataset
 
 The methodology involved in creating this dataset is as follows:
 
@@ -211,3 +234,6 @@ References:
 - Binary segmentation: one IoU value; multi-class segmentation: IoU calculated for each class separately, then averaged.
 - Dice coefficient measures overlap between predicted and ground truth segmentation as twice the size of their intersection divided by the sum of their sizes.
 - Dice coefficient gives more weight to true positives, while IoU gives equal weight to true positives, false positives, and false negatives.
+
+### Downcasting Data Types to Reduce Memory Usage - Time Series Data
+![time_series_donwcasting](images/research/time_series_downcasting.png)
