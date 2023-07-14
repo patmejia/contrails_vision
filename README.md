@@ -28,6 +28,7 @@ The dataset and outputs are publicly available on the Google Cloud Storage bucke
 
 • [Research Collection](documentation/RESEARCH.md) <br>
 • [ArXiv OpenContrail in a Nutshell](https://www.kaggle.com/code/patimejia/arxiv-opencontrail-nutshell)
+• [Contrails: Formation, Potential Mix-Ups, and Climatic Impact](https://www.kaggle.com/code/patimejia/contrail-formation-errors-climate-impact)
 
 ---
 ## ➲ Setup
