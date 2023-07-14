@@ -97,6 +97,9 @@ python src/utils/get_shape.py samples/sample_mini/contrails/1108741208571075.npy
 python -m src.utils.coordinate_converter samples/kaggle_competition_mini_sample/test/1000834164244036115 output
 python src/utils/rle_encoding_submission.py samples/kaggle_competition_mini_sample 2
 python src/utils/contrail_animation.py 1000603527582775543
+python src/utils/analyze_band_data_and_generate_animation.py 1000216489776414077 train
+python src/utils/analyze_band_data_and_generate_animation.py 1000603527582775543 train
+python src/utils/analyze_band_data_and_generate_animation.py 1000834164244036115 validation
 ```
 ---
 
@@ -108,29 +111,28 @@ python src/main.py
 ![globe-temp](documentation/images/generated/globe-tmp.png)
 
 ### Acknowledgements:
+
 ☛ https://arxiv.org/abs/2304.02122: Ng, J. Y.-H., McCloskey, K., Cui, J., Meijer, V., Brand, E., Sarna, A., Goyal, N., Van Arsdale, C., & Geraedts, S. (2023). OpenContrails: Benchmarking Contrail Detection on GOES-16 ABI. arXiv preprint arXiv:2304.02122.
 <br>
+
+---
 ☛ goes_contrails_dataset from OpenContrails: [Benchmarking Contrail Detection on GOES-16 ABI](https://console.cloud.google.com/storage/browser/goes_contrails_dataset)
 <br>
 ☛ Competition: [google-research-identify-contrails-reduce-global-warming](https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming)
+<br>
+☛ [k-12: Discover contrails and make one at school](https://www.nasa.gov/sites/default/files/atoms/files/contrails_k-12.pdf)
+<br>
+☛  [How Contrails Behave: the science of contrails](https://www.globe.gov/web/s-cool/home/observation-and-reporting/contrails/the-science-of-contrails)
+<br>
 
 ---
 ☛ visualization: [RAMMB CIRA, colostate.edu](https://rammb-slider.cira.colostate.edu/?sat=goes-18&sec=full_disk&x=12480&y=9274.5&z=0&angle=0&im=12&ts=1&st=0&et=0&speed=130&motion=loop&maps%5Bborders%5D=white&p%5B0%5D=geocolor&opacity%5B0%5D=1&pause=0&slider=-1&hide_controls=0&mouse_draw=0&follow_feature=0&follow_hide=0&s=rammb-slider&draw_color=FFD700&draw_width=6)
 <br>
 ☛ NASA's Eyes On The Earth [Sofware](https://climate.nasa.gov/earth-now/#/), [demo video](https://www.youtube.com/watch?v=p-6DusnZ1pQ)
 <br>
-☛ [visualize (input dataset 450.91 GB)](https://www.kaggle.com/code/inversion/visualizing-contrails#OpenContrails-dataset-documentation)
-<br>
-☛ How to create the standard RGB images: [Compilation of RGB Recipes (i.e. Ash RGB)](https://eumetrain.org/sites/default/files/2020-05/RGB_recipes.pdf)
-
----
 ☛ rammmb.cira: [Quick Guide: Ash RGB](https://rammb.cira.colostate.edu/training/visit/quick_guides/GOES_Ash_RGB.pdf)
 <br>
-☛ [contrails dataset sample (11.74 GB) train_df.csv, valid_df.csv](https://www.kaggle.com/datasets/shashwatraman/contrails-images-ash-color)
-<br>
-☛ [high-score-example]( https://www.kaggle.com/code/egortrushin/gr-icrgw-training-with-4-folds)
-<br>
-☛ [Using U-Net to Predict Segmentation Masks in Python & Keras](https://www.kaggle.com/keegil/keras-u-net-starter-lb-0-277)
+☛ How to create the standard RGB images: [Compilation of RGB Recipes (i.e. Ash RGB)](https://eumetrain.org/sites/default/files/2020-05/RGB_recipes.pdf)
 
 ----
 ☛ google storage [contrails-labeling-guide](https://storage.googleapis.com/goes_contrails_dataset/20230419/Contrail_Detection_Dataset_Instruction.pdf)
@@ -152,15 +154,30 @@ python src/main.py
 ☛ weather.gov: [GOES-16 Band Reference Guide](https://www.weather.gov/media/crp/GOES_16_Guides_FINALBIS.pdf)
 
 ---
-☛ Adam Duran (Michigan Tech, Q&A with [SATAVIA: Climate and Contrails](https://www.mtu.edu/unscripted/2021/06/qa-with-satavia-climate-and-contrails.html)
+☛ Adam Duran - Michigan Tech, Q&A with [SATAVIA: Climate and Contrails](https://www.mtu.edu/unscripted/2021/06/qa-with-satavia-climate-and-contrails.html)
 <br>
-☛ Catalogues of atmospheric [optics:](https://atoptics.co.uk/atoptics/shuttle.htm) [rocket plume, contrail and shuttle plume shadow](https://atoptics.co.uk/atoptics/contr1.htm)
+☛ Catalogues of atmospheric [optics](https://atoptics.co.uk/atoptics/shuttle.htm): [rocket plume, contrail and shuttle plume shadow](https://atoptics.co.uk/atoptics/contr1.htm)
 <br>
 ☛ [STAC](https://stacspec.org/en/tutorials/1-read-stac-python/)
 <br>
 ☛ [WGS84 coordinate system](https://support.virtual-surveyor.com/en/support/solutions/articles/1000261351-what-is-wgs84-) 
 
 ----
+☛ [Inversion - isualize (input dataset 450.91 GB)](https://www.kaggle.com/code/inversion/visualizing-contrails#OpenContrails-dataset-documentation)
+<br>
+☛ [Shashwatraman -  contrails dataset sample (11.74 GB) train_df.csv, valid_df.csv](https://www.kaggle.com/datasets/shashwatraman/contrails-images-ash-color)
+<br>
+☛ [egortrushin - high score example]( https://www.kaggle.com/code/egortrushin/gr-icrgw-training-with-4-folds)
+<br>
+☛ [keegil - Using U-Net to Predict Segmentation Masks in Python & Keras](https://www.kaggle.com/keegil/keras-u-net-starter-lb-0-277)
+<br>
+☛  [anshuls235 - Time Series Forecasting-EDA, FE & Modelling📈 -  ](https://www.kaggle.com/code/anshuls235/time-series-forecasting-eda-fe-modelling?scriptVersionId=42985144&cellId=7)
+<br>
+☛  [jamesmcguigan - Reading Parquet Files - RAM/CPU Optimization -  ](https://www.kaggle.com/code/jamesmcguigan/reading-parquet-files-ram-cpu-optimization)
+
+----
+
+
 <div style="background-color: #f2f2f2; padding: 10px; border-radius: 5px;">
 <h3>Contributing...</h3>
 <p style="text-align: left;">👋 Welcome to the contributing section! We're excited to have you join us in enhancing the GOES-16 Satellite Contrail Detection project. Contribute by forking the repository, making changes in a descriptive branch, and submitting a pull request. Join our <a href="https://sdteam6.slack.com/archives/C05D6MBTW2D">Slack</a> channel for real-time communication with other contributors. Follow and contribute to this impactful project to combat climate change through advanced technology 🌍✨</p>
@@ -169,7 +186,7 @@ python src/main.py
 ---
 
 <div style="background-color: #f2f2f2; padding: 10px; border-radius: 5px;">
-  <h3>If you found this notebook helpful...</h3>
+  <h3>If you found this repository helpful...</h3>
   <p>
   Please consider giving it a star. Your support helps me continue to develop high-quality code and pursue my career as a data analyst/engineer. Feedback is always welcome and appreciated. Thank you for taking the time to read my work! 
   </p> 
