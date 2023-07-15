@@ -1,38 +1,3 @@
-# Roadmap
-```
-I. Data Preparation and Exploration
-    1. Connect to the dataset and download necessary data
-        - Ensure that you have access to the dataset
-        - Download all necessary data and organize it in a logical manner
-    2. Explore the data using visualization functions
-        - Use visualization techniques to explore the data and look for patterns or trends
-        - Generate summary statistics or plots to better understand the distribution of the data
-
-II. Data Preprocessing
-    1. Normalize or scale the data
-        - Normalize or scale the data to ensure that all features are on the same scale
-    2. Handle missing values
-        - Identify and handle any missing values in the data
-
-III. Model Selection and Training
-    1. Research and select appropriate models
-        - Research different models and techniques that are appropriate for the task
-        - Select the model(s) that best fit your needs
-    2. Train selected model(s) on preprocessed data
-        - Train your selected model(s) on the preprocessed data
-        - Monitor training progress and make any necessary adjustments
-
-IV. Model Evaluation and Deployment
-    1. Evaluate model performance using appropriate metrics
-        - Evaluate the performance of your model(s) using appropriate evaluation metrics
-        - Compare results to a baseline or benchmark to assess performance
-    2. Make necessary adjustments
-        - Make any necessary adjustments to your model(s) based on the evaluation results
-    3. Deploy final model and make predictions on new data
-        - Deploy your final model and use it to make predictions on new data
-```
-
-
 # To-do's:
 
 ### □: posted <br> ☑︎: completed <br> ☒: abandoned <br> ○: in progress <br> ●: on hold <br> ◌: unconfirmed
@@ -69,6 +34,7 @@ band15 = load_band_data('band_15')
 human_pixel_mask = load_band_data('human_pixel_masks')
 human_individual_mask = load_band_data('human_individual_masks')
 ```
+##### ☑︎ Create data roadmap for project
 
 ##### ○ Revise script to better modularize data transformation and visualization steps, enhancing reusability and integration with rest of the project.
 

@@ -16,3 +16,7 @@ src/__pycache__/
 samples/sample_full/.DS_Store
 
 getting-started-opencontrails.ipynb
+
+documentation/research.md
+documentation/hyperbee.md
+documentation/pyvista.md

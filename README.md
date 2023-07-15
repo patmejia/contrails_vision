@@ -4,7 +4,9 @@
 *Comparison of an image with no contrail (left) and an image with a detected contrail (right)*
 
 #### Abstract:
-The paper "OpenContrails: Benchmarking Contrail Detection" presents a new contrail detection model that enhances the study of climate change. The model leverages multiple frames for temporal context to improve detection performance, particularly for young, linear contrails. The model utilizes the OpenContrails dataset, which contains human-labeled contrail detections from the GOES-16 satellite.
+The paper [OpenContrails: Benchmarking Contrail Detection](https://arxiv.org/abs/2304.02122) presents a new contrail detection model that enhances the study of climate change. The model leverages multiple frames for temporal context to improve detection performance, particularly for young, linear contrails. The model utilizes the OpenContrails dataset, which contains human-labeled contrail detections from the GOES-16 satellite ([labeling-guide](https://storage.googleapis.com/goes_contrails_dataset/20230419/Contrail_Detection_Dataset_Instruction.pdf)).
+<br>
+
 
 > #### Q: Why focus on contrails to curb climate change impacts?
 > #### Adam Durant: Non-carbon dioxide sources — like the climate forcing from contrails — make up almost two-thirds of the aviation industry’s impact, which equates to 2% of all human-caused climate change. 
@@ -26,10 +28,11 @@ The dataset and outputs are publicly available on the Google Cloud Storage bucke
 
 #### :: Documentation ::
 
-• [Flowchart: comprehensive decision tree 🌳 for contrail identification](https://gist.github.com/patmejia/dfb7b0ce44accb67dbe58a9524623002)<br>
+• [Flowchart 📈: comprehensive decision tree for contrail identification](https://gist.github.com/patmejia/dfb7b0ce44accb67dbe58a9524623002)<br>
 • [Contrails: Formation, Potential Mix-Ups, and Climatic Impact](https://www.kaggle.com/code/patimejia/contrail-formation-errors-climate-impact) <br>
-• [ArXiv OpenContrail in a Nutshell](https://www.kaggle.com/code/patimejia/arxiv-opencontrail-nutshell) <br>
-• [Research Collection](documentation/RESEARCH.md) <br>
+• [ArXiv OpenContrail in a Visual Nutshell](https://www.kaggle.com/code/patimejia/arxiv-opencontrail-nutshell) <br>
+• [Roadmap 📍: Contrail Analysis
+](documentation/roadmap_contrail_analysis.md) <br>
   
 ---
 ##  ▶︎ Setup
@@ -65,7 +68,7 @@ kaggle competitions list
 ```
 ##### ∙ Install the Kaggle CLI <br> ∙ Create a Kaggle account and go to your account settings page. <br> ∙ Click "Create New API Token" to download the `kaggle.json` file  <br> ∙  Move the downloaded file to `~/.kaggle/kaggle.json` <br> ∙ Set permissions for the API key file <br> ∙ Confirm the setup: Run kaggle competitions list to verify the API key works
 
-### ◉ Download data (optional)
+###  ⦿ Download data (optional)
 #####  ∙  sample-dataset ▸ ash-color [22.4k files - 11.74 GB](https://www.kaggle.com/shashwatraman/contrails-images-ash-color)
 ```bash 
 kaggle datasets download shashwatraman/contrails-images-ash-color -p /path/to/desired/directory
@@ -93,7 +96,7 @@ ctrl + c
 conda deactivate
 ```
 
-####  ▶︎ Usage:
+####   ⦿ Usage:
 ```bash
 python src/main.py
 python run.py samples/false_color_mini_sample/contrails output
