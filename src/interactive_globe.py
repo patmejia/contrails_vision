@@ -39,9 +39,6 @@ def save_image(plotter, folder):
     img = plotter.show(return_img=True)
     plt.imsave(os.path.join(folder, 'tmp.png'), img)
 
-    # Display the image
-    plotter.show()
-
 def main():
     dataset = download_dataset('globe')
     warped_dataset = compute_and_warp(dataset)

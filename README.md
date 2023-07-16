@@ -99,7 +99,7 @@ conda deactivate
 ####   ⦿ Usage:
 
 ```bash
-python src/main.py
+python src/interactive_globe.py
 
 python run.py samples/false_color_mini_sample/contrails output
 
