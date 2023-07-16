@@ -97,22 +97,20 @@ conda deactivate
 ```
 
 ####   ⦿ Usage:
+
 ```bash
 python src/main.py
 python run.py samples/false_color_mini_sample/contrails output
+python run.py samples/kaggle_competition_mini_sample/test/1000834164244036115 output
+python -m src.utils.coordinate_converter samples/kaggle_competition_mini_sample/test/1000834164244036115 output
 python src/utils/rand_record_viz_with_masks_false_color.py --base_dir samples/kaggle_competition_mini_sample/test/1000834164244036115  --n_records 2 --n_times_before 4
 python src/utils/get_shape.py samples/kaggle_competition_mini_sample/test/1000834164244036115/band_08.npy
-python src/utils/get_shape.py samples/sample_mini/contrails/1108741208571075.npy
-python -m src.utils.coordinate_converter samples/kaggle_competition_mini_sample/test/1000834164244036115 output
 python src/utils/rle_encoding_submission.py samples/kaggle_competition_mini_sample 2
-python src/utils/contrail_animation.py 1000603527582775543
-python src/utils/analyze_band_data_and_generate_animation.py 1000216489776414077 train
-python src/utils/analyze_band_data_and_generate_animation.py 1000603527582775543 train
-python src/utils/analyze_band_data_and_generate_animation.py 1000834164244036115 validation
 ```
+
 ---
 
-##### • Example usage output after running
+##### • Example usage output after running (i.e. `/output/tmp.png`)
 ```bash
 python src/main.py
 ```
