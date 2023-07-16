@@ -100,11 +100,17 @@ conda deactivate
 
 ```bash
 python src/main.py
+
 python run.py samples/false_color_mini_sample/contrails output
+
 python run.py samples/kaggle_competition_mini_sample/test/1000834164244036115 output
+
 python -m src.utils.coordinate_converter samples/kaggle_competition_mini_sample/test/1000834164244036115 output
+
 python src/utils/rand_record_viz_with_masks_false_color.py --base_dir samples/kaggle_competition_mini_sample/test/1000834164244036115  --n_records 2 --n_times_before 4
+
 python src/utils/get_shape.py samples/kaggle_competition_mini_sample/test/1000834164244036115/band_08.npy
+
 python src/utils/rle_encoding_submission.py samples/kaggle_competition_mini_sample 2
 ```
 
