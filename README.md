@@ -32,7 +32,7 @@ The dataset and outputs are publicly available on the Google Cloud Storage bucke
 #### :: Documentation ::
 
 • [Flowchart 📈: comprehensive decision tree for contrail identification](https://gist.github.com/patmejia/dfb7b0ce44accb67dbe58a9524623002)<br>
-• [Contrails: Formation, Potential Mix-Ups, and Climatic Impact](https://www.kaggle.com/code/patimejia/contrail-formation-errors-climate-impact) <br>
+• [Context research for the competition](https://https://www.kaggle.com/code/patimejia/context-for-goes16-contrails) <br>
 • [ArXiv OpenContrail in a Visual Nutshell](https://www.kaggle.com/code/patimejia/arxiv-opencontrail-nutshell) <br>
 • [Roadmap 📍: Contrail Analysis
 ](documentation/roadmap.md) <br>
@@ -213,3 +213,8 @@ python src/main.py
   </h4>
   </p>
 </div>
+
+---
+
+## License
+This project is licensed under the terms of the [MIT license](LICENSE).
