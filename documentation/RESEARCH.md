@@ -237,3 +237,102 @@ References:
 
 ### Downcasting Data Types to Reduce Memory Usage - Time Series Data
 ![time_series_donwcasting](images/research/time_series_downcasting.png)
+
+
+### CONUS vs Full Disk Images
+
+CONUS stands for Continental United States. In satellite imaging, CONUS refers to images that cover the continental United States1. A full disk image, on the other hand, is an image that covers the entire Western Hemisphere2. The Advanced Baseline Imager (ABI) is the primary instrument on the GOES-R Series for imaging Earth’s weather, oceans and environment. It has multiple scan modes. In mode 4, or continuous full disk mode, the ABI produces a full disk image every five minutes. In mode 3, or flex mode, the ABI concurrently produces a full disk every 15 minutes, a CONUS image every five minutes, and two mesoscale domains every 60 seconds or one sub-domain every 30 seconds2. Is there anything else you would like to know?
+
+Received message. CONUS stands for **Continental United States**. In satellite imaging, CONUS refers to images that cover the continental United States. A full disk image, on the other hand, is an image that covers the entire Western Hemisphere. The Advanced Baseline Imager (ABI) is the primary instrument on the GOES-R Series for imaging Earth’s weather, oceans and environment. It has multiple scan modes. In mode 4, or continuous full disk mode, the ABI produces a full disk image every five minutes. In mode 3, or flex mode, the ABI concurrently produces a full disk every 15 minutes, a CONUS image every five minutes, and two mesoscale domains every 60 seconds or one sub-domain every 30 seconds. Is there anything else you would like to know?
+Learn more:
+1. star.nesdis.noaa.gov
+2. goes-r.gov
+3. ncei.noaa.gov
+
+### GOES-16 ABI Data
+```
+The dataset used in the paper "OpenContrails: Benchmarking Contrail Detection" was sampled from GOES-16 ABI imagery from April 2019 to April 2020. However, the paper does not provide more precise start and end dates. The full dataset contains 20,544 examples in the training set and 1,866 examples in the validation set. The examples are randomly partitioned except for the satellite scenes that were identified as likely to have contrails by Google Street View, which are only included in the training set.
+```
+
+### Planetary Computer
+
+[microsoft-planetarycumputer-Goes16](https://planetarycomputer.microsoft.com/explore?c=-119.7036,0.0000&z=1.23&v=2&d=goes-cmi&s=false::100::true&ae=0&sr=desc&m=Most+recent+(Full+disk)&r=Natural+color)
+
+- L2, Full Disk, natural color, infrared, etc
+- example - item:OR_ABI-L2-F-M6_G16_s20231970250209
+07/16/2023 02:50:20 UTC
+```
+GOES-R Cloud & Moisture Imagery
+OR_ABI-L2-F-M6_G16_s20231970250209
+07/16/2023 02:50:20 UTC
+Datetime
+07/16/2023 02:50:20 UTC
+Platform
+GOES-16
+GOES Mode
+6
+Bounding Box
+[-5433892.69232443, 5433892.69232443, 5433893.209564505, -5433893.209564505]
+EPSG Code
+WKT2
+PROJCRS["undefined",BASEGEOGCRS["undefined",DATUM["undefined",ELLIPSOID["GRS 1980(IUGG, 1980)",6378137,298.257222101,LENGTHUNIT["metre",1,ID["EPSG",9001]]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8901]]],CONVERSION["unknown",METHOD["Geostationary Satellite (Sweep X)"],PARAMETER["Satellite height",35786023,LENGTHUNIT["metre",1,ID["EPSG",9001]]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-75,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1,ID["EPSG",9001]]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1,ID["EPSG",9001]]]]
+Shape
+[5424, 5424]
+Instruments
+ABI
+Transform
+[2004.017315487541, 0, -5434894.700982174, 0, -2004.017315487541, 5434894.700982174]
+Image Type
+FULL DISK
+Software
+stactools-goes (0.1.6)
+Processing Level
+L2
+System Environment
+OR
+STAC Item
+OR_ABI-L2-F-M6_G16_s20231970250209
+STAC Collection
+goes-cmi
+```
+- code
+```
+from pystac_client import Client
+import planetary_computer as pc
+
+# Search against the Planetary Computer STAC API
+catalog = Client.open(
+  "https://planetarycomputer.microsoft.com/api/stac/v1"
+)
+
+# Define your area of interest
+aoi = {
+  "type": "Polygon",
+  "coordinates": [
+    [
+      [-311.7336793422596, -83.58546077442502],
+      [72.32647647980653, -83.58546077442502],
+      [72.32647647980653, 83.58546077442497],
+      [-311.7336793422596, 83.58546077442497],
+      [-311.7336793422596, -83.58546077442502]
+    ]
+  ]
+}
+
+# Define your search with CQL2 syntax
+search = catalog.search(filter_lang="cql2-json", filter={
+  "op": "and",
+  "args": [
+    {"op": "s_intersects", "args": [{"property": "geometry"}, aoi]},
+    {"op": "=", "args": [{"property": "collection"}, "goes-cmi"]},
+    {"op": "=", "args": [{"property": "goes:image-type"}, "FULL DISK"]}
+  ]
+})
+
+# Grab the first item from the search results and sign the assets
+first_item = next(search.get_items())
+pc.sign_item(first_item).assets
+```
+- links: 
+   - [repo:planetarycomputer](https://github.com/microsoft/PlanetaryComputer)
+   - [documentation: STACT quick start]](https://planetarycomputer.microsoft.com/docs/quickstarts/reading-stac/)
