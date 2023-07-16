@@ -1,5 +1,8 @@
 # Contrail Detection using GOES-16 Satellite Imagery and Computer Vision
 
+![where_is_goes16](documentation/images/generated/sky-rogue-space-goes16-sat-globe-context.gif)
+*Gif: Finding where is GOES 16 within the context of Earth and Space*
+
 ![no_contrail_vs_detected_contrail](documentation/images/generated/contrail_vs_empty.gif)
 *Comparison of an image with no contrail (left) and an image with a detected contrail (right)*
 
