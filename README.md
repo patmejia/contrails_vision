@@ -115,6 +115,8 @@ python src/utils/rand_record_viz_with_masks_false_color.py --base_dir samples/ka
 python src/utils/get_shape.py samples/kaggle_competition_mini_sample/test/1000834164244036115/band_08.npy
 
 python src/utils/rle_encoding_submission.py samples/kaggle_competition_mini_sample 2
+
+python src/dataset_to_histogram_reports.py ./samples/kaggle_competition_mini_sample/ 
 ```
 
 ---
