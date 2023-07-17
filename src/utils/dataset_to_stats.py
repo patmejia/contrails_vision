@@ -5,8 +5,7 @@ import collections
 import math
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.cm import viridis
-
+from matplotlib import cm
 
 
 def load_numpy_file(filepath):
@@ -134,7 +133,7 @@ def group_and_plot_histograms_by_dataset_record(directory_path, output_dir, hist
         mask_results = [result for result in record_results if 'human_' in result[0].split('/')[-1]]
 
         # Create color palette for band histograms
-        colors = viridis(np.linspace(0, 1, len(band_results)))
+        colors = cm.viridis(np.linspace(0, 1, len(band_results)))  # type: ignore
 
         # Add a new subplot for the band histograms
         ax = fig.add_subplot(num_rows, histograms_per_row, i+1)
@@ -162,7 +161,7 @@ def group_and_plot_histograms_by_dataset_record(directory_path, output_dir, hist
         mask_results = [result for result in record_results if 'human_' in result[0].split('/')[-1]]
 
         # Create color palette for mask histograms
-        colors = viridis(np.linspace(0, 1, len(mask_results)))
+        colors = cm.viridis(np.linspace(0, 1, len(band_results)))  # type: ignore
 
         # Add a new subplot for the mask histograms
         ax = fig.add_subplot(num_rows, histograms_per_row, i+1)
