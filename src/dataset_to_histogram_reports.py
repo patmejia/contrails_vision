@@ -7,10 +7,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
 
-
+# Load numpy file from given filepath
 def load_numpy_file(filepath):
     return np.load(filepath)
 
+# Calculate statistics for the given data
 def calculate_statistics(data):
     mean = np.cumsum(data, dtype=float)[-1] / data.size if data.size > 0 else None
     hist, bins = np.histogram(data, bins=50)
@@ -33,9 +34,9 @@ def calculate_statistics(data):
         'histogram': (hist, bins)  # Add the histogram data
     }
 
+# Save histogram to the specified output path
 def save_histogram(hist, bins, output_path):
     fig, ax = plt.subplots()
-    # ax.bar(bins[:-1], hist, width=np.diff(bins), ec="k", align="edge")
     ax.set_xlabel('Values')
     ax.set_ylabel('Frequency')
     ax.grid(True)
@@ -43,6 +44,7 @@ def save_histogram(hist, bins, output_path):
     plt.savefig(output_path)
     plt.close(fig)
 
+# Generate markdown for the file statistics
 def generate_markdown_for_file(filepath, stats):
     markdown = f"### {filepath}\n\n"
     for stat, value in stats.items():
@@ -50,19 +52,17 @@ def generate_markdown_for_file(filepath, stats):
     markdown += '[Back to ToC](#table-of-contents)\n\n'
     return markdown
 
+# Process a single file, calculating its statistics and creating a markdown summary
 def process_file(filepath):
     try:
         data = load_numpy_file(filepath)
         stats = calculate_statistics(data)
-        # hist, bins = stats['histogram'] # Unpack histogram data
-        # output_path = f'output/numpy_stats/{os.path.basename(filepath)}_histogram.png'
-        # save_histogram(hist, bins, output_path) # Call the function with separate arguments
         return filepath, generate_markdown_for_file(filepath, stats), stats['zero_count'] > 0
     except Exception as e:
         print(f"Error processing file {filepath}: {str(e)}")
         return None, None, None
 
-
+# Process a directory, calculating statistics for each numpy file
 def process_directory(directory_path):
     files_with_zeros = []
     files_without_zeros = []
@@ -84,7 +84,7 @@ def process_directory(directory_path):
 
     return markdown_results, files_with_zeros, files_without_zeros
 
-
+# Generate markdown section for a list of items with a given title
 def generate_markdown_section(title, items):
     section = f'## {title}\n\n'
     for item in items:
@@ -92,6 +92,7 @@ def generate_markdown_section(title, items):
     section += '[Back to ToC](#table-of-contents)\n\n'
     return section
 
+# Save the results to a markdown file
 def save_results(markdown_results, files_with_zeros, files_without_zeros):
     with open('output/numpy_stats/zeros_dataset_report.md', 'w') as results_file:
         for markdown in markdown_results:
@@ -101,7 +102,6 @@ def save_results(markdown_results, files_with_zeros, files_without_zeros):
 
 
 def group_and_plot_histograms_by_dataset_record(directory_path, output_dir, histograms_per_row):
-    # Group results by dataset and record id 
     results_by_dataset_record = collections.defaultdict(list)
     for root, dirs, files in os.walk(directory_path):
         # dirs[:] = [d for d in dirs if d not in ['test']]
@@ -180,13 +180,13 @@ def group_and_plot_histograms_by_dataset_record(directory_path, output_dir, hist
     fig.savefig(output_filepath)
     plt.close(fig)
 
-
-
+# Parse arguments from command line
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Analyze numpy files in a directory.')
     parser.add_argument('directory', type=str, help='The directory to analyze.')
     return parser.parse_args()
 
+# Main function to handle the overall process
 def main():
     args = parse_arguments()
     base_directory = args.directory
