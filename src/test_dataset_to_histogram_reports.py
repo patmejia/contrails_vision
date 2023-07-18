@@ -1,46 +1,52 @@
+import os
+import shutil
 import pytest
 import numpy as np
-import os
+from dataset_to_histogram_reports import DataLoader, DataAnalyzer, HistogramGenerator, ReportGenerator, FileProcessor
 
-# Import your functions here
-from dataset_to_histogram_reports import load_numpy_file, calculate_statistics, process_file
+def test_data_loader():
+    test_data = np.array([1, 2, 3])
+    np.save('test.npy', test_data)
+    loaded_data = DataLoader.load_numpy_file('test.npy')
+    assert np.array_equal(test_data, loaded_data)
 
-def test_load_numpy_file(tmp_path):
-    # Create a temporary numpy file
-    p = tmp_path / "temp.npy"
-    np.save(p, np.array([1, 2, 3, 4, 5]))
-    
-    # Test load_numpy_file function
-    data = load_numpy_file(p)
-    assert np.array_equal(data, np.array([1, 2, 3, 4, 5]))
+def test_data_analyzer():
+    test_data = np.array([1, 2, 3])
+    stats = DataAnalyzer.calculate_statistics(test_data)
+    assert stats['mean'] == 2
+    assert stats['std_dev'] == np.std(test_data)
+    assert stats['min'] == 1
+    assert stats['max'] == 3
+    assert stats['median'] == 2
+    assert stats['all_zeros'] == False
+    assert stats['zero_count'] == 0
+    assert stats['non_zero_count'] == 3
+    assert stats['has_nan'] == False
+    assert stats['has_inf'] == False
 
-def test_calculate_statistics():
-    data = np.array([1, 2, 3, 4, 5])
-    
-    # Test calculate_statistics function
-    stats = calculate_statistics(data)
-    
-    assert stats['shape'] == data.shape
-    assert stats['size'] == data.size
-    assert stats['mean'] == np.mean(data)
-    assert stats['std_dev'] == np.std(data)
-    assert stats['min'] == np.min(data)
-    assert stats['max'] == np.max(data)
-    assert stats['median'] == np.median(data)
-    assert stats['all_zeros'] == np.all(data == 0)
-    assert stats['zero_count'] == np.count_nonzero(data == 0)
-    assert stats['non_zero_count'] == np.count_nonzero(data)
-    assert stats['has_nan'] == np.isnan(data).any()
-    assert stats['has_inf'] == np.isinf(data).any()
+def test_histogram_generator():
+    hist = np.array([1, 2, 3])
+    bins = np.array([0, 1, 2, 3])
+    output_dir = "test_dir"
+    os.makedirs(output_dir, exist_ok=True)
+    HistogramGenerator.save_histogram(hist, bins, os.path.join(output_dir, 'test.png'))
+    assert os.path.isfile(os.path.join(output_dir, 'test.png'))
+    shutil.rmtree(output_dir) # cleanup
 
-def test_process_file(tmp_path):
-    # Create a temporary numpy file
-    p = tmp_path / "temp.npy"
-    np.save(p, np.array([1, 2, 3, 4, 5]))
-    
-    # Test process_file function
-    filepath, markdown, has_zeros = process_file(p)
-    
-    assert str(filepath) == str(p)
-    assert markdown is not None
+def test_report_generator():
+    stats = {'mean': 2, 'std_dev': 1, 'min': 1, 'max': 3, 'median': 2}
+    markdown = ReportGenerator.generate_markdown_for_file('test.npy', stats)
+    assert '### test.npy' in markdown
+    assert '* **Mean**: 2' in markdown if markdown else False
+
+def test_file_processor():
+    test_data = np.array([1, 2, 3])
+    np.save('test.npy', test_data)
+    filepath, markdown, has_zeros, stats = FileProcessor.process_file('test.npy')
+    assert filepath == 'test.npy'
+    assert '* **Mean**: 2' in markdown if markdown else False
     assert has_zeros == False
+    if stats:  # Ensure stats is not None before accessing elements
+        assert stats['mean'] == 2
+    else:
+        assert False, "stats is None"

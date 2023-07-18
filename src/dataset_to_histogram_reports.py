@@ -52,7 +52,7 @@ class HistogramGenerator:
         results_by_dataset_record = collections.defaultdict(list)
         
         for filepath, stats in file_stats.items():
-            dataset, record_id = filepath.split('/')[3:5]  # Adjusted to get the correct dataset and record id
+            dataset, record_id = filepath.split('/')[3:5]  # Adjust to correct dataset and record id
             results_by_dataset_record[(dataset, record_id)].append((filepath, stats))
 
         dataset_records = list(results_by_dataset_record.keys())  # Get a list of all dataset-record pairs
@@ -60,42 +60,64 @@ class HistogramGenerator:
         num_histograms = len(dataset_records)
         num_rows = math.ceil(num_histograms / histograms_per_row)
 
-        fig = plt.figure(figsize=(15, num_rows * 7))
+        # Create a separate figure for the band histograms
+        fig_band = plt.figure(figsize=(15, num_rows * 7))
 
         # Create empty lists for the legend patches and labels
-        patches = []
-        labels = []
-        added_labels = set()  # Keep track of labels that have been added to the legend
+        patches_band = []
+        labels_band = []
 
         for i, (dataset, record_id) in enumerate(dataset_records):
             record_results = results_by_dataset_record[(dataset, record_id)]
             band_results = [result for result in record_results if 'band_' in result[0].split('/')[-1]]
-            mask_results = [result for result in record_results if 'human_' in result[0].split('/')[-1]]
-            colors = cm.viridis(np.linspace(0, 1, len(band_results)))  # type: ignore
+            colors_band = cm.viridis(np.linspace(0, 1, len(band_results)))  # type: ignore
 
-            ax = fig.add_subplot(num_rows, histograms_per_row, i+1)
-            for color, (filepath, stats) in zip(colors, band_results):
+            ax_band = fig_band.add_subplot(num_rows, histograms_per_row, i+1)
+            for color, (filepath, stats) in zip(colors_band, band_results):
                 hist, bins = stats['histogram']
-                ax.bar(bins[:-1], hist, width=np.diff(bins), ec="k", align="edge", alpha=0.5, color=color)
+                ax_band.bar(bins[:-1], hist, width=np.diff(bins), ec="k", align="edge", alpha=0.5, color=color)
+                patches_band.append(Rectangle((0, 0), 1, 1, fc=color))
+                labels_band.append(os.path.basename(filepath))
 
-                label = os.path.basename(filepath)
+            ax_band.set_title(f'Bands for record {record_id} in {dataset}')  
+            ax_band.grid(True)
 
-                # Only add the label to the legend if it hasn't been added before
-                if label not in added_labels:
-                    patches.append(Rectangle((0, 0), 1, 1, fc=color))
-                    labels.append(label)
-                    added_labels.add(label)  # Add the label to the set of added labels
+        # Create a single legend for the entire band figure
+        fig_band.legend(patches_band, labels_band, loc='upper right')
 
-            ax.set_title(f'Bands for record {record_id} in {dataset}')  
-            ax.grid(True)
+        output_filepath_band = os.path.join(output_dir, f'tiled_bands_histogram.png')
+        fig_band.savefig(output_filepath_band)
+        plt.close(fig_band)
 
-        # Create a single legend for the entire figure
-        fig.legend(patches, labels, loc='upper right')
+        # Create a separate figure for the mask histograms
+        fig_mask = plt.figure(figsize=(15, num_rows * 7))
 
-        output_filepath = os.path.join(output_dir, f'tiled_bands_histogram.png')
-        fig.savefig(output_filepath)
-        plt.close(fig)
-        pass
+        # Create empty lists for the legend patches and labels
+        patches_mask = []
+        labels_mask = []
+
+        for i, (dataset, record_id) in enumerate(dataset_records):
+            record_results = results_by_dataset_record[(dataset, record_id)]
+            mask_results = [result for result in record_results if 'human_' in result[0].split('/')[-1]]
+            colors_mask = cm.viridis(np.linspace(0, 1, len(mask_results)))  # type: ignore
+
+            ax_mask = fig_mask.add_subplot(num_rows, histograms_per_row, i+1)
+            for color, (filepath, stats) in zip(colors_mask, mask_results):
+                hist, bins = stats['histogram']
+                ax_mask.bar(bins[:-1], hist, width=np.diff(bins), ec="k", align="edge", alpha=0.5, color=color)
+                patches_mask.append(Rectangle((0, 0), 1, 1, fc=color))
+                labels_mask.append(os.path.basename(filepath))
+
+            ax_mask.set_title(f'Masks for record {record_id} in {dataset}')  
+            ax_mask.grid(True)
+
+        # Create a single legend for the entire mask figure
+        fig_mask.legend(patches_mask, labels_mask, loc='upper right')
+
+        output_filepath_mask = os.path.join(output_dir, f'tiled_masks_histogram.png')
+        fig_mask.savefig(output_filepath_mask)
+        plt.close(fig_mask)
+    pass
 
 class ReportGenerator:
     @staticmethod
@@ -143,7 +165,7 @@ class FileProcessor:
         file_stats = {}
 
         for root, dirs, files in os.walk(directory_path):
-            dirs[:] = [d for d in dirs if d not in ['test']] # Ignore the test directory
+            dirs[:] = [d for d in dirs if d not in ['test']] # Adjust: Ignore the test directory
             for file in files:
                 filepath = os.path.join(root, file)
                 if filepath.endswith('.npy'):  # Only process .npy files
