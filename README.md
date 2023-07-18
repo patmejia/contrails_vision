@@ -1,35 +1,35 @@
-# Contrail Detection using GOES-16 Satellite Imagery and Computer Vision
+# Climate Analytics: <br>GOES-16 and Aviation Contrails Detection
 
-![where_is_goes16](documentation/images/generated/sky-rogue-space-goes16-sat-globe-context.gif)
-*Gif: Finding where is GOES 16 within the context of Earth and Space*
+[OpenContrails: Benchmarking Contrails Detection](https://arxiv.org/abs/2304.02122) paper introduces model, contributes to climate analytics, focuses on contrails. Contrails account for ~2/3 of aviation's climate impact, ~2% of all anthropogenic climate change.
 
-![no_contrail_vs_detected_contrail](documentation/images/generated/contrail_vs_empty.gif)
-*Comparison of an image with no contrail (left) and an image with a detected contrail (right)*
+#### :: GOES-16 Satellite: Earth Monitoring ::
+![GOES-16 Satellite](documentation/images/generated/sky-rogue-space-goes16-sat-globe-context.gif)
+*GOES-16, in geostationary orbit 22,300 mi above Earth, matches Earth's rotation, providing continuous full-disk monitoring*
 
-#### Abstract:
-The paper [OpenContrails: Benchmarking Contrail Detection](https://arxiv.org/abs/2304.02122) presents a new contrail detection model that enhances the study of climate change. The model leverages multiple frames for temporal context to improve detection performance, particularly for young, linear contrails. The model utilizes the OpenContrails dataset, which contains human-labeled contrail detections from the GOES-16 satellite ([labeling-guide](https://storage.googleapis.com/goes_contrails_dataset/20230419/Contrail_Detection_Dataset_Instruction.pdf)).
+#### :: Contrail Detection: Climate Change Studies ::
+
+![Contrail Detection](documentation/images/generated/contrail_vs_empty.gif)
+*Contrails detected right (⇥), none left (⇤).*
+
+#### :: OpenContrail Dataset ::
+
+• OpenContrails dataset, collected April 2019-2020, includes:
 <br>
+• High-resolution per-pixel contrail masks.
+<br >
+• Contrail detection model output, multiple years of GOES-16 images.
+<br >
+• Focus on young, linear-shaped contrails.
+<br >
+• Use of ResNet, DeeplabV3+ architectures in contrail detection model.
+<br>
+• Dataset, outputs publicly accessible: [Google Cloud Storage](https://console.cloud.google.com/storage/browser/goes_contrails_dataset).
 
-
-> #### Q: Why focus on contrails to curb climate change impacts?
-> #### Adam Durant: Non-carbon dioxide sources — like the climate forcing from contrails — make up almost two-thirds of the aviation industry’s impact, which equates to 2% of all human-caused climate change. 
-
-<img src="documentation/images/research/arxiv_opencontrail/fig17_contrail_flights.png" width="500">
-
-####  •  Dataset: OpenContrails
-- Focuses on young, linear-shaped contrails due to their contribution to climate change.
-- Contains high-quality per-pixel contrail masks for each image.
-- Includes contrail detection model output from multiple years of GOES-16 images.
-- Covers the North and South American region with 10-minute interval images since April 2019.
-- The contrail detection model uses deep neural networks, including ResNet and DeeplabV3+ architectures.
-
-![network-architecture](documentation/images/research/network-architecture.png)
-
-The dataset and outputs are publicly available on the Google Cloud Storage bucket: [goes_contrails_dataset](https://console.cloud.google.com/storage/browser/goes_contrails_dataset)
+---
+• [Identify Contrails to Reduce Global Warming](https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming) competition underscores contrail study importance in climate change mitigation.
 
 ---
 
-#### :: Documentation ::
 
 • [Flowchart 📈: comprehensive decision tree for contrail identification](https://gist.github.com/patmejia/dfb7b0ce44accb67dbe58a9524623002)<br>
 • [Context research for the competition](https://https://www.kaggle.com/code/patimejia/context-for-goes16-contrails) <br>
@@ -38,7 +38,8 @@ The dataset and outputs are publicly available on the Google Cloud Storage bucke
 ](documentation/roadmap.md) <br>
   
 ---
-##  ▶︎ Setup
+---
+# ⤷ ▶︎ Setup
 
 ####  • using `conda`
 ```bash
@@ -85,7 +86,7 @@ kaggle competitions download -c google-research-identify-contrails-reduce-global
 ```
 ---
 
-## ▶︎ Run
+# ⤷ ▶︎ Run
 ```bash
 conda activate contrail_env 
 pytest -sv
@@ -99,26 +100,21 @@ ctrl + c
 conda deactivate
 ```
 
-####   ⦿ Usage:
+###   ⤷ ⦿ Usage:
 
 ```bash
+python src/dataset_to_histogram_reports.py ./samples/kaggle_competition_mini_sample/
+#--- 
 python src/interactive_globe.py
-
-python run.py samples/false_color_mini_sample/contrails output
-
-python run.py samples/kaggle_competition_mini_sample/test/1000834164244036115 output
-
+#---
 python -m src.utils.coordinate_converter samples/kaggle_competition_mini_sample/test/1000834164244036115 output
-
+#---
 python src/utils/rand_record_viz_with_masks_false_color.py --base_dir samples/kaggle_competition_mini_sample/test/1000834164244036115  --n_records 2 --n_times_before 4
-
+#---
 python src/utils/get_shape.py samples/kaggle_competition_mini_sample/test/1000834164244036115/band_08.npy
-
+#---
 python src/utils/rle_encoding_submission.py samples/kaggle_competition_mini_sample 2
-
-python src/dataset_to_histogram_reports.py ./samples/kaggle_competition_mini_sample/ 
 ```
-
 ---
 
 ##### • Example usage output after running (i.e. `/output/tmp.png`)
@@ -128,60 +124,67 @@ python src/main.py
 
 ![globe-temp](documentation/images/generated/globe-tmp.png)
 
-### :: Acknowledgements ::
-
-☛ https://arxiv.org/abs/2304.02122: Ng, J. Y.-H., McCloskey, K., Cui, J., Meijer, V., Brand, E., Sarna, A., Goyal, N., Van Arsdale, C., & Geraedts, S. (2023). OpenContrails: Benchmarking Contrail Detection on GOES-16 ABI. arXiv preprint arXiv:2304.02122.
-<br>
-
 ---
-☛ goes_contrails_dataset from OpenContrails: [Benchmarking Contrail Detection on GOES-16 ABI](https://console.cloud.google.com/storage/browser/goes_contrails_dataset)
-<br>
-☛ Competition: [google-research-identify-contrails-reduce-global-warming](https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming)
-<br>
-☛ [k-12: Discover contrails and make one at school](https://www.nasa.gov/sites/default/files/atoms/files/contrails_k-12.pdf)
-<br>
-☛  [How Contrails Behave: the science of contrails](https://www.globe.gov/web/s-cool/home/observation-and-reporting/contrails/the-science-of-contrails)
-<br>
-
 ---
-☛ visualization: [RAMMB CIRA, colostate.edu](https://rammb-slider.cira.colostate.edu/?sat=goes-18&sec=full_disk&x=12480&y=9274.5&z=0&angle=0&im=12&ts=1&st=0&et=0&speed=130&motion=loop&maps%5Bborders%5D=white&p%5B0%5D=geocolor&opacity%5B0%5D=1&pause=0&slider=-1&hide_controls=0&mouse_draw=0&follow_feature=0&follow_hide=0&s=rammb-slider&draw_color=FFD700&draw_width=6)
-<br>
-☛ NASA's Eyes On The Earth [Sofware](https://climate.nasa.gov/earth-now/#/), [demo video](https://www.youtube.com/watch?v=p-6DusnZ1pQ)
-<br>
-☛ rammmb.cira: [Quick Guide: Ash RGB](https://rammb.cira.colostate.edu/training/visit/quick_guides/GOES_Ash_RGB.pdf)
-<br>
-☛ How to create the standard RGB images: [Compilation of RGB Recipes (i.e. Ash RGB)](https://eumetrain.org/sites/default/files/2020-05/RGB_recipes.pdf)
 
-----
-☛ google storage [contrails-labeling-guide](https://storage.googleapis.com/goes_contrails_dataset/20230419/Contrail_Detection_Dataset_Instruction.pdf)
-<br>
-☛ penn-state-meteo3[Infrared Satellite Imagery](https://www.e-education.psu.edu/meteo3/l5_p5.html)
-<br>
-☛ penn-state-meteo3 [Interpreting Visible and Infrared Satellite Imagery_Transcript](https://view.officeapps.live.com/op/view.aspx?src=https://www.e-education.psu.edu/meteo3/sites/www.e-education.psu.edu.meteo3/files/transcripts/Interpreting%20Visible%20and%20Infrared%20Satellite%20Imagery_Transcript.docx&wdOrigin=BROWSELINK)
-<br>
-☛ [Using Python to Explore GOES-16 Data](https://edc.occ-data.org/goes16/python/)
+##  🥇 Credit goes to all authors and contributors ⤵︎ 
 
----
-☛  google storage [gcp-public-data-goes-16]( https://console.cloud.google.com/storage/browser/gcp-public-data-goes-16;tab=objects?prefix=&forceOnObjectsSortingFiltering=false)<br>
-☛ goes-r.gov: [Beginner's Guide to GOES-R Series Data](https://www.goes-r.gov/downloads/resources/documents/Beginners_Guide_to_GOES-R_Series_Data.pdf)
+☛ [OpenContrails: Benchmarking Contrail Detection on GOES-16 ABI](https://arxiv.org/abs/2304.02122) - Led by MIT Professor Steven Barrett from the Laboratory for Aviation and the Environment. 
 <br>
-☛ goes-r.gov: [GOES-R Series Product Definition and users' guide: Level 2+ Algorithm Products, page 43](https://www.goes-r.gov/products/docs/PUG-L2+-vol5.pdf)
+☛ Satellite images are from [NOAA GOES-16](https://www.goes-r.gov/).
 <br>
-☛ geostationary-operational-environmental-satellite-16 [GOES-16 (Geostationary Operational Environmental Satellite, Launch Date: Nov. 19, 2016)](https://eospso.nasa.gov/missions/geostationary-operational-environmental-satellite-16)
+☛ [goes_contrails_dataset](https://console.cloud.google.com/storage/browser/goes_contrails_dataset)
 <br>
-☛ weather.gov: [GOES-16 Band Reference Guide](https://www.weather.gov/media/crp/GOES_16_Guides_FINALBIS.pdf)
+☛ [Google Research - Identify Contrails to Reduce Global Warming Competition](https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming)
 
----
-☛ Adam Duran - Michigan Tech, Q&A with [SATAVIA: Climate and Contrails](https://www.mtu.edu/unscripted/2021/06/qa-with-satavia-climate-and-contrails.html)
+#### :: Visualization Tools ::
+☛ [RAMMB CIRA](https://rammb-slider.cira.colostate.edu/?sat=goes-18&sec=full_disk&x=12480&y=9274.5&z=0&angle=0&im=12&ts=1&st=0&et=0&speed=130&motion=loop&maps%5Bborders%5D=white&p%5B0%5D=geocolor&opacity%5B0%5D=1&pause=0&slider=-1&hide_controls=0&mouse_draw=0&follow_feature=0&follow_hide=0&s=rammb-slider&draw_color=FFD700&draw_width=6)
 <br>
-☛ Catalogues of atmospheric [optics](https://atoptics.co.uk/atoptics/shuttle.htm): [rocket plume, contrail and shuttle plume shadow](https://atoptics.co.uk/atoptics/contr1.htm)
+☛ [GOES-16/17](https://www.star.nesdis.noaa.gov/GOES/index.php)
+<br>
+☛ [NASA's Eyes On The Earth Software](https://climate.nasa.gov/earth-now/#/), [Demo](https://www.youtube.com/watch?v=p-6DusnZ1pQ)
+<br>
+☛ [Ash RGB Guide](https://rammb.cira.colostate.edu/training/visit/quick_guides/GOES_Ash_RGB.pdf)
+<br>
+☛ [RGB Recipes](https://eumetrain.org/sites/default/files/2020-05/RGB_recipes.pdf)
+
+
+#### :: Educational Resources ::
+☛ [Discover contrails at school](https://www.nasa.gov/sites/default/files/atoms/files/contrails_k-12.pdf)
+<br>
+☛ [Science of contrails](https://www.globe.gov/web/s-cool/home/observation-and-reporting/contrails/the-science-of-contrails)
+<br>
+☛ [Contrails-labeling-guide](https://storage.googleapis.com/goes_contrails_dataset/20230419/Contrail_Detection_Dataset_Instruction.pdf)
+<br>
+☛ [Infrared Satellite Imagery](https://www.e-education.psu.edu/meteo3/l5_p5.html)
+<br>
+☛ [Interpreting Satellite Imagery](https://view.officeapps.live.com/op/view.aspx?src=https://www.e-education.psu.edu/meteo3/sites/www.e-education.psu.edu.meteo3/files/transcripts/Interpreting%20Visible%20and%20Infrared%20Satellite%20Imagery_Transcript.docx)
+<br>
+☛ [Using Python with GOES-16 Data](https://edc.occ-data.org/goes16/python/)
+<br>
+☛ [Q&A with SATAVIA](https://www.mtu.edu/unscripted/2021/06/qa-with-satavia-climate-and-contrails.html)
+<br>
+☛ [Atmospheric Optics Catalogues](https://atoptics.co.uk/atoptics/shuttle.htm)
 <br>
 ☛ [STAC](https://stacspec.org/en/tutorials/1-read-stac-python/)
 <br>
-☛ [WGS84 coordinate system](https://support.virtual-surveyor.com/en/support/solutions/articles/1000261351-what-is-wgs84-) 
+☛ [WGS84 Coordinate System](https://support.virtual-surveyor.com/en/support/solutions/articles/1000261351-what-is-wgs84-)
 
-----
-:: From Kagglers :: <br>
+
+#### :: GOES-16 Resources ::
+
+☛ [gcp-public-data-goes-16](https://console.cloud.google.com/storage/browser/gcp-public-data-goes-16;tab=objects?prefix=&forceOnObjectsSortingFiltering=false)
+<br>
+☛ [Beginner's Guide to GOES-R](https://www.goes-r.gov/downloads/resources/documents/Beginners_Guide_to_GOES-R_Series_Data.pdf)
+<br>
+☛ [GOES-R Series Product Definition](https://www.goes-r.gov/products/docs/PUG-L2+-vol5.pdf)
+<br>
+☛ [GOES-16](https://eospso.nasa.gov/missions/geostationary-operational-environmental-satellite-16)
+<br>
+☛ [GOES-16 Band Reference Guide](https://www.weather.gov/media/crp/GOES_16_Guides_FINALBIS.pdf)
+
+
+#### :: From Kagglers ::
 ☛ [Inversion - isualize (input dataset 450.91 GB)](https://www.kaggle.com/code/inversion/visualizing-contrails#OpenContrails-dataset-documentation)
 <br>
 ☛ [Shashwatraman -  contrails dataset sample (11.74 GB) train_df.csv, valid_df.csv](https://www.kaggle.com/datasets/shashwatraman/contrails-images-ash-color)
@@ -190,12 +193,11 @@ python src/main.py
 <br>
 ☛ [keegil - Using U-Net to Predict Segmentation Masks in Python & Keras](https://www.kaggle.com/keegil/keras-u-net-starter-lb-0-277)
 <br>
-☛  [anshuls235 - Time Series Forecasting-EDA, FE & Modelling📈 -  ](https://www.kaggle.com/code/anshuls235/time-series-forecasting-eda-fe-modelling?scriptVersionId=42985144&cellId=7)
+☛  [anshuls235 - Time Series Forecasting-EDA, FE & Modelling](https://www.kaggle.com/code/anshuls235/time-series-forecasting-eda-fe-modelling?scriptVersionId=42985144&cellId=7)
 <br>
-☛  [jamesmcguigan - Reading Parquet Files - RAM/CPU Optimization -  ](https://www.kaggle.com/code/jamesmcguigan/reading-parquet-files-ram-cpu-optimization)
+☛  [jamesmcguigan - RAM/CPU Optimization | downcasting unit8 → float64](https://www.kaggle.com/code/jamesmcguigan/reading-parquet-files-ram-cpu-optimization)
 
-----
-
+---
 
 <div style="background-color: #1f1f1f; color: #f2f2f2; padding: 10px; border-radius: 5px;">
 <h3>Contributing...</h3>
@@ -207,7 +209,7 @@ python src/main.py
 <div style="background-color: #1f1f1f; color: #f2f2f2; padding: 10px; border-radius: 5px;">
   <h3>If you found this repository helpful...</h3>
   <p>
-  Please consider giving it a star. Your support helps me continue to develop high-quality code and pursue my career as a data analyst/engineer. Feedback is always welcome and appreciated. Thank you for taking the time to read my work! 
+  Please consider giving it a star. Your support helps me continue to develop high-quality code and pursue my career in data analitics and pipelines. Feedback is always welcome and appreciated. <strong>Thank you</strong> for taking the time to read my work!
   </p> 
   <h4>
   <p style="text-align: right;">
@@ -216,7 +218,6 @@ python src/main.py
   </p>
 </div>
 
----
 
 ## License
 This project is licensed under the terms of the [MIT license](LICENSE).
