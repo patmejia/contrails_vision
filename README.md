@@ -42,7 +42,7 @@
 
 ---
 #### :: Identify Contrails to Reduce Global Warming ::
-• [Identify Contrails to Reduce Global Warming](https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming) competition underscores contrail study importance in climate change mitigation.
+• [The Kaggle competition](https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming) competition underscores contrail study importance in climate change mitigation.
 
 ---
 
