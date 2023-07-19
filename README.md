@@ -208,9 +208,7 @@ This project is licensed under the terms of the [MIT license](LICENSE).
 <div style="background-color: #1f1f1f; color: #f2f2f2; padding: 10px; border-radius: 5px;">
   <h3>If you found this repository helpful...</h3>
   <p>
-  Please consider giving it a star. Your support helps me continue to develop high-quality code and pursue my career in data analitics and pipelines. Feedback is always welcome and appreciated. Thank you for taking the
-
- time to read my work!
+  Please consider giving it a star. Your support helps me continue to develop high-quality code and pursue my career in data analitics and pipelines. Feedback is always welcome and appreciated. Thank you for taking the time to read this study!
   </p> 
   <h4>
   <p style="text-align: right;">
