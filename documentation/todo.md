@@ -35,3 +35,9 @@
 
 ---
 ##### ☒ Draw: script to imagine a global reference ellipsoid
+
+---
+
+
+- **Pending**: Implement changes to reduce memory usage in script by processing numpy files in smaller batches, reducing the resolution of histograms, or refactoring code to discard data when no longer needed. Also, fix the repeated legend issue.
+
