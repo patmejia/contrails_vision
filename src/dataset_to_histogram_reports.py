@@ -76,11 +76,8 @@ class HistogramGenerator:
             for color, (filepath, stats) in zip(colors_band, band_results):
                 hist, bins = stats['histogram']
                 ax_band.bar(bins[:-1], hist, width=np.diff(bins), ec="k", align="edge", alpha=0.5, color=color)
-                
-                # Moved the checks inside the loop
-                if os.path.basename(filepath) not in labels_band:
-                    labels_band.append(os.path.basename(filepath))
-                    patches_band.append(Rectangle((0, 0), 1, 1, fc=color))
+                patches_band.append(Rectangle((0, 0), 1, 1, fc=color))
+                labels_band.append(os.path.basename(filepath))
 
             ax_band.set_title(f'Bands for record {record_id} in {dataset}')  
             ax_band.grid(True)
@@ -108,11 +105,8 @@ class HistogramGenerator:
             for color, (filepath, stats) in zip(colors_mask, mask_results):
                 hist, bins = stats['histogram']
                 ax_mask.bar(bins[:-1], hist, width=np.diff(bins), ec="k", align="edge", alpha=0.5, color=color)
-                
-                # Moved the checks inside the loop
-                if os.path.basename(filepath) not in labels_mask:
-                    labels_mask.append(os.path.basename(filepath))
-                    patches_mask.append(Rectangle((0, 0), 1, 1, fc=color))
+                patches_mask.append(Rectangle((0, 0), 1, 1, fc=color))
+                labels_mask.append(os.path.basename(filepath))
 
             ax_mask.set_title(f'Masks for record {record_id} in {dataset}')  
             ax_mask.grid(True)
@@ -123,7 +117,6 @@ class HistogramGenerator:
         output_filepath_mask = os.path.join(output_dir, f'tiled_masks_histogram.png')
         fig_mask.savefig(output_filepath_mask)
         plt.close(fig_mask)
-    
     pass
 
 class ReportGenerator:
