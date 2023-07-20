@@ -1,5 +1,9 @@
 # Climate Analytics: <br>GOES-16 and Aviation Contrails Detection
 
+The [European Geosciences Union](https://www.sciencedaily.com/releases/2019/06/190627113949.htm) suggests contrail clouds may have a more pronounced global warming impact than even CO2 emissions. This insight aligns with the concept of [effective radiative forcing $(W/m^2)$](https://climate.mit.edu/explainers/radiative-forcing) in climate science, which gauges the overall warming effect. Using satellites and plane sensors, researchers aim to analyze contrail formation, integrating data on weather, turbulence, and wind speed. 
+
+>The goal is to develop a model that can predict contrail formation and duration.
+
 ## Table of Contents:
 1. [GOES-16 Satellite: Earth Monitoring](#goes-16-satellite-earth-monitoring)
 2. [Contrail Detection: Climate Change Studies](#contrail-detection-climate-change-studies)
@@ -158,7 +162,7 @@ python src/main.py
 • [NASA's Eyes On The Earth Software](https://climate.nasa.gov/earth-now/#/), [Demo](https://www.youtube.com/watch?v=p-6DusnZ1pQ)
 • [Ash RGB Guide](https://rammb.cira.colostate.edu/training/visit/quick_guides/GOES_Ash_RGB.pdf)
 • [RGB Recipes](https://eumetrain.org/sites/default/files/2020-05/RGB_recipes.pdf)
-• [deck.gl](https://deck.gl/examples/hexagon-layer)
+• [deck.gl](https://deck.gl/examples/hexagon-layer) 
 
 #### Educational Resources
 • [Discover contrails at school](https://www.nasa.gov/sites/default/files/atoms/files/contrails_k-12.pdf)
@@ -171,6 +175,8 @@ python src/main.py
 • [Atmospheric Optics Catalogues](https://atoptics.co.uk/atoptics/shuttle.htm)
 • [STAC](https://stacspec.org/en/tutorials/1-read-stac-python/)
 • [WGS84 Coordinate System](https://support.virtual-surveyor.com/en/support/solutions/articles/1000261351-what-is-wgs84-)
+• [Moderate Resolution Imaging Spectroradiometer (MODIS)](https://www.earthdata.nasa.gov/learn/find-data/near-real-time/modis)
+• [Could air someday power your flight? Airlines are betting on it.](https://portal.staralliance.com/cms/news/hot-topics/2023-01-20/general/could-air-someday-power-your-flight-airlines-are-betting-on-it)
 
 #### GOES-16 Resources
 • [gcp-public-data-goes-16](https://console.cloud.google.com/storage/browser/gcp-public-data-goes-16;tab=objects?prefix=&forceOnObjectsSortingFiltering=false)
