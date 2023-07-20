@@ -9,30 +9,31 @@ Contrail clouds, artificial cirrus formations due to aircraft exhaust, significa
 ## Table of Contents:
 1. [GOES-16 Satellite: Earth Monitoring](#goes-16-satellite-earth-monitoring)
 2. [Contrail Detection: Climate Change Studies](#contrail-detection-climate-change-studies)
-3. [Dataset → OpenContrails: Benchmarking Contrail Detection on GOES-16 ABI](#dataset--opencontrails-benchmarking-contrail-detection-on-goes-16-abi)
-4. [Identify Contrails to Reduce Global Warming](#identify-contrails-to-reduce-global-warming)
+3. [Dataset OpenContrails: Benchmarking Contrail Detection on GOES-16 ABI](#dataset-opencontrails-benchmarking-contrail-detection-on-goes-16-abi)
+4. [Kaggle Competition: Identify Contrails to Reduce Global Warming](#kaggle-competition-identify-contrails-to-reduce-global-warming)
 5. [Docs](#docs)
-6. [Setup](#⤷-▶︎-setup)
-7. [Run](#⤷-▶︎-run)
-8. [Usage](#⤷-⦿-usage)
-9. [Output Example](#output-example-outputtmppng)
-10. [Credits](#credit-goes-to-all-authors-and-contributors)
+6. [Setup](#setup)
+7. [Run](#run)
+8. [Usage](#usage)
+9. [Output Example](#output-example)
+10. [Credit](#credit-goes-to-all-authors-and-contributors)
 11. [Contributing](#contributing)
 12. [License](#license)
 
 ---
 
-[OpenContrails: Benchmarking Contrails Detection](https://arxiv.org/abs/2304.02122) paper underscores contrail's importance, attributing them to ~2/3 of aviation's climate impact and ~2% of all anthropogenic climate changes.
+[OpenContrails: Benchmarking Contrails Detection](https://arxiv.org/abs/2304.02122) paper underlines contrail's importance, attributing them to $\sim \frac{2}{3}$ of aviation's climate impact and $\sim 2\% $ of all anthropogenic climate changes.
 
-#### :: GOES-16 Satellite: Earth Monitoring ::
+### GOES-16 Satellite: Earth Monitoring
+
 ![GOES-16 Satellite](documentation/images/generated/sky-rogue-space-goes16-sat-globe-context.gif)
 *GOES-16 provides continuous monitoring from its geostationary orbit 22,300 mi above Earth.*
 
-#### :: Contrail Detection: Climate Change Studies ::
+#### Contrail Detection: Climate Change Studies
 ![Contrail Detection](documentation/images/generated/contrail_vs_empty.gif)
 *Right side shows detected contrails (⇥); left side shows absence (⇤).*
 
-#### :: Dataset OpenContrails: Benchmarking Contrail Detection on GOES-16 ABI ::
+#### Dataset OpenContrails: Benchmarking Contrail Detection on GOES-16 ABI
 • OpenContrails dataset, collected between April 2019-2020, encompasses:
   - High-resolution contrail masks.
   - Contrail detection model outputs from multiple GOES-16 image years.
@@ -42,12 +43,18 @@ Contrail clouds, artificial cirrus formations due to aircraft exhaust, significa
 
 ---
 
-#### :: Identify Contrails to Reduce Global Warming ::
-• The [Kaggle competition](https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming) emphasizes the importance of contrail studies in climate change mitigation.
+#### Kaggle Competition: Identify Contrails to Reduce Global Warming
+
+The [competition](https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming) aims to develop a model predicting contrail formation and duration. 
+
+The dataset contains 244,400 images, each with 16 spectral bands, from the GOES-16 satellite. The images are labeled with contrail masks, and the goal is to predict the contrail masks for the test set. The competition is sponsored by Google Research and the Laboratory for Aviation and the Environment at MIT. 
+
+Our work will quantifiably improve the confidence in the prediction of contrail-forming regions and the techniques to avoid creating them.
+
 
 ---
 
-#### :: Docs ::
+#### Docs
 • [Flowchart 📈 | Decision tree for contrail identification](https://gist.github.com/patmejia/dfb7b0ce44accb67dbe58a9524623002)
 • [Context | Research insights for this study](https://www.kaggle.com/code/patimejia/context-for-goes16-contrails)
 • [Pre-print ArXiv | OpenContrails and GOES-16 ABI | Visual Overview](https://www.kaggle.com/code/patimejia/arxiv-opencontrail-nutshell)
@@ -62,7 +69,7 @@ This revision keeps the content technical, precise, and concise. The changes foc
 
 ---
 
-# ⤷ ▶︎ Setup
+# Setup
 ####  • using `conda`
 ```bash
 conda env create -f requirements.yml
@@ -111,7 +118,7 @@ kaggle competitions download -c google-research-identify-contrails-reduce-global
 
 ---
 
-# ⤷ ▶︎ Run
+# Run
 ```bash
 conda activate contrail_env 
 pytest -sv
@@ -125,7 +132,7 @@ ctrl + c
 conda deactivate
 ```
 
-### ⤷ ⦿ Usage:
+### Usage
 ```bash
 python src/dataset_to_histogram_reports.py ./samples/kaggle_competition_mini_sample/
 #--- 
@@ -140,7 +147,8 @@ python src/utils/get_shape.py samples/kaggle_competition_mini_sample/test/100083
 python src/utils/rle_encoding_submission.py samples/kaggle_competition_mini_sample 2
 ```
 
-##### Output Example: `/output/tmp.png`
+### Output Example
+##### `/output/tmp.png`
 ```bash
 python src/main.py
 ```
@@ -178,6 +186,7 @@ python src/main.py
 • [WGS84 Coordinate System](https://support.virtual-surveyor.com/en/support/solutions/articles/1000261351-what-is-wgs84-)
 • [Moderate Resolution Imaging Spectroradiometer (MODIS)](https://www.earthdata.nasa.gov/learn/find-data/near-real-time/modis)
 • [Could air someday power your flight? Airlines are betting on it.](https://portal.staralliance.com/cms/news/hot-topics/2023-01-20/general/could-air-someday-power-your-flight-airlines-are-betting-on-it)
+• [Efficacy of climate forcings | Hansen et. al](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005JD005776)
 
 #### GOES-16 Resources
 • [gcp-public-data-goes-16](https://console.cloud.google.com/storage/browser/gcp-public-data-goes-16;tab=objects?prefix=&forceOnObjectsSortingFiltering=false)
