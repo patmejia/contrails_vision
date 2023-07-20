@@ -1,8 +1,10 @@
-# Climate Analytics: <br>GOES-16 and Aviation Contrails Detection
+# Climate Analytics: GOES-16 and Aviation Contrails Detection
 
-The [European Geosciences Union](https://www.sciencedaily.com/releases/2019/06/190627113949.htm) suggests contrail clouds may have a more pronounced global warming impact than even CO2 emissions. This insight aligns with the concept of [effective radiative forcing $(W/m^2)$](https://climate.mit.edu/explainers/radiative-forcing) in climate science, which gauges the overall warming effect. Using satellites and plane sensors, researchers aim to analyze contrail formation, integrating data on weather, turbulence, and wind speed. 
+Contrail clouds, artificial cirrus formations due to aircraft exhaust, significantly influence global warming, potentially more than CO2 emissions, by affecting Earth's radiation balance [European Geosciences Union, 2019](https://www.sciencedaily.com/releases/2019/06/190627113949.htm). This effect is quantified by [effective radiative forcing](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2019JD030581) (ERF), which gauges the net energy flux change at the atmosphere's top. Using satellite and aircraft data, combined with insights from weather conditions and turbulence, the aim is to predict and understand contrail formation.
 
->The goal is to develop a model that can predict contrail formation and duration.
+###### The ERF equation  $$ \Delta N = F - \lambda \Delta T $$  linearly links top-of-atmosphere (TOA) energy imbalance ($\Delta N $), effective radiative forcing (F), climate feedback ($ \lambda $), and global temperature change ($ \Delta T $). A positive $ \lambda $ amplifies warming, whereas a negative one reduces it.
+
+> **Objective:** Develop a model predicting contrail formation and duration.
 
 ## Table of Contents:
 1. [GOES-16 Satellite: Earth Monitoring](#goes-16-satellite-earth-monitoring)
@@ -14,49 +16,48 @@ The [European Geosciences Union](https://www.sciencedaily.com/releases/2019/06/1
 7. [Run](#⤷-▶︎-run)
 8. [Usage](#⤷-⦿-usage)
 9. [Output Example](#output-example-outputtmppng)
-10. [Credit goes to all authors and contributors](#credit-goes-to-all-authors-and-contributors)
+10. [Credits](#credit-goes-to-all-authors-and-contributors)
 11. [Contributing](#contributing)
 12. [License](#license)
 
 ---
-<br>
 
-[OpenContrails: Benchmarking Contrails Detection](https://arxiv.org/abs/2304.02122) paper introduces model, contributes to climate analytics, focuses on contrails. Contrails account for ~2/3 of aviation's climate impact, ~2% of all anthropogenic climate change.
+[OpenContrails: Benchmarking Contrails Detection](https://arxiv.org/abs/2304.02122) paper underscores contrail's importance, attributing them to ~2/3 of aviation's climate impact and ~2% of all anthropogenic climate changes.
 
 #### :: GOES-16 Satellite: Earth Monitoring ::
 ![GOES-16 Satellite](documentation/images/generated/sky-rogue-space-goes16-sat-globe-context.gif)
-*GOES-16, in geostationary orbit 22,300 mi above Earth, matches Earth's rotation, providing continuous full-disk monitoring.*
+*GOES-16 provides continuous monitoring from its geostationary orbit 22,300 mi above Earth.*
 
 #### :: Contrail Detection: Climate Change Studies ::
 ![Contrail Detection](documentation/images/generated/contrail_vs_empty.gif)
-*Contrails detected right (⇥), none left (⇤).*
+*Right side shows detected contrails (⇥); left side shows absence (⇤).*
 
 #### :: Dataset OpenContrails: Benchmarking Contrail Detection on GOES-16 ABI ::
-• OpenContrails dataset, collected April 2019-2020, includes:
-<br>
-• High-resolution per-pixel contrail masks.
-<br>
-• Contrail detection model output, multiple years of GOES-16 images.
-<br>
-• Focus on young, linear-shaped contrails.
-<br>
-• Use of ResNet, DeeplabV3+ architectures in contrail detection model.
-<br>
-• Dataset, outputs publicly accessible: [Google Cloud Storage](https://console.cloud.google.com/storage/browser/goes_contrails_dataset).
+• OpenContrails dataset, collected between April 2019-2020, encompasses:
+  - High-resolution contrail masks.
+  - Contrail detection model outputs from multiple GOES-16 image years.
+  - Emphasis on young, linear-shaped contrails.
+  - Utilization of ResNet and DeeplabV3+ architectures for contrail detection.
+  - Dataset is publicly available on [Google Cloud Storage](https://console.cloud.google.com/storage/browser/goes_contrails_dataset).
 
 ---
+
 #### :: Identify Contrails to Reduce Global Warming ::
-• [The Kaggle competition](https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming) competition underscores contrail study importance in climate change mitigation.
+• The [Kaggle competition](https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming) emphasizes the importance of contrail studies in climate change mitigation.
 
 ---
 
 #### :: Docs ::
-• [Flowchart 📈 | comprehensive decision tree for contrail identification](https://gist.github.com/patmejia/dfb7b0ce44accb67dbe58a9524623002)
-• [Context | research for this study](https://www.kaggle.com/code/patimejia/context-for-goes16-contrails)
-• [Pre-print ArXiv | OpenContrails and GOES-16 ABI | Visual Booklet](https://www.kaggle.com/code/patimejia/arxiv-opencontrail-nutshell)
+• [Flowchart 📈 | Decision tree for contrail identification](https://gist.github.com/patmejia/dfb7b0ce44accb67dbe58a9524623002)
+• [Context | Research insights for this study](https://www.kaggle.com/code/patimejia/context-for-goes16-contrails)
+• [Pre-print ArXiv | OpenContrails and GOES-16 ABI | Visual Overview](https://www.kaggle.com/code/patimejia/arxiv-opencontrail-nutshell)
 • [Roadmap 📍| Contrail Analysis](documentation/roadmap.md)
 
-![Alt text](documentation/images/generated/tiled_bands_2_by_5_histogram.png)
+---
+
+This revision keeps the content technical, precise, and concise. The changes focus on making the content more readable and structured while retaining all the key technical details.
+
+![overlayed_bands](documentation/images/generated/tiled_bands_2_by_5_histogram.png)
 *The overlayed histograms highlight varying pixel distributions across spectral bands, predominantly showcasing lower reflectance values in satellite imagery data.*
 
 ---
