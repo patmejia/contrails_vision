@@ -2,7 +2,7 @@
 
 Contrail clouds, artificial cirrus formations due to aircraft exhaust, significantly influence global warming, potentially more than CO2 emissions, by affecting Earth's radiation balance [European Geosciences Union, 2019](https://www.sciencedaily.com/releases/2019/06/190627113949.htm). This effect is quantified by [effective radiative forcing](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2019JD030581) (ERF), which gauges the net energy flux change at the atmosphere's top. Using satellite and aircraft data, combined with insights from weather conditions and turbulence, the aim is to predict and understand contrail formation.
 
-###### The ERF equation  $$ \Delta N = F - \lambda \Delta T $$  linearly links top-of-atmosphere (TOA) energy imbalance ($\Delta N $), effective radiative forcing (F), climate feedback ($ \lambda $), and global temperature change ($ \Delta T $). A positive $ \lambda $ amplifies warming, whereas a negative one reduces it.
+###### The ERF equation  $$\Delta N = F - \lambda \Delta T$$  linearly links top-of-atmosphere $TOA$ energy imbalance $\Delta N$, effective radiative forcing $F$, climate feedback $\lambda$, and global temperature change $\Delta T$. A positive $\lambda$ amplifies warming, whereas a negative one reduces it.
 
 > **Objective:** Develop a model predicting contrail formation and duration.
 
@@ -22,7 +22,7 @@ Contrail clouds, artificial cirrus formations due to aircraft exhaust, significa
 
 ---
 
-[OpenContrails: Benchmarking Contrails Detection](https://arxiv.org/abs/2304.02122) paper underlines contrail's importance, attributing them to $\sim \frac{2}{3}$ of aviation's climate impact and $\sim 2\% $ of all anthropogenic climate changes.
+[OpenContrails: Benchmarking Contrails Detection](https://arxiv.org/abs/2304.02122) paper underlines contrail's importance, attributing them to $\sim \frac{2}{3}$ of aviation's climate impact and $\sim 2\%$ of all anthropogenic climate changes.
 
 ### GOES-16 Satellite: Earth Monitoring
 
