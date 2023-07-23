@@ -1,63 +1,78 @@
-# Climate Analytics: <br>GOES-16 and Aviation Contrails Detection
+# Climate Analytics: GOES-16 and Aviation Contrails Detection
+### GOES-16 Satellite: Earth Monitoring
+
+![GOES-16 Satellite](documentation/images/generated/sky-rogue-space-goes16-sat-globe-context.gif)
+*GOES-16 provides continuous monitoring from its geostationary orbit 22,300 mi above Earth.*
+
+Contrail clouds, artificial cirrus formations due to aircraft exhaust, significantly influence global warming, potentially more than CO2 emissions, by affecting Earth's radiation balance [European Geosciences Union, 2019](https://www.sciencedaily.com/releases/2019/06/190627113949.htm). This effect is quantified by [effective radiative forcing](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2019JD030581) (ERF), which gauges the net energy flux change at the atmosphere's top. Using satellite and aircraft data, combined with insights from weather conditions and turbulence, the aim is to predict and understand contrail formation.
+
+###### The ERF equation  $$\Delta N = F - \lambda \Delta T$$  linearly links top-of-atmosphere $TOA$ energy imbalance $\Delta N$, effective radiative forcing $F$, climate feedback $\lambda$, and global temperature change $\Delta T$. A positive $\lambda$ amplifies warming, whereas a negative one reduces it.
+
+> **Objective:** Develop a model predicting contrail formation and duration.
 
 ## Table of Contents:
-1. [GOES-16 Satellite: Earth Monitoring](#goes-16-satellite-earth-monitoring)
-2. [Contrail Detection: Climate Change Studies](#contrail-detection-climate-change-studies)
-3. [Dataset → OpenContrails: Benchmarking Contrail Detection on GOES-16 ABI](#dataset--opencontrails-benchmarking-contrail-detection-on-goes-16-abi)
-4. [Identify Contrails to Reduce Global Warming](#identify-contrails-to-reduce-global-warming)
-5. [Docs](#docs)
-6. [Setup](#⤷-▶︎-setup)
-7. [Run](#⤷-▶︎-run)
-8. [Usage](#⤷-⦿-usage)
-9. [Output Example](#output-example-outputtmppng)
-10. [Credit goes to all authors and contributors](#credit-goes-to-all-authors-and-contributors)
-11. [Contributing](#contributing)
-12. [License](#license)
+1. [Introduction: Climate Analytics and Contrails](#climate-analytics-goes-16-and-aviation-contrails-detection)
+2. [Objective](#objective)
+3. [GOES-16 Satellite: Earth Monitoring](#goes-16-satellite-earth-monitoring)
+4. [Contrail Detection: Climate Change Studies](#contrail-detection-climate-change-studies)
+5. [Dataset OpenContrails: Benchmarking on GOES-16 ABI](#dataset-opencontrails-benchmarking-contrail-detection-on-goes-16-abi)
+6. [Kaggle Competition: Identify Contrails](#kaggle-competition-identify-contrails-to-reduce-global-warming)
+7. [Documentation and Resources](#docs)
+8. [Setup](#setup)
+9. [Pipeline: Connect to Kaggle Datasets](#pipeline-connect-to-kaggle-datasets)
+10. [Run and Usage](#run)
+11. [Output Example](#output-example)
+12. [Credits](#credit-goes-to-all-authors-and-contributors)
+13. [Contributing](#contributing)
+14. [License](#license)
+15. [Acknowledgments and Support](#acknowledgments-and-support)
+
 
 ---
-<br>
 
-[OpenContrails: Benchmarking Contrails Detection](https://arxiv.org/abs/2304.02122) paper introduces model, contributes to climate analytics, focuses on contrails. Contrails account for ~2/3 of aviation's climate impact, ~2% of all anthropogenic climate change.
+[OpenContrails: Benchmarking Contrails Detection](https://arxiv.org/abs/2304.02122) paper underlines contrail's importance, attributing them to $\sim \frac{2}{3}$ of aviation's climate impact and $\sim 2\%$ of all anthropogenic climate changes.
 
-#### :: GOES-16 Satellite: Earth Monitoring ::
-![GOES-16 Satellite](documentation/images/generated/sky-rogue-space-goes16-sat-globe-context.gif)
-*GOES-16, in geostationary orbit 22,300 mi above Earth, matches Earth's rotation, providing continuous full-disk monitoring.*
 
-#### :: Contrail Detection: Climate Change Studies ::
+#### Contrail Detection: Climate Change Studies
 ![Contrail Detection](documentation/images/generated/contrail_vs_empty.gif)
-*Contrails detected right (⇥), none left (⇤).*
+*Right side shows detected contrails (⇥); left side shows absence (⇤).*
 
-#### :: Dataset OpenContrails: Benchmarking Contrail Detection on GOES-16 ABI ::
-• OpenContrails dataset, collected April 2019-2020, includes:
-<br>
-• High-resolution per-pixel contrail masks.
-<br>
-• Contrail detection model output, multiple years of GOES-16 images.
-<br>
-• Focus on young, linear-shaped contrails.
-<br>
-• Use of ResNet, DeeplabV3+ architectures in contrail detection model.
-<br>
-• Dataset, outputs publicly accessible: [Google Cloud Storage](https://console.cloud.google.com/storage/browser/goes_contrails_dataset).
-
----
-#### :: Identify Contrails to Reduce Global Warming ::
-• [The Kaggle competition](https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming) competition underscores contrail study importance in climate change mitigation.
+#### Dataset OpenContrails: Benchmarking Contrail Detection on GOES-16 ABI
+• OpenContrails dataset, collected between April 2019-2020, encompasses:
+  - High-resolution contrail masks.
+  - Contrail detection model outputs from multiple GOES-16 image years.
+  - Emphasis on young, linear-shaped contrails.
+  - Utilization of ResNet and DeeplabV3+ architectures for contrail detection.
+  - Dataset is publicly available on [Google Cloud Storage](https://console.cloud.google.com/storage/browser/goes_contrails_dataset).
 
 ---
 
-#### :: Docs ::
-• [Flowchart 📈 | comprehensive decision tree for contrail identification](https://gist.github.com/patmejia/dfb7b0ce44accb67dbe58a9524623002)
-• [Context | research for this study](https://www.kaggle.com/code/patimejia/context-for-goes16-contrails)
-• [Pre-print ArXiv | OpenContrails and GOES-16 ABI | Visual Booklet](https://www.kaggle.com/code/patimejia/arxiv-opencontrail-nutshell)
+#### Kaggle Competition: Identify Contrails to Reduce Global Warming
+
+The [competition](https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming) aims to develop a model predicting contrail formation and duration. 
+
+The dataset contains 244,400 images, each with 16 spectral bands, from the GOES-16 satellite. The images are labeled with contrail masks, and the goal is to predict the contrail masks for the test set. The competition is sponsored by Google Research and the Laboratory for Aviation and the Environment at MIT. 
+
+Our work will quantifiably improve the confidence in the prediction of contrail-forming regions and the techniques to avoid creating them.
+
+
+---
+
+#### Docs
+• [Flowchart 📈 | Decision tree for contrail identification](https://gist.github.com/patmejia/dfb7b0ce44accb67dbe58a9524623002)
+• [Context | Research insights for this study](https://www.kaggle.com/code/patimejia/context-for-goes16-contrails)
+• [Pre-print ArXiv | OpenContrails and GOES-16 ABI | Visual Overview](https://www.kaggle.com/code/patimejia/arxiv-opencontrail-nutshell)
 • [Roadmap 📍| Contrail Analysis](documentation/roadmap.md)
 
-![Alt text](documentation/images/generated/tiled_bands_2_by_5_histogram.png)
+---
+
+
+![overlayed_bands](documentation/images/generated/tiled_bands_2_by_5_histogram.png)
 *The overlayed histograms highlight varying pixel distributions across spectral bands, predominantly showcasing lower reflectance values in satellite imagery data.*
 
 ---
 
-# ⤷ ▶︎ Setup
+# Setup
 ####  • using `conda`
 ```bash
 conda env create -f requirements.yml
@@ -82,16 +97,20 @@ pip install -r requirements.txt
 
 ---
 
-### ⦿ Kaggle api key (optional)
+## Pipeline: Connect to Kaggle Datasets
+
+### ⦿ Kaggle api key
+#### Visit [Kaggle Settings](https://www.kaggle.com/settings). Under the API section, click on “Create New API Token” to download the `kaggle.json` file.
+#### Run the following commands in your terminal:
 ```bash
 pip install kaggle
 mkdir ~/.kaggle
-mv /path/to/kaggle.json ~/.kaggle/kaggle.json
+mv /path/to/kaggle.json ~/.kaggle/kaggle.json # move .json to kaggle dir (i.e. mv ~ops/Downloads/kaggle.json ~/.kaggle/kaggle.json)
 chmod 600 ~/.kaggle/kaggle.json
 kaggle competitions list
 ```
 
-###  ⦿ Download data (optional)
+###  ⦿ Download a Kaggle dataset
 #####  ∙  sample-dataset ▸ ash-color [22.4k files - 11.74 GB](https://www.kaggle.com/shashwatraman/contrails-images-ash-color)
 ```bash 
 kaggle datasets download shashwatraman/contrails-images-ash-color -p /path/to/desired/directory
@@ -99,14 +118,14 @@ unzip contrails-images-ash-color.zip -d /path/to/desired/directory
 rm contrails-images-ash-color.zip
 ```
 
-#####  ∙  full-dataset  ▸  OpenContrails [244.4k files - 450.91 GB](https://arxiv.org/pdf/2304.02122.pdf)
+#####  ∙  full-dataset  ▸  OpenContrails [244.4k files - 450.91 GB](https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming/data)
 ```bash
 kaggle competitions download -c google-research-identify-contrails-reduce-global-warming
 ```
 
 ---
 
-# ⤷ ▶︎ Run
+# Run
 ```bash
 conda activate contrail_env 
 pytest -sv
@@ -120,7 +139,7 @@ ctrl + c
 conda deactivate
 ```
 
-### ⤷ ⦿ Usage:
+### Usage
 ```bash
 python src/dataset_to_histogram_reports.py ./samples/kaggle_competition_mini_sample/
 #--- 
@@ -135,7 +154,8 @@ python src/utils/get_shape.py samples/kaggle_competition_mini_sample/test/100083
 python src/utils/rle_encoding_submission.py samples/kaggle_competition_mini_sample 2
 ```
 
-##### Output Example: `/output/tmp.png`
+### Output Example
+##### `/output/tmp.png`
 ```bash
 python src/main.py
 ```
@@ -158,7 +178,7 @@ python src/main.py
 • [NASA's Eyes On The Earth Software](https://climate.nasa.gov/earth-now/#/), [Demo](https://www.youtube.com/watch?v=p-6DusnZ1pQ)
 • [Ash RGB Guide](https://rammb.cira.colostate.edu/training/visit/quick_guides/GOES_Ash_RGB.pdf)
 • [RGB Recipes](https://eumetrain.org/sites/default/files/2020-05/RGB_recipes.pdf)
-• [deck.gl](https://deck.gl/examples/hexagon-layer)
+• [deck.gl](https://deck.gl/examples/hexagon-layer) 
 
 #### Educational Resources
 • [Discover contrails at school](https://www.nasa.gov/sites/default/files/atoms/files/contrails_k-12.pdf)
@@ -171,6 +191,9 @@ python src/main.py
 • [Atmospheric Optics Catalogues](https://atoptics.co.uk/atoptics/shuttle.htm)
 • [STAC](https://stacspec.org/en/tutorials/1-read-stac-python/)
 • [WGS84 Coordinate System](https://support.virtual-surveyor.com/en/support/solutions/articles/1000261351-what-is-wgs84-)
+• [Moderate Resolution Imaging Spectroradiometer (MODIS)](https://www.earthdata.nasa.gov/learn/find-data/near-real-time/modis)
+• [Could air someday power your flight? Airlines are betting on it.](https://portal.staralliance.com/cms/news/hot-topics/2023-01-20/general/could-air-someday-power-your-flight-airlines-are-betting-on-it)
+• [Efficacy of climate forcings | Hansen et. al](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005JD005776)
 
 #### GOES-16 Resources
 • [gcp-public-data-goes-16](https://console.cloud.google.com/storage/browser/gcp-public-data-goes-16;tab=objects?prefix=&forceOnObjectsSortingFiltering=false)
