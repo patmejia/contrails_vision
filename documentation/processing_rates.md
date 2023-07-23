@@ -25,3 +25,11 @@ Total number of files processed: 123
 Processed 22.74 files per second.
 ```
 ---
+
+`👷‍♂️ contrails/init_data_stats_histograms`
+Generating Stats Report and Overlaid Band Histogram
+```
+Total time taken: 12.3240 seconds
+Total number of files processed: 105
+Processed 8.52 files per second.
+```

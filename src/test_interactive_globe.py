@@ -1,54 +1,52 @@
-import os
-import pytest
-import pyvista as pv
-from pyvista import examples
+import json
 import matplotlib.pyplot as plt
-import interactive_globe
-from unittest.mock import patch, MagicMock
+from datetime import datetime
 
-def test_download_dataset():
-    with patch.object(examples, 'download_topo_global', return_value=pv.PolyData()):
-        dataset = interactive_globe.download_dataset('globe')
-    assert isinstance(dataset, pv.PolyData)
+def get_timestamps_from_file(filename):
+    """
+    Extract timestamps from a given JSON file.
+    """
+    with open(filename, 'r') as f:
+        data = json.load(f)
+        timestamps = [entry["timestamp"] for entry in data]
+    return timestamps
 
-def test_compute_and_warp():
-    # Create a dataset with scalars and faces
-    points = [[0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [1.0, 1.0, 0.0], [0.0, 1.0, 0.0]]
-    faces = [[4, 0, 1, 2, 3]]
-    scalars = [1.0, 2.0, 3.0, 4.0]
-    dataset = pv.PolyData(points, faces)
-    dataset.point_data['scalars'] = scalars
+def convert_to_datetime_format(timestamps):
+    """
+    Convert a list of timestamps into a datetime format.
+    """
+    return [datetime.utcfromtimestamp(ts).strftime('%Y-%m') for ts in timestamps]
 
-    warped_dataset = interactive_globe.compute_and_warp(dataset)
-    assert isinstance(warped_dataset, pv.PolyData)
+def plot_histogram(train_dates, validation_dates):
+    """
+    Plot the histogram for training and validation dates.
+    """
+    plt.figure(figsize=(15, 6))
+    plt.hist(train_dates, bins=30, alpha=0.5, label="Training Dataset", color="blue", edgecolor="black")
+    plt.hist(validation_dates, bins=30, alpha=0.5, label="Validation Dataset", color="orange", edgecolor="black")
+    plt.title("Temporal Distribution of Training vs. Validation Datasets")
+    plt.xlabel("Date")
+    plt.ylabel("Number of Records")
+    plt.xticks(rotation=45)
+    plt.legend(loc="upper left")
+    plt.tight_layout()
+    plt.show()
 
+if __name__ == "__main__":
+    # Define the paths to your files
+    train_file_path = "samples/opencontrails_mini_sample/train_metadata.json"
+    validation_file_path = "samples/opencontrails_mini_sample/validation_metadata.json"
 
-def test_create_plotter():
-    plotter = interactive_globe.create_plotter()
-    assert isinstance(plotter, pv.Plotter)
+    # Extract timestamps
+    train_timestamps = get_timestamps_from_file(train_file_path)
+    validation_timestamps = get_timestamps_from_file(validation_file_path)
 
-def test_add_mesh_to_plotter():
-    dataset = pv.PolyData()
-    plotter = pv.Plotter()
-    with patch.object(plotter, 'add_mesh', return_value=1):
-        mesh = interactive_globe.add_mesh_to_plotter(plotter, dataset, cmap="gist_earth")
-    assert mesh == 1
+    # Convert timestamps to datetime format
+    train_dates = convert_to_datetime_format(train_timestamps)
+    validation_dates = convert_to_datetime_format(validation_timestamps)
 
-def test_get_output_folder():
-    with patch.object(os.path, 'dirname', return_value=''), \
-         patch.object(os.path, 'basename', return_value='interactive_globe.py'), \
-         patch.object(os.path, 'join', return_value='output/interactive_globe'):
-        output_folder = interactive_globe.get_output_folder()
-    assert output_folder == 'output/interactive_globe'
-
-def test_create_output_folder():
-    with patch.object(os, 'makedirs') as mock_makedirs, \
-         patch.object(os.path, 'exists', return_value=False):
-        interactive_globe.create_output_folder('output/interactive_globe')
-    mock_makedirs.assert_called_once_with('output/interactive_globe')
-
-def test_save_image():
-    plotter = pv.Plotter()
-    with patch.object(plotter, 'show', return_value=plt.imread(examples.mapfile)), \
-         patch.object(plt, 'imsave'):
-        interactive_globe.save_image(plotter, 'output/interactive_globe')
+    # Check if we have valid data
+    if not train_dates and not validation_dates:
+        print("No valid months found for both Training and Validation datasets..")
+    else:
+        plot_histogram(train_dates, validation_dates)
