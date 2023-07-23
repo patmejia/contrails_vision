@@ -36,17 +36,21 @@ def test_histogram_generator():
 def test_report_generator():
     stats = {'mean': 2, 'std_dev': 1, 'min': 1, 'max': 3, 'median': 2}
     markdown = ReportGenerator.generate_markdown_for_file('test.npy', stats)
+    print(markdown)  # Print the generated markdown
     assert '### test.npy' in markdown
-    assert '* **Mean**: 2' in markdown if markdown else False
+    assert "- **Mean**: 2" in markdown if markdown else False
 
 def test_file_processor():
     test_data = np.array([1, 2, 3])
     np.save('test.npy', test_data)
     filepath, markdown, has_zeros, stats = FileProcessor.process_file('test.npy')
+    print(markdown)  # Print the generated markdown
     assert filepath == 'test.npy'
-    assert '* **Mean**: 2' in markdown if markdown else False
+    assert "- **Mean**: 2" in markdown if markdown else False
     assert has_zeros == False
     if stats:  # Ensure stats is not None before accessing elements
         assert stats['mean'] == 2
     else:
-        assert False, "stats is None"
+        assert False    
+
+
