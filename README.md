@@ -66,7 +66,7 @@ Our work will quantifiably improve the confidence in the prediction of contrail-
 
 ---
 
-![overlayed_bands](documentation/images/generated/tiled_bands_histogram_all.png)
+![overlayed_bands](documentation/images/generated/tiled_bands_histogram_test.png)
 *The overlayed histograms highlight varying pixel distributions across spectral bands, predominantly showcasing lower reflectance values in satellite imagery data.*
 
 ---
