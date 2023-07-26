@@ -93,7 +93,6 @@ class ReportGenerator:
 
     @staticmethod
     def normalize_anchor(text):
-        # Convert text to lowercase, replace spaces with hyphens, and remove punctuation
         return text.lower().replace(' ', '-').replace('.', '')
 
     @staticmethod
@@ -152,21 +151,22 @@ class FileProcessor:
         markdown_results = []
         file_stats = {}
 
+        # but skip the test folder
         for root, _, files in os.walk(directory_path):
             for file in files:
-                filepath = os.path.join(root, file)
-                if filepath.endswith('.npy'):
+                if file.endswith('.npy'):
+                    filepath = os.path.join(root, file)
                     filepath, markdown, has_zeros, stats = FileProcessor.process_file(filepath)
-                    if filepath is None:
-                        continue
-                    if has_zeros:
-                        files_with_zeros.append(filepath)
-                    else:
-                        files_without_zeros.append(filepath)
-                    markdown_results.append(markdown)
-                    file_stats[filepath] = stats
+                    if filepath is not None:
+                        file_stats[filepath] = stats
+                        markdown_results.append(markdown)
+                        if has_zeros:
+                            files_with_zeros.append(filepath)
+                        else:
+                            files_without_zeros.append(filepath)
+                            
         return markdown_results, files_with_zeros, files_without_zeros, file_stats
-
+    
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Analyze numpy files in a directory.')
     parser.add_argument('directory', type=str, help='The directory to analyze.')

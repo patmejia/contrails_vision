@@ -66,8 +66,7 @@ Our work will quantifiably improve the confidence in the prediction of contrail-
 
 ---
 
-
-![overlayed_bands](documentation/images/generated/tiled_bands_2_by_5_histogram.png)
+![overlayed_bands](documentation/images/generated/tiled_bands_histogram_all.png)
 *The overlayed histograms highlight varying pixel distributions across spectral bands, predominantly showcasing lower reflectance values in satellite imagery data.*
 
 ---
@@ -179,6 +178,7 @@ python src/main.py
 • [Ash RGB Guide](https://rammb.cira.colostate.edu/training/visit/quick_guides/GOES_Ash_RGB.pdf)
 • [RGB Recipes](https://eumetrain.org/sites/default/files/2020-05/RGB_recipes.pdf)
 • [deck.gl](https://deck.gl/examples/hexagon-layer) 
+• [windy.com/aerosol ](https://www.windy.com/-Aerosol?41.706,-88.195,5)
 
 #### Educational Resources
 • [Discover contrails at school](https://www.nasa.gov/sites/default/files/atoms/files/contrails_k-12.pdf)
