@@ -209,6 +209,7 @@ python src/main.py
 • [keegil - Using U-Net to Predict Segmentation Masks in Python & Keras](https://www.kaggle.com/keegil/keras-u-net-starter-lb-0-277)
 • [anshuls235 - Time Series Forecasting-EDA, FE & Modelling](https://www.kaggle.com/code/anshuls235/time-series-forecasting-eda-fe-modelling?scriptVersionId=42985144&cellId=7)
 • [jamesmcguigan - RAM/CPU Optimization | downcasting unit8 → float64](https://www.kaggle.com/code/jamesmcguigan/reading-parquet-files-ram-cpu-optimization)
+• [Opencontrails Competition | One month to go! Summary of everything that happened](https://www.kaggle.com/competitions/google-research-identify-contrails-reduce-global-warming/discussion/420629)
 
 ---
 

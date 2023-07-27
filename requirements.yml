@@ -1,8 +1,11 @@
-name: contrails_env
+# apple m1 chip:
+name: contrails_env_m1
 channels:
+  - apple
   - conda-forge
   - defaults
 dependencies:
+  - tensorflow-deps #conda install -c apple tensorflow-deps
   - pytest
   - pytest-mock
   - libtiff
@@ -18,3 +21,5 @@ dependencies:
   - scipy
   - scikit-learn
   - seaborn
+  - torch
+  - torchvision

@@ -1,3 +1,4 @@
+# apple m1 chip:
 pytest
 pytest-mock
 libtiff
@@ -13,3 +14,8 @@ ipykernel
 scipy
 sklearn
 seaborn
+# conda install -c apple tensorflow-deps
+tensorflow-macos
+tensorflow-metal # Optional for GPU support
+torch
+torchvision
