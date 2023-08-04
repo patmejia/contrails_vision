@@ -165,11 +165,17 @@ python src/main.py
 
 <h2 id="credit-goes-to-all-authors-and-contributors">🥇 Credit goes to all authors and contributors ⤵︎ </h2>
 
+#### Contrails Research
+• 🗞️ news: [preprint: jul 2023 | light Contrail Segmentation via Augmented Transfer Learning with Novel SR Loss Function in Hough Space
+Junzi Sun & Esther Roosenbranda, Faculty of Aerospace Engineering, Delft University of Technology](https://arxiv.org/pdf/2307.12032.pdf) • [github @junzi](https://github.com/junzis/contrail-net/tree/main/data)
+
 • [OpenContrails: Benchmarking Contrail Detection on GOES-16 ABI](https://arxiv.org/abs/2304.02122) - Led by MIT Professor Steven Barrett from the Laboratory for Aviation and the Environment. 
 • Satellite images are from
 
  [NOAA GOES-16](https://www.goes-r.gov/).
 • [goes_contrails_dataset](https://console.cloud.google.com/storage/browser/goes_contrails_dataset)
+
+
 
 #### Visualization Tools
 • [RAMMB CIRA](https://rammb-slider.cira.colostate.edu/?sat=goes-18&sec=full_disk&x=12480&y=9274.5&z=0&angle=0&im=12&ts=1&st=0&et=0&speed=130&motion=loop&maps%5Bborders%5D=white&p%5B0%5D=geocolor&opacity%5B0%5D=1&pause=0&slider=-1&hide_controls=0&mouse_draw=0&follow_feature=0&follow_hide=0&s=rammb-slider&draw_color=FFD700&draw_width=6)
@@ -178,7 +184,8 @@ python src/main.py
 • [Ash RGB Guide](https://rammb.cira.colostate.edu/training/visit/quick_guides/GOES_Ash_RGB.pdf)
 • [RGB Recipes](https://eumetrain.org/sites/default/files/2020-05/RGB_recipes.pdf)
 • [deck.gl](https://deck.gl/examples/hexagon-layer) 
-• [windy.com/aerosol ](https://www.windy.com/-Aerosol?41.706,-88.195,5)
+• [windy.com/aerosol ](https://www.windy.com/-Aerosol?41.706,-88.195,5) 
+• [@blaylockbk | goes2go](https://github.com/blaylockbk/goes2go)
 
 #### Educational Resources
 • [Discover contrails at school](https://www.nasa.gov/sites/default/files/atoms/files/contrails_k-12.pdf)
@@ -194,6 +201,8 @@ python src/main.py
 • [Moderate Resolution Imaging Spectroradiometer (MODIS)](https://www.earthdata.nasa.gov/learn/find-data/near-real-time/modis)
 • [Could air someday power your flight? Airlines are betting on it.](https://portal.staralliance.com/cms/news/hot-topics/2023-01-20/general/could-air-someday-power-your-flight-airlines-are-betting-on-it)
 • [Efficacy of climate forcings | Hansen et. al](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005JD005776)
+• [⽕⛆ Pyrocumulonimbus (storm clouds from extreme wildfires)| Identifying the Causes
+PyroCb](https://arxiv.org/pdf/2211.08883.pdf)
 
 #### GOES-16 Resources
 • [gcp-public-data-goes-16](https://console.cloud.google.com/storage/browser/gcp-public-data-goes-16;tab=objects?prefix=&forceOnObjectsSortingFiltering=false)
@@ -201,6 +210,9 @@ python src/main.py
 • [GOES-R Series Product Definition](https://www.goes-r.gov/products/docs/PUG-L2+-vol5.pdf)
 • [GOES-16](https://eospso.nasa.gov/missions/geostationary-operational-environmental-satellite-16)
 • [GOES-16 Band Reference Guide](https://www.weather.gov/media/crp/GOES_16_Guides_FINALBIS.pdf)
+• [github: @awslab | noaa-goes16 ](https://github.com/awslabs/open-data-docs/tree/main/docs/noaa/noaa-goes16) 
+• [aws/noaa-goes](https://registry.opendata.aws/noaa-goes/)
+
 
 #### From Kagglers
 • [Inversion - isualize (input dataset 450.91 GB)](https://www.kaggle.com/code/inversion/visualizing-contrails#OpenContrails-dataset-documentation)
