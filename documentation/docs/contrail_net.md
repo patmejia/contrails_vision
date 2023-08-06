@@ -1,7 +1,7 @@
 # Contrail Net
 ### Neural Network Models: Contrail Detection & Segmentation from Satellite Images
 
-[Fork from @junzis| contrail-net](https://github.com/junzis/contrail-net)
+[Credit goes to  @junzis| contrail-net](https://github.com/junzis/contrail-net)
 
 Contrail Net leverages a pre-trained ResUNet model, image augmentations, and SR Loss using Hough space. Demonstrates contrail detection with various models, loss functions, and image sources. Built with PyTorch and includes a visualization notebook.
 
@@ -11,14 +11,18 @@ Contrail Net leverages a pre-trained ResUNet model, image augmentations, and SR 
 - **Model & Loss Function Examples**: Contrail detection with ResUNet, Dice Loss, Focal Loss.
 - **Image Source Examples**: Contrail detection from GOES-16, Himawari-8, MODIS.
 
+---
+
 ## Image Sources:
-Uses GOES-16 channels 13 (10.35 µm) and 15 (12.3 µm) to generate brightness temperature difference (BTD) images, isolating optically thin cirrus clouds and contrails.
-![channel_13](../images/research/abi_band_13.png)
-*ABI Band 13 - 10.3 µms - "Clean" Longwave Window*
- ![channel_14](../images/research//abi_band_14.png) 
-*ABI Band 14 - 11.2 µms - Longwave Window*
-![channel_15](../images/research/abi_band_15.png)
-*ABI Band 15 - 12.3 µms - "Dirty" Longwave Window - Water Vapor Absorption*
+The GOES-16 satellite uses channels 13 (10.35 µm) and 15 (12.3 µm) to generate brightness temperature difference (BTD) images, which can isolate optically thin cirrus clouds and contrails.
+
+| ABI Band 13 - 10.3 µms - "Clean" Longwave Window | ABI Band 14 - 11.2 µms - Longwave Window | ABI Band 15 - 12.3 µms - "Dirty" Longwave Window - Water Vapor Absorption |
+|:---:|:---:|:---:|
+| ![channel_13](../images/research/abi_band_13.png) | ![channel_14](../images/research/abi_band_14.png) | ![channel_15](../images/research/abi_band_15.png) |
+
+This table displays the images of the three bands used by the GOES-16 satellite to generate BTD images. Each band has a different wavelength and is used for a specific purpose. The "Clean" Longwave Window (Band 13) is used to detect high clouds, while the "Dirty" Longwave Window (Band 15) is used to detect low clouds and water vapor absorption.
+
+---
 
 ## References:
 - [Flight Contrail Segmentation with SR Loss in Hough Space](https://arxiv.org/pdf/2307.12032.pdf)
