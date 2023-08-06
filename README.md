@@ -8,7 +8,22 @@ Contrail clouds, artificial cirrus formations due to aircraft exhaust, significa
 
 ###### The ERF equation  $$\Delta N = F - \lambda \Delta T$$  linearly links top-of-atmosphere $TOA$ energy imbalance $\Delta N$, effective radiative forcing $F$, climate feedback $\lambda$, and global temperature change $\Delta T$. A positive $\lambda$ amplifies warming, whereas a negative one reduces it.
 
-> **Objective:** Develop a model predicting contrail formation and duration.
+> **Objective:** Develop a model predicting contrail formation and duration. In fact, the model should potentially predict number and duration of each contrails in a given area.
+
+---
+
+**Atmospheric column water vapor**.  A greenhouse gas playing a critical role in regulating temperature and precipitation patterns. It is the total water vapor in vertical atmospheric column, from Earth's surface to top of atmosphere. Expressed as height/depth of condensed liquid spread evenly across column. Measured in kilograms per square meter (kg/m2) or millimeters (mm).
+
+Calculating precipitable water vapor is given by:
+
+$$
+W = \frac{1}{\rho g} \int_{\rho_1}^{\rho_2} x dp
+$$
+
+where $W$ is the precipitable water vapor, $ρ$ is the density of water, $g$ is the acceleration of gravity, and $x(p)$ is the mixing ratio at the pressure level, $p$. Primary greenhouse gas, regulates temperature/precipitation. Amount varies with temperature, humidity, location. 
+[source: precipitable water vapor](https://glossary.ametsoc.org/wiki/Precipitable_water)
+
+---
 
 ## Table of Contents:
 1. [Introduction: Climate Analytics and Contrails](#climate-analytics-goes-16-and-aviation-contrails-detection)
@@ -26,7 +41,6 @@ Contrail clouds, artificial cirrus formations due to aircraft exhaust, significa
 13. [Contributing](#contributing)
 14. [License](#license)
 15. [Acknowledgments and Support](#acknowledgments-and-support)
-
 
 ---
 
@@ -233,7 +247,7 @@ PyroCb](https://arxiv.org/pdf/2211.08883.pdf)
 ## License
 This project is licensed under the terms of the [MIT license](LICENSE).
 
----
+
 
 <div style="background-color: #1f1f1f; color: #f2f2f2; padding: 15px; border-radius: 5px; margin-top: 20px;">
     <p>Work under construction. If there are inaccurate or missing quotes or credits, please email 👷 <a href="mailto:dev@patimejia.com?subject=Inaccurate%20or%20Missing%20Quotes%20or%20Credits">dev@patimejia.com</a>. Thanks!</p>
@@ -244,7 +258,7 @@ This project is licensed under the terms of the [MIT license](LICENSE).
 <div style="background-color: #1f1f1f; color: #f2f2f2; padding: 10px; border-radius: 5px;">
   <h3>If you found this repository helpful...</h3>
   <p>
-  Please consider giving it a star. Your support helps me continue to develop high-quality code and pursue my career in data analitics and pipelines. Feedback is always welcome and appreciated. Thank you for taking the time to read this study!
+  If you found this helpful, please consider giving it a star. Your support helps me maintain and continue to develop high-quality code and pursue my career in data analytics. Feedback is always welcome and appreciated. Thank you for taking the time to read this study. I hope you found it insightful and wish you all the best in your data science journey.
   </p> 
   <h4>
   <p style="text-align: right;">
