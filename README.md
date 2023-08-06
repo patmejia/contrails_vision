@@ -14,14 +14,7 @@ Contrail clouds, artificial cirrus formations due to aircraft exhaust, significa
 
 **Atmospheric column water vapor**.  A greenhouse gas playing a critical role in regulating temperature and precipitation patterns. It is the total water vapor in vertical atmospheric column, from Earth's surface to top of atmosphere. Expressed as height/depth of condensed liquid spread evenly across column. Measured in kilograms per square meter (kg/m2) or millimeters (mm).
 
-Calculating precipitable water vapor is given by:
-
-$$
-W = \frac{1}{\rho g} \int_{\rho_1}^{\rho_2} x dp
-$$
-
-where $W$ is the precipitable water vapor, $ρ$ is the density of water, $g$ is the acceleration of gravity, and $x(p)$ is the mixing ratio at the pressure level, $p$. Primary greenhouse gas, regulates temperature/precipitation. Amount varies with temperature, humidity, location. 
-[source: precipitable water vapor](https://glossary.ametsoc.org/wiki/Precipitable_water)
+######  Calculating precipitable water vapor is given by: $$W = \frac{1}{\rho g} \int_{\rho_1}^{\rho_2} x dp$$ where $W$ is the precipitable water vapor, $ρ$ is the density of water, $g$ is the acceleration of gravity, and $x(p)$ is the mixing ratio at the pressure level, $p$. Primary greenhouse gas, regulates temperature/precipitation. Amount varies with temperature, humidity, location. [source: precipitable water vapor](https://glossary.ametsoc.org/wiki/Precipitable_water)
 
 ---
 
