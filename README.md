@@ -1,22 +1,29 @@
 # Climate Analytics: GOES-16 and Aviation Contrails Detection
+> **Objective:** Develop a model using satellite and aircraft data to predict contrail formation, number, and duration in specific areas.
+
+---
+
 ### GOES-16 Satellite: Earth Monitoring
 
 ![GOES-16 Satellite](documentation/images/generated/sky-rogue-space-goes16-sat-globe-context.gif)
 *GOES-16 provides continuous monitoring from its geostationary orbit 22,300 mi above Earth.*
 
-Contrail clouds, artificial cirrus formations due to aircraft exhaust, significantly influence global warming, potentially more than CO2 emissions, by affecting Earth's radiation balance [European Geosciences Union, 2019](https://www.sciencedaily.com/releases/2019/06/190627113949.htm). This effect is quantified by [effective radiative forcing](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2019JD030581) (ERF), which gauges the net energy flux change at the atmosphere's top. Using satellite and aircraft data, combined with insights from weather conditions and turbulence, the aim is to predict and understand contrail formation.
 
-###### The ERF equation  $$\Delta N = F - \lambda \Delta T$$  linearly links top-of-atmosphere $TOA$ energy imbalance $\Delta N$, effective radiative forcing $F$, climate feedback $\lambda$, and global temperature change $\Delta T$. A positive $\lambda$ amplifies warming, whereas a negative one reduces it.
 
-> **Objective:** Develop a model predicting contrail formation and duration. In fact, the model should potentially predict number and duration of each contrails in a given area.
+
+###### Contrail clouds, originating from aircraft exhaust, play a pivotal role in global warming by modulating Earth's radiation balance [European Geosciences Union, 2019](https://www.sciencedaily.com/releases/2019/06/190627113949.htm). This modulation is quantified by [effective radiative forcing](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2019JD030581) (ERF), representing the net energy flux alteration at the top of the atmosphere (TOA).
+
+###### $$\Delta N = F - \lambda \Delta T$$ correlating TOA energy imbalance \(\Delta N\) with effective radiative forcing \(F\), climate feedback \(\lambda\), and global temperature shift \(\Delta T\). The magnitude and sign of \(\lambda\) determine the direction of thermal response.
+
+---
+
+###### **Atmospheric column water vapor** is a critical greenhouse determinant, quantifying the vertical water vapor content from Earth's surface to TOA. This metric is represented as the condensed liquid's height/depth uniformly distributed across the column, with units in kg/m^2 or mm.
+
+###### The formula: $$W = \frac{1}{\rho g} \int_{\rho_1}^{\rho_2} x dp$$ defines \(W\) as precipitable water vapor. Here, \(\rho\) is water density, \(g\) is gravitational acceleration, and \(x(p)\) denotes the mixing ratio at a specific pressure \(p\). Its concentration varies with temperature, humidity, and geographical factors. [source: precipitable water vapor](https://glossary.ametsoc.org/wiki/Precipitable_water)
 
 ---
 
-**Atmospheric column water vapor**.  A greenhouse gas playing a critical role in regulating temperature and precipitation patterns. It is the total water vapor in vertical atmospheric column, from Earth's surface to top of atmosphere. Expressed as height/depth of condensed liquid spread evenly across column. Measured in kilograms per square meter (kg/m2) or millimeters (mm).
 
-######  Calculating precipitable water vapor is given by: $$W = \frac{1}{\rho g} \int_{\rho_1}^{\rho_2} x dp$$ where $W$ is the precipitable water vapor, $ρ$ is the density of water, $g$ is the acceleration of gravity, and $x(p)$ is the mixing ratio at the pressure level, $p$. Primary greenhouse gas, regulates temperature/precipitation. Amount varies with temperature, humidity, location. [source: precipitable water vapor](https://glossary.ametsoc.org/wiki/Precipitable_water)
-
----
 
 ## Table of Contents:
 1. [Introduction: Climate Analytics and Contrails](#climate-analytics-goes-16-and-aviation-contrails-detection)
@@ -37,10 +44,10 @@ Contrail clouds, artificial cirrus formations due to aircraft exhaust, significa
 
 ---
 
+#### Contrail Detection: Climate Change Studies
+
 [OpenContrails: Benchmarking Contrails Detection](https://arxiv.org/abs/2304.02122) paper underlines contrail's importance, attributing them to $\sim \frac{2}{3}$ of aviation's climate impact and $\sim 2\%$ of all anthropogenic climate changes.
 
-
-#### Contrail Detection: Climate Change Studies
 ![Contrail Detection](documentation/images/generated/contrail_vs_empty.gif)
 *Right side shows detected contrails (⇥); left side shows absence (⇤).*
 
