@@ -13,7 +13,8 @@
 
 ###### Contrail clouds, originating from aircraft exhaust, play a pivotal role in global warming by modulating Earth's radiation balance [European Geosciences Union, 2019](https://www.sciencedaily.com/releases/2019/06/190627113949.htm). This modulation is quantified by [effective radiative forcing](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2019JD030581) (ERF), representing the net energy flux alteration at the top of the atmosphere (TOA).
 
-###### $$\Delta N = F - \lambda \Delta T$$ correlating TOA energy imbalance \(\Delta N\) with effective radiative forcing \(F\), climate feedback \(\lambda\), and global temperature shift \(\Delta T\). The magnitude and sign of \(\lambda\) determine the direction of thermal response.
+###### $$\Delta N = F - \lambda \Delta T$$ correlating TOA energy imbalance $\Delta N$ with effective radiative forcing $F$, climate feedback $\lambda$, and global temperature shift $\Delta T$. The magnitude and sign of $\lambda$ determine the direction of thermal response.
+
 
 ---
 
@@ -258,7 +259,7 @@ This project is licensed under the terms of the [MIT license](LICENSE).
 <div style="background-color: #1f1f1f; color: #f2f2f2; padding: 10px; border-radius: 5px;">
   <h3>If you found this repository helpful...</h3>
   <p>
-  If you found this helpful, please consider giving it a star. Your support helps me maintain and continue to develop high-quality code and pursue my career in data analytics. Feedback is always welcome and appreciated. Thank you for taking the time to read this study. I hope you found it insightful and wish you all the best in your data science journey.
+ Your support helps me maintain and continue to develop high-quality code and pursue my career in data analytics. Feedback is always welcome and appreciated. Thank you for taking the time to read this study. I hope you found it insightful and wish you all the best in your data science journey.
   </p> 
   <h4>
   <p style="text-align: right;">
