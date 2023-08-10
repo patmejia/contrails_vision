@@ -187,19 +187,16 @@ python src/main.py
 
 ---
 
-
-<h2 id="credit-goes-to-all-authors-and-contributors">🥇 Credit goes to all authors and contributors ⤵︎ </h2>
+## 🥇 Credit goes to all authors and contributors ⤵︎
 
 #### Contrails Research
-• 🗞️ news: [preprint: jul 2023 | light Contrail Segmentation via Augmented Transfer Learning with Novel SR Loss Function in Hough Space
-Junzi Sun & Esther Roosenbranda, Faculty of Aerospace Engineering, Delft University of Technology](https://arxiv.org/pdf/2307.12032.pdf) • [github @junzi](https://github.com/junzis/contrail-net/tree/main/data)
 
-• [OpenContrails: Benchmarking Contrail Detection on GOES-16 ABI](https://arxiv.org/abs/2304.02122) - Led by MIT Professor Steven Barrett from the Laboratory for Aviation and the Environment. 
-• Satellite images are from
-
- [NOAA GOES-16](https://www.goes-r.gov/).
+• [OpenContrails: Benchmarking Contrail Detection on GOES-16 ABI (April 2023)](https://arxiv.org/abs/2304.02122) - Led by MIT Professor Steven Barrett from the Laboratory for Aviation and the Environment.
+• Satellite images are from [NOAA GOES-16](https://www.goes-r.gov/).
 • [goes_contrails_dataset](https://console.cloud.google.com/storage/browser/goes_contrails_dataset)
-
+• [Contrail Recognition with Convolutional Neural Network and Contrail Parameterizations Evaluation (August 2018)](https://www.jstage.jst.go.jp/article/sola/14/0/14_2018-023/_pdf)
+• [The Application of a Convolutional Neural Network for the Detection of Contrails in Satellite Imagery (May 2023)](https://www.mdpi.com/2072-4292/15/11/2854)
+• [Light Contrail Segmentation via Augmented Transfer Learning with Novel SR Loss Function in Hough Space (July 2023)](https://arxiv.org/pdf/2307.12032.pdf)
 
 
 #### Visualization Tools
