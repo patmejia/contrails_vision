@@ -11,19 +11,29 @@
 
 
 
-###### Contrail clouds, originating from aircraft exhaust, play a pivotal role in global warming by modulating Earth's radiation balance [European Geosciences Union, 2019](https://www.sciencedaily.com/releases/2019/06/190627113949.htm). This modulation is quantified by [effective radiative forcing](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2019JD030581) (ERF), representing the net energy flux alteration at the top of the atmosphere (TOA).
 
-###### $$\Delta N = F - \lambda \Delta T$$ correlating TOA energy imbalance $\Delta N$ with effective radiative forcing $F$, climate feedback $\lambda$, and global temperature shift $\Delta T$. The magnitude and sign of $\lambda$ determine the direction of thermal response.
+Contrail clouds, which originate from aircraft exhaust, play a pivotal role in global warming by modulating Earth's radiation balance [European Geosciences Union, 2019](https://www.sciencedaily.com/releases/2019/06/190627113949.htm). This modulation is quantified by [effective radiative forcing](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2019JD030581) (ERF), which represents the net energy flux alteration at the top of the atmosphere (TOA).
+
+The relationship between the TOA energy imbalance $\Delta N$, effective radiative forcing $F$, climate feedback $\lambda$, and global temperature shift $\Delta T$ can be expressed as:
+
+$$\Delta N = F - \lambda \Delta T$$ 
+
+The magnitude and sign of $\lambda$ determine the direction of thermal response.
+
+
+**Atmospheric column water vapor** is a critical greenhouse determinant, quantifying the vertical water vapor content from Earth's surface to TOA. This metric is represented as the condensed liquid's height/depth uniformly distributed across the column, with units in $kg/m^2$.
+
+The amount of precipitable water vapor, denoted as $W$, can be calculated using the formula: 
+
+$$W = \frac{1}{\rho g} \int_{\rho_1}^{\rho_2} x dp$$ 
+
+where $\rho$ is the density of water, $g$ is the gravitational acceleration, and $x(p)$ denotes the mixing ratio at a specific pressure $p$. The concentration of $x(p)$ varies with temperature, humidity, and geographical factors. [source: precipitable water vapor](https://glossary.ametsoc.org/wiki/Precipitable_water_vapor)
+
+
+While the **ERF** is related to energy balance and dynamics at the top of the atmosphere, **precipitable water vapor**, is related to the distribution of water vapor in the atmosphere.
 
 
 ---
-
-###### **Atmospheric column water vapor** is a critical greenhouse determinant, quantifying the vertical water vapor content from Earth's surface to TOA. This metric is represented as the condensed liquid's height/depth uniformly distributed across the column, with units in kg/m^2 or mm.
-
-###### The formula: $$W = \frac{1}{\rho g} \int_{\rho_1}^{\rho_2} x dp$$ defines \(W\) as precipitable water vapor. Here, \(\rho\) is water density, \(g\) is gravitational acceleration, and \(x(p)\) denotes the mixing ratio at a specific pressure \(p\). Its concentration varies with temperature, humidity, and geographical factors. [source: precipitable water vapor](https://glossary.ametsoc.org/wiki/Precipitable_water)
-
----
-
 
 
 ## Table of Contents:
@@ -258,9 +268,7 @@ This project is licensed under the terms of the [MIT license](LICENSE).
 
 <div style="background-color: #1f1f1f; color: #f2f2f2; padding: 10px; border-radius: 5px;">
   <h3>If you found this repository helpful...</h3>
-  <p>
- Your support helps me maintain and continue to develop high-quality code and pursue my career in data analytics. Feedback is always welcome and appreciated. Thank you for taking the time to read this study. I hope you found it insightful and wish you all the best in your data science journey.
-  </p> 
+  <p>Please consider starring this repository to help others find it. Your support helps me maintain and develop high-quality code and pursue my career in data analytics. Feedback is always appreciated. Thank you for reading this study. I hope you found it insightful and wish you all the best in your data science journey.</p>
   <h4>
   <p style="text-align: right;">
   <a href="https://github.com/patmejia"> - pat [¬º-°]¬ </a>
