@@ -16,3 +16,4 @@ samples/sample_full/.DS_Store
 # run.py
 **/dev_log/ 
 test.npy
+.vscode/settings.json
