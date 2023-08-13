@@ -18,7 +18,7 @@
   *•* Handles errors related to Azure Blob Storage.
 *•* **Usage Example**:
   ```
-  python script_name.py ABI-L2-CMIPF 2021 001 08 15
+ python src/goes16_data/get_index.py ABI-L2-CMIPF 2021 001 08 15
   ```
 *•* **Output**: Displays the search results for the specified parameters and prints the total processing time.
 *•* **Note**: The product must be one of the available GOES-R products, and the date and time must be within valid ranges.
