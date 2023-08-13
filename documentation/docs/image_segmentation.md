@@ -60,5 +60,15 @@ ion)*
 ---
 [🐍 10 Best Image Processing Libraries in Python-Jun 25, 2022](https://www.unite.ai/10-best-image-processing-libraries-in-python/)
 
-[Efficient Graph-Based Image Segmentation-August 2023](http://vision.stanford.edu/teaching/cs231b_spring1415/papers/IJCV2004_FelzenszwalbHuttenlocher.pdf)
+[Efficient Graph-Based Image Segmentation](http://vision.stanford.edu/teaching/cs231b_spring1415/papers/IJCV2004_FelzenszwalbHuttenlocher.pdf)
 
+#### Graph-Based Image Segmentation using RAGs
+![rags](</documentation/images/research/rags.png>)
+*[scikit/RAGs](https://scikit-image.org/docs/stable/auto_examples/segmentation/plot_rag.html#sphx-glr-auto-examples-segmentation-plot-rag-py)*
+
+![drawing-rags](</documentation/images/research/drawing-rags.png>)
+*[scikit/Drawing Region Adjenacy Graphs](https://scikit-image.org/docs/stable/auto_examples/segmentation/plot_rag_draw.html)*
+
+
+![morphological-snake](</documentation/images/research/morphological-snakes.png>)
+*[scikit/Morphological Snakes](https://scikit-image.org/docs/stable/auto_examples/segmentation/plot_morphsnakes.html#sphx-glr-auto-examples-segmentation-plot-morphsnakes-py)*

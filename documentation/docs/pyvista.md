@@ -111,47 +111,18 @@ for i in range(n_chunks):
 *•*  **Parallelization**: The `multiprocessing` package enables parallel processing of data in chunks. This is useful for CPU-bound tasks such as image processing.
 *•*  **Distributed Computing Frameworks**: Dask and Apache Spark distribute data and computation across multiple machines for advanced efficiency.
 
-## Installing Dependencies
 
-```bash
-pip install netCDF4 pyvista
-brew update
-brew install azure-cli
-```
-
-## GOES-16 Data Handling (Azure CLI)
-
-*1.* **Authenticate**: 
-```bash
-az login
-```
-
-*2.* **Find the data**: GOES-16 ABI level 2 products in West Europe Azure data center (NetCDF and COG format) in containers: [noaa-goes16].
-```bash
-az storage blob list --account-name goeseuwest --container-name noaa-goes16 --prefix ABI-L2-CMIPF/2021/001/00/
-```
-
-*3.* **Download the data**:
-```sh
-az storage blob download --account-name goeseuwest --container-name noaa-goes16 --name path/to/file.nc --file path/to/local/file.nc --auth-mode login
-```
-
-### Troubleshooting
-
-#### Azure login error: `No subscriptions found for ...`
-
-*•*  Verify that the email address used for Azure login is correct and matches the GitHub account email if using GitHub authentication.
-*•*  Prior to executing `az login`, initiate and follow the prompts with Azure Cloud Shell, which automatically logs in, then try `az login` again.
 
 ### Resources and Credits: 
 
+*•* [Brian Blaylock's GOES-16 Download Tool](https://home.chpc.utah.edu/~u0553130/Brian_Blaylock/cgi-bin/goes16_download.cgi)
+
 *•*  [element84/robosat](https://github.com/Element84/robosat-jupyter-notebook/blob/master/Robosat%20Labeling.ipynb)
-*•*  [blaylock_aws/goes16_download.cgi](https://home.chpc.utah.edu/~u0553130/Brian_Blaylock/cgi-bin/goes16_download.cgi)
 
-## Notes
+*•* [Microsoft AI for Earth Datasets, GOES-R Data on GitHub](https://github.com/microsoft/AIforEarthDataSets/blob/main/data/goes-r.md)
 
-*•* Considering distributed computing frameworks for advanced efficiency needs. i.e. Dask, Apache Spark.
+*•* [GOES-R Government Official Products Overview](https://www.goes-r.gov/products/overview.html)
 
----
+*•* [GOES-16 ABI Level 2 Cloud and Moisture Imagery Full Disk Product](https://docs.opendata.aws/noaa-goes16/cics-readme.html)
 
-
+*•* [NOAA GOES-R Series Advanced Baseline Imager (ABI) Level 2 Cloud and Moisture Imagery Full Disk Product (CMIP/F)](https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C01502)
