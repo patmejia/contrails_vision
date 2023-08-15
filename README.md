@@ -265,7 +265,7 @@ This project is licensed under the terms of the [MIT license](LICENSE).
 
 <div style="background-color: #1f1f1f; color: #f2f2f2; padding: 10px; border-radius: 5px;">
   <h3>If you found this repository helpful...</h3>
-  <p>Please consider starring this repository to help others find it. Your support helps me maintain and develop high-quality code and pursue my career in data analytics. Feedback is always appreciated. Thank you for reading this study. I hope you found it insightful and wish you all the best in your data science journey.</p>
+  <p>Please consider starring this repository to help others find it. Feedback and contributions are appreciated. Thank you for reading this study. Wishing you all the best in your journey.</p>
   <h4>
   <p style="text-align: right;">
   <a href="https://github.com/patmejia"> - pat [¬º-°]¬ </a>
