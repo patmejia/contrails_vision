@@ -187,7 +187,7 @@ python src/main.py
 
 ---
 
-## 🥇 Credit goes to all authors and contributors ⤵︎
+## Credits go to the authors and contributors ⤵︎
 
 #### Contrails Research
 
