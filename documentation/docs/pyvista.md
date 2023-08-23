@@ -5,25 +5,16 @@ PyVista provides 3D visualization and mesh analysis tools for Python. Key resour
 #### Visualization Tools
 
 *•* **Renderer**: Utilize the [`Renderer` class](https://docs.pyvista.org/plotting/renderer.html) for 3D scene rendering with `view_isometric()`
-
-
 *•*  **Surface Normals**: Compute mesh shading and lighting via [surface normals](https://docs.pyvista.org/examples/01-filter/glyphs.html).
-
 *•*  **Point Clouds**: Visualize [point clouds](https://docs.pyvista.org/examples/00-load/create-point-cloud.html) with `add_points()`
-
-
 *•*  **ITK Plotter**: Employ [ITK plotter](https://docs.pyvista.org/examples/02-plot/itk_plotting.html) for interactive 3D visualization.
-
 *•*  **Time Series**: Visualize [time series data](https://docs.pyvista.org/examples/02-plot/time-series.html) with `add_mesh()`
 
 
 #### Mesh Analysis Tools
 
 *•*  **Mesh Smoothing**: Smooth meshes with [Laplacian smoothing](https://docs.pyvista.org/examples/01-filter/laplacian_smoothing.html).
-
-
 *•*  **Mesh Decimation**: Reduce the number of triangles in a mesh with [decimation](https://docs.pyvista.org/examples/01-filter/decimate.html).
-
 *•*  **Mesh Slicing**: Slice meshes with [clipping](https://docs.pyvista.org/examples/01-filter/clip.html).
 
 #### LLA to ECEF Conversion
@@ -63,22 +54,18 @@ Follow these steps to utilize the pipeline:
 from netCDF4 import Dataset
 data = Dataset('path/to/data.nc')
 ```
-
 *2.* **Convert radiance to reflectance**:
 ```python
 reflectance = (data.variables['Rad'][:].data * np.pi * 0.3) / 663.274497
 ```
-
 *3.* **Apply gamma correction**:
 ```python
 gamma_corrected = np.power(reflectance, 0.5)
 ```
-
 *4.* **Create pseudo-true color images**:
 ```python
 pseudo_true_color = np.dstack((band2, band3, band1))
 ```
-
 *5.* **Visualize the data using PyVista**:
 ```python
 import pyvista as pv
@@ -90,8 +77,6 @@ plotter.show()
 ### Efficient Processing of Large Datasets
 
 #### Chunk Reading for Memory Efficiency
-
-
 ```python
 from netCDF4 import Dataset
 data = Dataset('path/to/data.nc')
@@ -107,7 +92,6 @@ for i in range(n_chunks):
 ```
 
 #### Parallelization and Distributed Computing Frameworks
-
 *•*  **Parallelization**: The `multiprocessing` package enables parallel processing of data in chunks. This is useful for CPU-bound tasks such as image processing.
 *•*  **Distributed Computing Frameworks**: Dask and Apache Spark distribute data and computation across multiple machines for advanced efficiency.
 

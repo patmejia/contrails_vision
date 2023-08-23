@@ -71,3 +71,20 @@ Total time taken: 13.1758 seconds
 Total number of files processed: 126
 Processed 9.56 files per second.
 ```
+---
+#### aug. 14, 2023:
+---
+
+`python src/goes16_data/get_index.py ABI-L2-CMIPF 2021 001 08 15`
+
+```
+Searching in container: noaa-goes16 with prefix: ABI-L2-CMIPF/2021/001/08/
+Searching in container: noaa-goes16 with prefix: ABI-L2-CMIPF/2021/001/09/
+Searching in container: noaa-goes16 with prefix: ABI-L2-CMIPF/2021/001/10/
+Searching in container: noaa-goes16 with prefix: ABI-L2-CMIPF/2021/001/11/
+Searching in container: noaa-goes16 with prefix: ABI-L2-CMIPF/2021/001/12/
+Searching in container: noaa-goes16 with prefix: ABI-L2-CMIPF/2021/001/13/
+Searching in container: noaa-goes16 with prefix: ABI-L2-CMIPF/2021/001/14/
+Searching in container: noaa-goes16 with prefix: ABI-L2-CMIPF/2021/001/15/
+Process completed in 2.81 seconds.
+```

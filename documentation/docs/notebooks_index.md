@@ -1,4 +1,4 @@
-# Documentation Index
+# Kaggle Notebook Index
 
 • [Flowchart 📈 | comprehensive decision tree for contrail identification](https://gist.github.com/patmejia/dfb7b0ce44accb67dbe58a9524623002)
 
