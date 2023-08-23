@@ -28,39 +28,39 @@
 
 ### **Usage**
 1. **Preparation**
-   - **External Dataset**: [NOAA GOES-R weather imagery](https://microsoft.github.io/AIforEarthDataSets/data/goes-r.html)
-   - **Environment Setup**:
-     ```bash
-     conda create --name contrail_env python=3.8
-     conda activate contrail_env
-     pip install azure-storage-blob
-     ```
+- **External Dataset**: [NOAA GOES-R weather imagery](https://microsoft.github.io/AIforEarthDataSets/data/goes-r.html)
+- **Environment Setup**:
+```bash
+conda create --name contrail_env python=3.8
+conda activate contrail_env
+pip install azure-storage-blob
+```
 
 2. **Example Run**:
-   - **Command**:
-     ```bash
-     python src/goes16_data/get_index.py ABI-L2-CMIPF 2021 001 08 15
-     ```
+- **Command**:
+```bash
+python src/goes16_data/get_index.py ABI-L2-CMIPF 2021 001 08 15
+```
 
-   - **Output**:
-     ```bash
-     Searching in container: noaa-goes16 with prefix: ABI-L2-CMIPF/2021/001/08/
-     ...
-     Process completed in 3.10 seconds.
-     ```
+- **Output**:
+```bash
+Searching in container: noaa-goes16 with prefix: ABI-L2-CMIPF/2021/001/08/
+...
+Process completed in 3.10 seconds.
+```
 
-   - **Note**: The product must be one of the available GOES-R products, date and time must be within valid ranges.
+- **Note**: The product must be one of the available GOES-R products, date and time must be within valid ranges.
 
 3. **Available Products**:
-   ```python
-   PRODUCT_LIST = [
-   "ABI-L2-CMIPC", "ABI-L2-CMIPF", "ABI-L2-CMIPM",
-   "ABI-L2-FDCC", "ABI-L2-FDCF", "ABI-L2-LSTC",
-   "ABI-L2-LSTF", "ABI-L2-LSTM", "ABI-L2-MCMIPC",
-   "ABI-L2-MCMIPF", "ABI-L2-MCMIPM", "ABI-L2-RRQPEF",
-   "ABI-L2-SSTF", "GLM-L2-LCFA"
-   ]
-   ```
+```python
+PRODUCT_LIST = [
+"ABI-L2-CMIPC", "ABI-L2-CMIPF", "ABI-L2-CMIPM",
+"ABI-L2-FDCC", "ABI-L2-FDCF", "ABI-L2-LSTC",
+"ABI-L2-LSTF", "ABI-L2-LSTM", "ABI-L2-MCMIPC",
+"ABI-L2-MCMIPF", "ABI-L2-MCMIPM", "ABI-L2-RRQPEF",
+"ABI-L2-SSTF", "GLM-L2-LCFA"
+]
+```
 
 ### **Output Details**
 - Displays search results for specified parameters.
